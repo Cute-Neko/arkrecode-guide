@@ -17,7 +17,6 @@ def plain(value: str) -> str:
 def candidates() -> dict[str, Path]:
     found: dict[str, Path] = {}
     patterns = [
-        (ROOT, "h*-build-damage-node-sheet.html"),
         (ROOT / "combined_node_sheets", "h*-build-damage-node-sheet.html"),
     ]
     for folder, pattern in patterns:
@@ -91,11 +90,11 @@ input:focus{{border-color:var(--blue);box-shadow:0 0 0 3px #bfdbfe}}.count{{whit
 <body>
 <header><div class="header-inner"><p class="eyebrow">ARK RE:CODE DATABASE</p><h1>角色技能与配装资料库</h1><p class="intro">按角色查看面板、六件装备、理论伤害和经过验证的技能节点表。</p></div></header>
 <main>
-<div class="toolbar"><label class="search-wrap"><span>⌕</span><input id="search" type="search" autocomplete="off" placeholder="搜索角色中文名或编号，例如：露西芙尔、H185" aria-label="搜索角色"></label><span class="count" id="count">共 {len(cards)} 名角色</span></div>
+<div class="toolbar"><label class="search-wrap"><span>⌕</span><input id="search" type="search" autocomplete="off" placeholder="搜索角色中文名或编号，例如：蜜娜、H804" aria-label="搜索角色"></label><span class="count" id="count">共 {len(cards)} 名角色</span></div>
 <div class="grid" id="grid">{''.join(card_html)}</div>
 <div class="empty" id="empty">没有找到对应角色。</div>
 </main>
-<footer>页面内容来自本地生成的角色合并表。</footer>
+
 <script>
 (function(){{
 var input=document.getElementById("search");
