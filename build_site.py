@@ -11,6 +11,7 @@ OUT = Path(__file__).resolve().parent
 CHARACTERS = OUT / "characters"
 REFERENCE = OUT / "reference"
 NODE_GRAPH_SOURCE = ROOT / "node_validation" / "sep08_closure_audit" / "COMPLETE_BATTLE_NODE_GRAPH_V9_COMPACT_CONTROL_FLOW.svg"
+PVP_NODE_GRAPH_SOURCE = ROOT / "node_validation" / "sep10_pvp_graph" / "PURE_PVP_BATTLE_NODE_GRAPH.html"
 
 def plain(value: str) -> str:
     value = re.sub(r"<[^>]+>", " ", value)
@@ -93,7 +94,7 @@ input:focus{{border-color:var(--blue);box-shadow:0 0 0 3px #bfdbfe}}.count{{whit
 <body>
 <header><div class="header-inner"><p class="eyebrow">ARK RE:CODE DATABASE</p><h1>角色技能与配装资料库</h1><p class="intro">按角色查看面板、六件装备、理论伤害和经过验证的技能节点表。</p></div></header>
 <main>
-<div class="resources" aria-label="全局资料"><a class="resource" href="reference/battle-node-graph.html"><b>完整战斗节点图 V9 →</b><span>人类可读的完整控制流：146 个节点、187 条边。</span></a><a class="resource" href="reference/damage-formula.html"><b>伤害计算乘区说明 →</b><span>基于逆向与解包数据，逐项解释公式、贯穿、增减伤和事件结算。</span></a></div>
+<div class="resources" aria-label="全局资料"><a class="resource" href="reference/pvp-battle-node-graph.html"><b>纯 PVP 战斗节点表 →</b><span>移除波次、援军、Boss 与 PVE 奖励分支；每个节点附 master.db 实例和完整边台账。</span></a><a class="resource" href="reference/battle-node-graph.html"><b>完整战斗节点图 V9 →</b><span>包含 PVE 与 PVP 的完整控制流：146 个节点、187 条边。</span></a><a class="resource" href="reference/damage-formula.html"><b>伤害计算乘区说明 →</b><span>基于逆向与解包数据，逐项解释公式、贯穿、增减伤和事件结算。</span></a></div>
 <div class="toolbar"><label class="search-wrap"><span>⌕</span><input id="search" type="search" autocomplete="off" placeholder="搜索角色中文名或编号，例如：蜜娜、H804" aria-label="搜索角色"></label><span class="count" id="count">共 {len(cards)} 名角色</span></div>
 <div class="grid" id="grid">{''.join(card_html)}</div>
 <div class="empty" id="empty">没有找到对应角色。</div>
@@ -124,6 +125,11 @@ def main() -> None:
     if not NODE_GRAPH_SOURCE.exists():
         raise FileNotFoundError(f"缺少完整节点图：{NODE_GRAPH_SOURCE}")
     shutil.copy2(NODE_GRAPH_SOURCE, REFERENCE / "complete-battle-node-graph-v9.svg")
+    if not PVP_NODE_GRAPH_SOURCE.exists():
+        raise FileNotFoundError(f"缺少纯 PVP 节点表：{PVP_NODE_GRAPH_SOURCE}")
+    (REFERENCE / "pvp-battle-node-graph.html").write_text(
+        inject_directory_link(PVP_NODE_GRAPH_SOURCE.read_text(encoding="utf-8")), encoding="utf-8"
+    )
     for old in CHARACTERS.glob("*.html"):
         old.unlink()
     cards=[]
