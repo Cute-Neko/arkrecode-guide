@@ -20,13 +20,14 @@ def plain(value: str) -> str:
 def candidates() -> dict[str, Path]:
     found: dict[str, Path] = {}
     patterns = [
+        (ROOT / "generated_node_sheets", "h*-readable-node-sheet.html"),
         (ROOT / "combined_node_sheets", "h*-build-damage-node-sheet.html"),
     ]
     for folder, pattern in patterns:
         if not folder.exists():
             continue
         for path in sorted(folder.glob(pattern)):
-            match = re.match(r"(h\d+)-build-damage-node-sheet\.html$", path.name, re.I)
+            match = re.match(r"(h\d+)-(?:readable-node-sheet|build-damage-node-sheet)\.html$", path.name, re.I)
             if match:
                 found[match.group(1).lower()] = path
     return found
@@ -49,9 +50,12 @@ def read_card(code: str, path: Path) -> dict[str, str]:
     name = name_match.group(1).strip() if name_match else code.upper()
     subtitle_match = re.search(r'<p[^>]*class=["\'][^"\']*subtitle[^"\']*["\'][^>]*>(.*?)</p>', text, re.I | re.S)
     subtitle = plain(subtitle_match.group(1)) if subtitle_match else "配装、理论伤害与技能节点表"
+    node_only = path.name.lower().endswith("-readable-node-sheet.html")
     panel_match = re.search(r"(\d+)\s*套面板", subtitle)
-    panels = panel_match.group(1) + " 套面板" if panel_match else "单面板"
-    return {"id": code.upper(), "name": name, "title": title, "subtitle": subtitle, "panels": panels, "source": str(path.relative_to(ROOT)).replace("\\", "/")}
+    panels = "0 套面板" if node_only else (panel_match.group(1) + " 套面板" if panel_match else "单面板")
+    if node_only:
+        subtitle = subtitle + "｜当前仅收录技能节点表"
+    return {"id": code.upper(), "name": name, "title": title, "subtitle": subtitle, "panels": panels, "kind": "node-only" if node_only else "combined", "source": str(path.relative_to(ROOT)).replace("\\", "/")}
 
 def build_index(cards: list[dict[str, str]]) -> str:
     card_html = []
@@ -92,7 +96,7 @@ input:focus{{border-color:var(--blue);box-shadow:0 0 0 3px #bfdbfe}}.count{{whit
 </style>
 </head>
 <body>
-<header><div class="header-inner"><p class="eyebrow">ARK RE:CODE DATABASE</p><h1>角色技能与配装资料库</h1><p class="intro">按角色查看面板、六件装备、理论伤害和经过验证的技能节点表。</p></div></header>
+<header><div class="header-inner"><p class="eyebrow">ARK RE:CODE DATABASE</p><h1>角色技能与配装资料库</h1><p class="intro">按角色查看经过验证的技能节点表；已经完成人工配装的角色还会显示面板、六件装备与理论伤害。</p></div></header>
 <main>
 <div class="resources" aria-label="全局资料"><a class="resource" href="reference/pvp-battle-node-graph.html"><b>纯 PVP 战斗节点表 →</b><span>移除波次、援军、Boss 与 PVE 奖励分支；每个节点附 master.db 实例和完整边台账。</span></a><a class="resource" href="reference/battle-node-graph.html"><b>完整战斗节点图 V9 →</b><span>包含 PVE 与 PVP 的完整控制流：146 个节点、187 条边。</span></a><a class="resource" href="reference/damage-formula.html"><b>伤害计算乘区说明 →</b><span>基于逆向与解包数据，逐项解释公式、贯穿、增减伤和事件结算。</span></a></div>
 <div class="toolbar"><label class="search-wrap"><span>⌕</span><input id="search" type="search" autocomplete="off" placeholder="搜索角色中文名或编号，例如：蜜娜、H804" aria-label="搜索角色"></label><span class="count" id="count">共 {len(cards)} 名角色</span></div>

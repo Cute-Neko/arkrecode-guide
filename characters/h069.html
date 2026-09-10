@@ -1,0 +1,82 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>欧尔嘉 H069 · 技能节点阅读版</title>
+<style>
+:root{--ink:#172033;--muted:#5b6473;--line:#d7dce5}*{box-sizing:border-box}html,body{margin:0;background:#fff;color:var(--ink);font-family:"Microsoft YaHei UI","Noto Sans SC",Arial,sans-serif}main{max-width:1720px;margin:auto;padding:22px;border:1px solid #d7dce5}h1{margin:0 0 6px;font-size:24px;font-weight:500;color:#111827}h2{margin:0;font-size:18px;font-weight:500;color:#111827}h3{margin:0;font-size:16px}.subtitle,.description,.meta{color:var(--muted);line-height:1.55}.subtitle{margin:0 0 14px}.legend{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;font-size:13px}.legend span{display:flex;align-items:center;gap:6px}.legend i{width:14px;height:14px;border:1px solid;border-radius:3px}.jumpbar{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:7px;padding:10px 0;background:rgba(255,255,255,.96);border-bottom:1px solid #e5e7eb}.jumpbar a{padding:6px 11px;border-radius:999px;background:#f1f5f9;color:#334155;text-decoration:none;font-size:12px;font-weight:600}.section{border-top:2px solid var(--line);padding-top:14px;margin-top:18px}.section-title{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:9px}.meta{font-size:12px}.description{margin:7px 0 11px;font-size:13px}.lane{display:flex;align-items:stretch;flex-wrap:wrap;gap:7px;margin:7px 0}.lane-label{flex:0 0 108px;align-self:center;color:#374151;font-size:13px;font-weight:600}.node{min-width:108px;max-width:176px;min-height:50px;padding:7px 9px;border:1px solid;border-radius:6px;display:flex;flex-direction:column;justify-content:center}.node-id{font:700 12px Consolas,monospace;margin-bottom:2px}.node-name{font-size:12px;line-height:1.35}.arrow{align-self:center;color:#6b7280;font-size:18px}.trigger{background:#fff7ed;border-color:#fb923c}.action{background:#eff6ff;border-color:#60a5fa}.dispatch{background:#faf5ff;border-color:#c084fc}.operator{background:#ecfeff;border-color:#22d3ee}.damage{background:#fff1f2;border-color:#fb7185}.status{background:#ecfdf5;border-color:#34d399}.queue{background:#fefce8;border-color:#eab308}.effect{padding:9px 11px;margin:8px 0;border:1px solid #dbe3ee;border-radius:9px;background:#fbfdff}.effect-copy{margin:5px 0 0 115px;color:#475569;font-size:12px;line-height:1.5}.proof{color:#0f766e}.note{margin:8px 0;padding:8px 10px;border-left:3px solid #64748b;background:#f8fafc;color:#334155;font-size:13px;line-height:1.5}.enhance{margin:10px 0;padding:9px 11px;border:1px solid #e5e7eb;border-radius:8px;background:#fff}.enhance summary{cursor:pointer;font-weight:600;color:#334155}.enhance li{margin:5px 0;color:#475569;font-size:13px}.status-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.status-card{padding:13px;border:1px solid #dbe3ee;border-radius:10px;background:#fff}.status-card .lane-label{flex-basis:94px}.status-card .effect-copy{margin-left:101px}.passbar{display:flex;flex-wrap:wrap;gap:15px;margin-top:19px;padding:11px 13px;background:#f0fdf4;border:1px solid #86efac;color:#166534;font-size:13px}.empty{color:#64748b;font-style:italic}@media(max-width:850px){main{padding:13px}.status-grid{grid-template-columns:1fr}.lane-label{flex-basis:100%}.node{flex:1 1 130px;max-width:none}.effect-copy,.status-card .effect-copy{margin-left:0}}
+</style><style id="site-directory-link-style">
+.site-directory-link{position:fixed;right:18px;bottom:18px;z-index:99999;padding:10px 15px;border-radius:999px;background:#172033;color:#fff!important;text-decoration:none;font:600 14px/1.2 "Microsoft YaHei UI","Noto Sans SC",sans-serif;box-shadow:0 8px 24px rgba(15,23,42,.24)}
+.site-directory-link:hover{background:#2563eb}.site-directory-link:focus-visible{outline:3px solid #93c5fd;outline-offset:3px}
+@media print{.site-directory-link{display:none}}
+</style></head><body><a class="site-directory-link" href="../index.html" aria-label="返回角色目录">← 角色目录</a><main>
+<h1>欧尔嘉 H069 · 技能节点阅读版</h1>
+<p class="subtitle">Ice属性 · 法师｜按人工技能页结构整理｜白底单页</p>
+<div class="legend"><span><i class="trigger"></i>触发</span><span><i class="action"></i>行动</span><span><i class="dispatch"></i>函数分派</span><span><i class="operator"></i>EFunction</span><span><i class="damage"></i>伤害</span><span><i class="status"></i>状态</span><span><i class="queue"></i>队列与回合</span></div><nav class="jumpbar"><a href="#entry">公共入口</a><a href="#H069S1">H069S1</a><a href="#H069S2">H069S2</a><a href="#H069S3">H069S3</a><a href="#damage-chain">伤害链</a><a href="#statuses">派生状态</a></nav>
+<section class="section" id="entry">
+          <div class="section-title"><h2>公共主动技能入口</h2><span class="meta">H069S1、H069S2、H069S3 共用</span></div>
+          <div class="lane"><span class="lane-label">玩家施放</span><span class="node trigger"><span class="node-id">T10</span><span class="node-name">玩家输入或 AI 选择动作</span></span><span class="arrow">→</span><span class="node action"><span class="node-id">A01</span><span class="node-name">技能可用性、CD与魂力检查</span></span><span class="arrow">→</span><span class="node action"><span class="node-id">A00</span><span class="node-name">提交动作并校验 SourceID</span></span><span class="arrow">→</span><span class="node action"><span class="node-id">A04</span><span class="node-name">StartNewSkillEvent</span></span><span class="arrow">→</span><span class="node action"><span class="node-id">A02</span><span class="node-name">替换技能与魂燃函数装填</span></span><span class="arrow">→</span><span class="node action"><span class="node-id">A03</span><span class="node-name">目标寻址与过滤</span></span><span class="arrow">→</span><span class="node action"><span class="node-id">A05</span><span class="node-name">写入技能自身冷却</span></span><span class="arrow">→</span><span class="node action"><span class="node-id">A06</span><span class="node-name">魂力→自身BeforeSkill→全体AnyOneBeforeSkill→夹击</span></span><span class="arrow">→</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
+        </section><section class="section" id="H069S1">
+          <div class="section-title"><h2>H069S1　算计</h2><span class="meta">伤害技能｜目标 数据库未标注｜CD 1｜AttRate 1｜Pow 0.95</span></div>
+          <p class="description">挥洒红酒攻击敌人，伤害量根据目标身上的负向状态数量等比提升</p>
+          <div class="effects"><div class="effect">
+      <div class="lane"><span class="lane-label">条件伤害倍率</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
+      <p class="effect-copy">满足条件时，条件攻击倍率为 0.1｜数据：属性/条件函数；属性=DebuffCount；概率/倍率=10%<span class="proof">｜已验证连续边</span></p>
+    </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　伤害量提升 10%</li><li><b>Lv.5</b>　伤害量提升 15%</li></ul></details>
+        </section><section class="section" id="H069S2">
+          <div class="section-title"><h2>H069S2　撩人姿态</h2><span class="meta">非伤害技能｜目标 All｜CD 4</span></div>
+          <p class="description">以撩人的姿态施展阴谋，以 [35%:2_1:Rate] 机率对全体敌人造成[攻击力下降:ReduceAttack:StatusFun]( 2 回合)[:AWAKEN]</p>
+          <div class="effects"><div class="effect">
+      <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
+      <p class="effect-copy">施加攻击力下降（ReduceAttack）；基础概率 35%｜数据：AddStatus；状态 攻击力下降 (ReduceAttack)；目标=All；概率/倍率=35%<span class="proof">｜已验证连续边</span></p>
+    </div><div class="effect">
+      <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
+      <p class="effect-copy">施加速度下降（ReduceSpeed）；基础概率 35%｜数据：AddStatus；状态 速度下降 (ReduceSpeed)；目标=All；概率/倍率=35%<span class="proof">｜已验证连续边</span></p>
+    </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　效果发生率提升 5%</li><li><b>Lv.3</b>　效果发生率提升 5%</li><li><b>Lv.4</b>　冷却时间减少 1 回合</li><li><b>Lv.5</b>　效果发生率提升 5%</li></ul></details>
+        </section><section class="section" id="H069S3">
+          <div class="section-title"><h2>H069S3　一起干杯</h2><span class="meta">伤害技能｜目标 All｜CD 4｜AttRate 0.85｜Pow 0.95｜魂燃 10</span></div>
+          <p class="description">用特制的红酒攻击全体敌人，以 [50%:3_1:Rate] 机率造成[命中率下降:DecreaseHitChance:StatusFun]( 2 回合)</p>
+          <div class="effects"><div class="effect">
+      <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
+      <p class="effect-copy">施加命中率下降（DecreaseHitChance）；基础概率 50%；持续 2 回合｜数据：AddStatus；状态 命中率下降 (DecreaseHitChance)；目标=All；概率/倍率=50%；持续回合=2<span class="proof">｜已验证连续边</span></p>
+    </div><div class="effect">
+      <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜已验证连续边</span></p>
+    </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　效果发生率提升 10%</li><li><b>Lv.5</b>　冷却时间减少 1 回合</li><li><b>Lv.6</b>　伤害量提升 10%</li><li><b>Lv.7</b>　效果发生率提升 15%</li><li><b>Lv.8</b>　伤害量提升 15%</li></ul></details>
+        </section><section class="section" id="damage-chain">
+          <div class="section-title"><h2>直接目标的完整伤害链</h2><span class="meta">H069S1、H069S3 使用</span></div>
+          <div class="lane"><span class="lane-label">普通伤害</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node damage"><span class="node-id">D00</span><span class="node-name">建立命中事件与前快照</span></span><span class="arrow">→</span><span class="node damage"><span class="node-id">D01</span><span class="node-name">收集技能、角色与光环函数</span></span><span class="arrow">→</span><span class="node damage"><span class="node-id">D02</span><span class="node-name">命中/闪避/暴击</span></span><span class="arrow">→</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span><span class="arrow">→</span><span class="node damage"><span class="node-id">D04</span><span class="node-name">防御与三层贯穿</span></span><span class="arrow">→</span><span class="node damage"><span class="node-id">D03B</span><span class="node-name">技能倍率 GetSkillAttRate</span></span><span class="arrow">→</span><span class="node damage"><span class="node-id">D05</span><span class="node-name">攻方伤害增幅</span></span><span class="arrow">→</span><span class="node damage"><span class="node-id">D06</span><span class="node-name">目标及光环减伤</span></span><span class="arrow">→</span><span class="node damage"><span class="node-id">D07</span><span class="node-name">伤害上限与最终伤害</span></span><span class="arrow">→</span><span class="node damage"><span class="node-id">D08</span><span class="node-name">事件提交前函数</span></span><span class="arrow">→</span><span class="node damage"><span class="node-id">D10</span><span class="node-name">护盾与生命应用</span></span><span class="arrow">→</span><span class="node damage"><span class="node-id">D11</span><span class="node-name">实际生命损失与创伤提交</span></span><span class="arrow">→</span><span class="node damage"><span class="node-id">D12A</span><span class="node-name">受击 SP/时间/阵营资源事件内变更</span></span><span class="arrow">→</span><span class="node damage"><span class="node-id">D13</span><span class="node-name">目标与来源事件后函数</span></span><span class="arrow">→</span><span class="node damage"><span class="node-id">D14</span><span class="node-name">吸血检查与吸血事件</span></span></div>
+          <div class="note">这里只展示master.db中具有 AttRate 与 Pow 的技能。百分比生命直伤、状态跳伤和引爆由相应F节点表达，不强行套入普通攻击公式。</div>
+        </section>
+<section class="section" id="statuses"><div class="section-title"><h2>派生状态与嵌套效果</h2><span class="meta">3 个状态</span></div><div class="status-grid"><article class="status-card">
+          <div class="section-title"><h3>ReduceAttack　攻击力下降</h3><span class="meta">基础回合 2｜最大层数 0｜常驻 0</span></div>
+          <p class="description">攻击力下降 50%</p>
+          <div class="effect">
+      <div class="lane"><span class="lane-label">攻击力提升</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
+      <p class="effect-copy">攻击力提高 -50%（最终攻击倍率）｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+    </div><div class="effect">
+      <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+    </div>
+        </article><article class="status-card">
+          <div class="section-title"><h3>ReduceSpeed　速度下降</h3><span class="meta">基础回合 2｜最大层数 0｜常驻 0</span></div>
+          <p class="description">速度下降 30%</p>
+          <div class="effect">
+      <div class="lane"><span class="lane-label">SpeedFinalRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
+      <p class="effect-copy">SpeedFinalRate = -0.3｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+    </div><div class="effect">
+      <div class="lane"><span class="lane-label">ReduceSpeed</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
+      <p class="effect-copy">ReduceSpeed = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+    </div><div class="effect">
+      <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+    </div>
+        </article><article class="status-card">
+          <div class="section-title"><h3>DecreaseHitChance　命中率下降</h3><span class="meta">基础回合 1｜最大层数 0｜常驻 0</span></div>
+          <p class="description">命中率下降 50%</p>
+          <div class="effect">
+      <div class="lane"><span class="lane-label">HitRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
+      <p class="effect-copy">HitRate = -0.5｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+    </div><div class="effect">
+      <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+    </div>
+        </article></div></section>
+</main></body></html>
