@@ -1,0 +1,1051 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5100" height="7600" viewBox="0 0 5100 7600" role="img" aria-labelledby="title desc">
+<title id="title">完整战斗节点图 V9 紧凑控制流程图</title>
+<desc id="desc">全部146个节点与187条边。默认只显示节点ID、名称、控制流和必要分支条件；点击节点或边显示编号、主流程位置与证据等级。</desc>
+<rect width="5100" height="7600" fill="#fff"/>
+<style>
+        text{font-family:"Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;fill:#172033}
+        .title{font-size:34px;font-weight:700}.subtitle{font-size:17px;fill:#526071}
+        .group-box{fill:#fbfcfe;stroke:#aab4c2;stroke-width:1.5;stroke-dasharray:8 7}
+        .group-title-bg{fill:#fff}.group-title{font-size:20px;font-weight:700;fill:#26364a}
+        .node rect{fill:#fff;stroke:#4c5b6d;stroke-width:1.65}.node text{pointer-events:none}
+        .node.action rect{fill:#f3f8ff;stroke:#3b79b8}.node.damage rect{fill:#fff7f7;stroke:#bc5962}
+        .node.life rect{fill:#fffaf0;stroke:#b67b21}.node.dispatch rect{fill:#faf7ff;stroke:#7958a7}
+        .node.operator rect{fill:#f3fbf8;stroke:#3c8174}.node.boundary rect{fill:#f7f8fa;stroke:#687383}
+        .nid{font:700 15px Consolas,monospace}.nname{font-size:14px}.operator .nid{font-size:13px}.operator .nname{font-size:12px}
+        .edge{cursor:pointer}.edge path{fill:none;stroke:#6f7d8d;stroke-width:1.8;opacity:.72;vector-effect:non-scaling-stroke}
+        .edge.branch path{stroke:#516f92;stroke-dasharray:7 5}.edge.function path{stroke:#609188;stroke-width:1.35;opacity:.48}
+        .edge.trigger path{stroke:#8066a1;stroke-width:1.35;opacity:.45}.edge.back path{stroke-dasharray:8 5}
+        .edge-label{font-size:12px;fill:#42536a;paint-order:stroke;stroke:#fff;stroke-width:5px;stroke-linejoin:round}
+        .edge:hover path,.edge.active path{stroke:#d32323;stroke-width:3.8;opacity:1}.node:hover rect,.node.active rect{stroke:#d32323;stroke-width:3}
+        .dim{opacity:.075}.detail-bg{fill:#fffdf7;stroke:#d3a72f;stroke-width:1.5}.detail-title{font-size:15px;font-weight:700}.detail-text{font-size:13px}
+        .hint{font-size:14px;fill:#64748b}.section-note{font-size:13px;fill:#64748b}
+        </style>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="3.5" orient="auto"><path d="M0,0 L0,7 L9,3.5 z" fill="#536273"/></marker><marker id="arrow-hot" markerWidth="9" markerHeight="9" refX="8" refY="3.5" orient="auto"><path d="M0,0 L0,7 L9,3.5 z" fill="#d32323"/></marker></defs>
+<text x="90" y="55" class="title">完整战斗节点图 V9 · 紧凑控制流程</text>
+<text x="90" y="86" class="subtitle">146 节点 / 187 边　白底　节点框仅保留 ID 与名称；点击查看 P 顺序、证据等级、边编号和完整条件</text>
+<text x="5010" y="84" class="hint" text-anchor="end">点击空白处恢复全图</text>
+<g class="group"><rect class="group-box" x="2066" y="130" width="458" height="960" rx="8"/><rect class="group-title-bg" x="2080" y="117" width="120" height="28"/><text class="group-title" x="2090" y="138">初始化</text></g>
+<g class="group"><rect class="group-box" x="3466" y="2730" width="458" height="232" rx="8"/><rect class="group-title-bg" x="3480" y="2717" width="345" height="28"/><text class="group-title" x="3490" y="2738">共享函数收集与合并（按需调用）</text></g>
+<g class="group"><rect class="group-box" x="2066" y="1140" width="1258" height="1696" rx="8"/><rect class="group-title-bg" x="2080" y="1127" width="207" height="28"/><text class="group-title" x="2090" y="1148">开战、调度与回合前</text></g>
+<g class="group"><rect class="group-box" x="226" y="1324" width="1078" height="838" rx="8"/><rect class="group-title-bg" x="240" y="1311" width="120" height="28"/><text class="group-title" x="250" y="1332">结果与边界</text></g>
+<g class="group"><rect class="group-box" x="2066" y="2970" width="458" height="776" rx="8"/><rect class="group-title-bg" x="2080" y="2957" width="120" height="28"/><text class="group-title" x="2090" y="2978">动作与技能</text></g>
+<g class="group"><rect class="group-box" x="2886" y="3610" width="458" height="232" rx="8"/><rect class="group-title-bg" x="2900" y="3597" width="120" height="28"/><text class="group-title" x="2910" y="3618">状态分支</text></g>
+<g class="group"><rect class="group-box" x="2066" y="3810" width="1278" height="1420" rx="8"/><rect class="group-title-bg" x="2080" y="3797" width="120" height="28"/><text class="group-title" x="2090" y="3818">命中与伤害</text></g>
+<g class="group"><rect class="group-box" x="1086" y="4870" width="458" height="632" rx="8"/><rect class="group-title-bg" x="1100" y="4857" width="120" height="28"/><text class="group-title" x="1110" y="4878">死亡与复活</text></g>
+<g class="group"><rect class="group-box" x="2066" y="5410" width="1278" height="902" rx="8"/><rect class="group-title-bg" x="2080" y="5397" width="276" height="28"/><text class="group-title" x="2090" y="5418">技能后、追加动作与回合尾</text></g>
+<g class="group"><rect class="group-box" x="4306" y="3040" width="458" height="512" rx="8"/><rect class="group-title-bg" x="4320" y="3027" width="138" height="28"/><text class="group-title" x="4330" y="3048">技能函数分派</text></g>
+<g class="group"><rect class="group-box" x="2895" y="3828" width="2020" height="1444" rx="8"/><rect class="group-title-bg" x="2909" y="3815" width="390" height="28"/><text class="group-title" x="2919" y="3836">EFunction 操作符 F00–F59</text><text class="section-note" x="3305" y="3835">X04 按 opcode 分派；点击任一操作符查看真实入口与回流</text></g>
+<g id="edges">
+<g id="edge-E0001" class="edge main" data-source="I00" data-target="I01" data-edge="E0001" data-grade="B" data-name="接收入场载荷经已验证调用链到达BattleData.StartBattle" data-condition="宿主流程中的固定路径"><title>E0001｜I00 → I01｜接收入场载荷经已验证调用链到达BattleData.StartBattle｜条件：宿主流程中的固定路径｜证据等级 B</title><path d="M 2295.0 234 L 2295.0 272" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0002" class="edge main" data-source="I01" data-target="I02" data-edge="E0002" data-grade="A" data-name="BattleData.StartBattle直接调用创建阵营与角色实体" data-condition="宿主流程中的固定路径"><title>E0002｜I01 → I02｜BattleData.StartBattle直接调用创建阵营与角色实体｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 326 L 2295.0 364" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0003" class="edge main" data-source="I02" data-target="I07" data-edge="E0003" data-grade="B" data-name="创建阵营与角色实体经已验证调用链到达建立初始状态" data-condition="宿主流程中的固定路径"><title>E0003｜I02 → I07｜创建阵营与角色实体经已验证调用链到达建立初始状态｜条件：宿主流程中的固定路径｜证据等级 B</title><path d="M 2295.0 418 L 2295.0 456" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0004" class="edge main" data-source="I07" data-target="I05" data-edge="E0004" data-grade="A" data-name="同一宿主流程中，建立初始状态之后执行阵型与刻印属性" data-condition="宿主流程中的固定路径"><title>E0004｜I07 → I05｜同一宿主流程中，建立初始状态之后执行阵型与刻印属性｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 510 L 2295.0 548" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0005" class="edge main" data-source="I05" data-target="I03A" data-edge="E0005" data-grade="A" data-name="同一宿主流程中，阵型与刻印属性之后执行基础与运行属性首轮计算" data-condition="宿主流程中的固定路径"><title>E0005｜I05 → I03A｜同一宿主流程中，阵型与刻印属性之后执行基础与运行属性首轮计算｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 602 L 2295.0 640" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0006" class="edge main" data-source="I03A" data-target="I04" data-edge="E0006" data-grade="A" data-name="BattleRoleData.Init 内，I03A 首轮属性写入后调用 I04 的 AbilityData.Reset 与 ResetData" data-condition="BattleRoleData.Init 的固定初始化顺序"><title>E0006｜I03A → I04｜BattleRoleData.Init 内，I03A 首轮属性写入后调用 I04 的 AbilityData.Reset 与 ResetData｜条件：BattleRoleData.Init 的固定初始化顺序｜证据等级 A</title><path d="M 2295.0 694 L 2295.0 732" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0007" class="edge main" data-source="I04" data-target="I03B" data-edge="E0007" data-grade="A" data-name="I04 的 AbilityData.Reset 与 ResetData 返回后，BattleRoleData.Init 继续执行 I03B 的 HP/SP 复算" data-condition="BattleRoleData.Init 的固定初始化顺序"><title>E0007｜I04 → I03B｜I04 的 AbilityData.Reset 与 ResetData 返回后，BattleRoleData.Init 继续执行 I03B 的 HP/SP 复算｜条件：BattleRoleData.Init 的固定初始化顺序｜证据等级 A</title><path d="M 2295.0 786 L 2295.0 824" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0008" class="edge main" data-source="I03B" data-target="I09A" data-edge="E0008" data-grade="A" data-name="HP/SP 等运行值复算直接调用InitTime" data-condition="宿主流程中的固定路径"><title>E0008｜I03B → I09A｜HP/SP 等运行值复算直接调用InitTime｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 878 L 2295.0 916" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0009" class="edge main" data-source="I09A" data-target="I09B" data-edge="E0009" data-grade="A" data-name="同一宿主流程中，InitTime之后执行BattleSkillContainer.Init / 初始CD" data-condition="宿主流程中的固定路径"><title>E0009｜I09A → I09B｜同一宿主流程中，InitTime之后执行BattleSkillContainer.Init / 初始CD｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 970 L 2295.0 1008" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0010" class="edge branch" data-source="I06" data-target="I08" data-edge="E0010" data-grade="B" data-name="按上下文收集角色/神器函数的输出作为合并被动/状态/光环函数的输入" data-condition="收集到的函数集合进入合并阶段时"><title>E0010｜I06 → I08｜按上下文收集角色/神器函数的输出作为合并被动/状态/光环函数的输入｜条件：收集到的函数集合进入合并阶段时｜证据等级 B</title><path d="M 3695.0 2834 L 3695.0 2880" marker-end="url(#arrow)"/>
+<text class="edge-label" x="3704.0" y="2857.0">收集到的函数集合进入合并阶段时</text>
+</g>
+<g id="edge-E0011" class="edge main" data-source="I09B" data-target="T00" data-edge="E0011" data-grade="C" data-name="外层编排在BattleSkillContainer.Init / 初始CD返回或成立后启动NextBattleProcess / CoBattleProcess" data-condition="初始化返回外层战斗编排器后"><title>E0011｜I09B → T00｜外层编排在BattleSkillContainer.Init / 初始CD返回或成立后启动NextBattleProcess / CoBattleProcess｜条件：初始化返回外层战斗编排器后｜证据等级 C</title><path d="M 2295.0 1062 L 2295.0 1190" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2304.0" y="1126.0">初始化返回外层战斗编排器后</text>
+</g>
+<g id="edge-E0012" class="edge main" data-source="T00" data-target="W00" data-edge="E0012" data-grade="A" data-name="NextBattleProcess / CoBattleProcess直接调用结束/波完成/末波判定" data-condition="宿主流程中的固定路径"><title>E0012｜T00 → W00｜NextBattleProcess / CoBattleProcess直接调用结束/波完成/末波判定｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 1244 L 2295.0 1282" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0013" class="edge branch" data-source="W00" data-target="W02" data-edge="E0013" data-grade="A" data-name="满足“可装载下一波”时，结束/波完成/末波判定调用ProcessStartPVEWave" data-condition="可装载下一波"><title>E0013｜W00 → W02｜满足“可装载下一波”时，结束/波完成/末波判定调用ProcessStartPVEWave｜条件：可装载下一波｜证据等级 A</title><path d="M 2490 1309.0 H 2695.0 V 1401.0 H 2900" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2700.0" y="1355.0">可装载下一波</text>
+</g>
+<g id="edge-E0014" class="edge back" data-source="W02" data-target="W00" data-edge="E0014" data-grade="B" data-name="ProcessStartPVEWave 返回并恢复状态机后，重新执行 W00 波次与结束判定" data-condition="装载下一波的状态恢复后"><title>E0014｜W02 → W00｜ProcessStartPVEWave 返回并恢复状态机后，重新执行 W00 波次与结束判定｜条件：装载下一波的状态恢复后｜证据等级 B</title><path d="M 3290 1401.0 H 3380 V 1309.0 H 2490" marker-end="url(#arrow)"/>
+<text class="edge-label" x="3385" y="1355.0">装载下一波的状态恢复后</text>
+</g>
+<g id="edge-E0015" class="edge branch" data-source="W00" data-target="S00" data-edge="E0015" data-grade="A" data-name="同一宿主流程中，结束/波完成/末波判定之后执行全局首次战斗包装" data-condition="未结束且首次包装待执行"><title>E0015｜W00 → S00｜同一宿主流程中，结束/波完成/末波判定之后执行全局首次战斗包装｜条件：未结束且首次包装待执行｜证据等级 A</title><path d="M 2490 1309.0 H 2719.0 V 1587.0 H 2900" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2724.0" y="1448.0">未结束且首次包装待执行</text>
+</g>
+<g id="edge-E0016" class="edge main" data-source="W00" data-target="W01" data-edge="E0016" data-grade="A" data-name="状态机从结束/波完成/末波判定转移到换波事件与状态处理" data-condition="首次战斗包装已经完成"><title>E0016｜W00 → W01｜状态机从结束/波完成/末波判定转移到换波事件与状态处理｜条件：首次战斗包装已经完成｜证据等级 A</title><path d="M 2295.0 1336 L 2295.0 1374" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2304.0" y="1355.0">首次战斗包装已经完成</text>
+</g>
+<g id="edge-E0017" class="edge back" data-source="S00" data-target="W01" data-edge="E0017" data-grade="A" data-name="S00 首次战斗包装返回后，状态机转入 W01 换波内联阶段" data-condition="首次战斗包装状态返回后"><title>E0017｜S00 → W01｜S00 首次战斗包装返回后，状态机转入 W01 换波内联阶段｜条件：首次战斗包装状态返回后｜证据等级 A</title><path d="M 3290 1587.0 H 3446 V 1401.0 H 2490" marker-end="url(#arrow)"/>
+<text class="edge-label" x="3451" y="1494.0">首次战斗包装状态返回后</text>
+</g>
+<g id="edge-E0018" class="edge main" data-source="W01" data-target="W03" data-edge="E0018" data-grade="A" data-name="同一宿主流程中，换波事件与状态处理之后执行新波开始动作容器" data-condition="宿主流程中的固定路径"><title>E0018｜W01 → W03｜同一宿主流程中，换波事件与状态处理之后执行新波开始动作容器｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 1428 L 2295.0 1466" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0019" class="edge main" data-source="W03" data-target="S01" data-edge="E0019" data-grade="B" data-name="新波开始动作容器经已验证调用链到达FirstStartBattle" data-condition="宿主流程中的固定路径"><title>E0019｜W03 → S01｜新波开始动作容器经已验证调用链到达FirstStartBattle｜条件：宿主流程中的固定路径｜证据等级 B</title><path d="M 2295.0 1520 L 2295.0 1558" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0020" class="edge main" data-source="S01" data-target="S02" data-edge="E0020" data-grade="A" data-name="同一宿主流程中，FirstStartBattle之后执行PreStartBattle" data-condition="宿主流程中的固定路径"><title>E0020｜S01 → S02｜同一宿主流程中，FirstStartBattle之后执行PreStartBattle｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 1612 L 2295.0 1650" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0021" class="edge main" data-source="S02" data-target="S03" data-edge="E0021" data-grade="A" data-name="同一宿主流程中，PreStartBattle之后执行StartBattle" data-condition="宿主流程中的固定路径"><title>E0021｜S02 → S03｜同一宿主流程中，PreStartBattle之后执行StartBattle｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 1704 L 2295.0 1742" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0022" class="edge main" data-source="S03" data-target="S04" data-edge="E0022" data-grade="A" data-name="同一宿主流程中，StartBattle之后执行PostStartBattle 0x25" data-condition="宿主流程中的固定路径"><title>E0022｜S03 → S04｜同一宿主流程中，StartBattle之后执行PostStartBattle 0x25｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 1796 L 2295.0 1834" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0023" class="edge main" data-source="S04" data-target="T01" data-edge="E0023" data-grade="B" data-name="S04 所在的新波启动内层流程返回后，CoBattleProcess 继续调用 T01 StartRound" data-condition="宿主流程中的固定路径"><title>E0023｜S04 → T01｜S04 所在的新波启动内层流程返回后，CoBattleProcess 继续调用 T01 StartRound｜条件：宿主流程中的固定路径｜证据等级 B</title><path d="M 2295.0 1888 L 2295.0 1926" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0024" class="edge main" data-source="T01" data-target="T02" data-edge="E0024" data-grade="A" data-name="StartRound直接调用选择行动者并复位其时间" data-condition="宿主流程中的固定路径"><title>E0024｜T01 → T02｜StartRound直接调用选择行动者并复位其时间｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 1980 L 2295.0 2018" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0025" class="edge main" data-source="T02" data-target="T03" data-edge="E0025" data-grade="A" data-name="同一宿主流程中，选择行动者并复位其时间之后执行重算全体能力与时间" data-condition="宿主流程中的固定路径"><title>E0025｜T02 → T03｜同一宿主流程中，选择行动者并复位其时间之后执行重算全体能力与时间｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 2072 L 2295.0 2110" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0026" class="edge main" data-source="T03" data-target="T04" data-edge="E0026" data-grade="A" data-name="进入全体AnyOneBeforeRound扫描（包含当前行动者）" data-condition="角色字典全量遍历，无排除当前行动者条件"><title>E0026｜T03 → T04｜进入全体AnyOneBeforeRound扫描（包含当前行动者）｜条件：角色字典全量遍历，无排除当前行动者条件｜证据等级 A</title><path d="M 2295.0 2164 L 2295.0 2202" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2304.0" y="2183.0">角色字典全量遍历，无排除当前行动者条件</text>
+</g>
+<g id="edge-E0027" class="edge main" data-source="T04" data-target="T05" data-edge="E0027" data-grade="A" data-name="全体AnyOneBeforeRound结束后，当前行动者执行自身BeforeRound" data-condition="先全体扫描，后当前角色专属监听"><title>E0027｜T04 → T05｜全体AnyOneBeforeRound结束后，当前行动者执行自身BeforeRound｜条件：先全体扫描，后当前角色专属监听｜证据等级 A</title><path d="M 2295.0 2256 L 2295.0 2294" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2304.0" y="2275.0">先全体扫描，后当前角色专属监听</text>
+</g>
+<g id="edge-E0028" class="edge main" data-source="T05" data-target="T06" data-edge="E0028" data-grade="A" data-name="当前角色 BeforeRound直接调用持续状态跳动" data-condition="宿主流程中的固定路径"><title>E0028｜T05 → T06｜当前角色 BeforeRound直接调用持续状态跳动｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 2348 L 2295.0 2386" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0029" class="edge main" data-source="T06" data-target="T07" data-edge="E0029" data-grade="A" data-name="持续状态处理后消费DirectHitList；普通Bomb已在T06直接提交" data-condition="T07只处理已排入DirectHitList的追加伤害"><title>E0029｜T06 → T07｜持续状态处理后消费DirectHitList；普通Bomb已在T06直接提交｜条件：T07只处理已排入DirectHitList的追加伤害｜证据等级 A</title><path d="M 2295.0 2440 L 2295.0 2478" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2304.0" y="2459.0">T07只处理已排入DirectHitLis…</text>
+</g>
+<g id="edge-E0030" class="edge main" data-source="T07" data-target="T08" data-edge="E0030" data-grade="A" data-name="同一宿主流程中，回合前追加伤害之后执行死亡/复活/Boss 条件结算" data-condition="宿主流程中的固定路径"><title>E0030｜T07 → T08｜同一宿主流程中，回合前追加伤害之后执行死亡/复活/Boss 条件结算｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 2532 L 2295.0 2570" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0031" class="edge main" data-source="T08" data-target="T09" data-edge="E0031" data-grade="A" data-name="同一宿主流程中，死亡/复活/Boss 条件结算之后执行援军创建初始化" data-condition="宿主流程中的固定路径"><title>E0031｜T08 → T09｜同一宿主流程中，死亡/复活/Boss 条件结算之后执行援军创建初始化｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 2624 L 2295.0 2662" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0032" class="edge main" data-source="T09" data-target="T10" data-edge="E0032" data-grade="B" data-name="T09 援军处理返回且战斗继续时，外层流程进入 T10 玩家输入或 AI 动作选择" data-condition="角色存活且战斗继续"><title>E0032｜T09 → T10｜T09 援军处理返回且战斗继续时，外层流程进入 T10 玩家输入或 AI 动作选择｜条件：角色存活且战斗继续｜证据等级 B</title><path d="M 2295.0 2716 L 2295.0 2754" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2304.0" y="2735.0">角色存活且战斗继续</text>
+</g>
+<g id="edge-E0033" class="edge main" data-source="T10" data-target="A01" data-edge="E0033" data-grade="A" data-name="T10 的 AI 魂力技能选择路径调用 A01 的 CanUseSoulSkill 检查" data-condition="AI 选择魂力技能时"><title>E0033｜T10 → A01｜T10 的 AI 魂力技能选择路径调用 A01 的 CanUseSoulSkill 检查｜条件：AI 选择魂力技能时｜证据等级 A</title><path d="M 2295.0 2808 L 2295.0 3020" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2304.0" y="2914.0">AI 选择魂力技能时</text>
+</g>
+<g id="edge-E0034" class="edge main" data-source="A01" data-target="A00" data-edge="E0034" data-grade="B" data-name="A01 校验结果随构造成功的 BattleAction 交给 A00 提交与 SourceID 校验" data-condition="动作构造成功并返回 BattleAction 时"><title>E0034｜A01 → A00｜A01 校验结果随构造成功的 BattleAction 交给 A00 提交与 SourceID 校验｜条件：动作构造成功并返回 BattleAction 时｜证据等级 B</title><path d="M 2295.0 3074 L 2295.0 3112" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2304.0" y="3093.0">动作构造成功并返回 BattleActio…</text>
+</g>
+<g id="edge-E0035" class="edge main" data-source="A00" data-target="A04" data-edge="E0035" data-grade="A" data-name="提交动作并校验 SourceID经已验证调用链到达StartNewSkillEvent" data-condition="宿主流程中的固定路径"><title>E0035｜A00 → A04｜提交动作并校验 SourceID经已验证调用链到达StartNewSkillEvent｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 3166 L 2295.0 3204" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0036" class="edge main" data-source="A04" data-target="A02" data-edge="E0036" data-grade="A" data-name="同一宿主流程中，StartNewSkillEvent之后执行替换技能与魂燃函数装填" data-condition="宿主流程中的固定路径"><title>E0036｜A04 → A02｜同一宿主流程中，StartNewSkillEvent之后执行替换技能与魂燃函数装填｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 3258 L 2295.0 3296" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0037" class="edge main" data-source="A02" data-target="A03" data-edge="E0037" data-grade="A" data-name="同一宿主流程中，替换技能与魂燃函数装填之后执行目标寻址与过滤" data-condition="宿主流程中的固定路径"><title>E0037｜A02 → A03｜同一宿主流程中，替换技能与魂燃函数装填之后执行目标寻址与过滤｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 3350 L 2295.0 3388" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0038" class="edge main" data-source="A03" data-target="A05" data-edge="E0038" data-grade="A" data-name="同一宿主流程中，目标寻址与过滤之后执行写入技能自身冷却" data-condition="宿主流程中的固定路径"><title>E0038｜A03 → A05｜同一宿主流程中，目标寻址与过滤之后执行写入技能自身冷却｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 3442 L 2295.0 3480" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0039" class="edge main" data-source="A05" data-target="A06" data-edge="E0039" data-grade="A" data-name="写入CD后依次处理魂力、自身BeforeSkill、全体AnyOneBeforeSkill与夹击" data-condition="方法体调用顺序"><title>E0039｜A05 → A06｜写入CD后依次处理魂力、自身BeforeSkill、全体AnyOneBeforeSkill与夹击｜条件：方法体调用顺序｜证据等级 A</title><path d="M 2295.0 3534 L 2295.0 3572" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2304.0" y="3553.0">方法体调用顺序</text>
+</g>
+<g id="edge-E0040" class="edge main" data-source="A06" data-target="A07" data-edge="E0040" data-grade="A" data-name="BeforeSkill / AnyOneBeforeSkill / 夹击准备通过已注册回调调用逐直接目标处理" data-condition="宿主流程中的固定路径"><title>E0040｜A06 → A07｜BeforeSkill / AnyOneBeforeSkill / 夹击准备通过已注册回调调用逐直接目标处理｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 3626 L 2295.0 3664" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0041" class="edge main" data-source="A07" data-target="D00" data-edge="E0041" data-grade="A" data-name="满足“伤害函数”时，逐直接目标处理调用建立命中事件与前快照" data-condition="伤害函数"><title>E0041｜A07 → D00｜满足“伤害函数”时，逐直接目标处理调用建立命中事件与前快照｜条件：伤害函数｜证据等级 A</title><path d="M 2295.0 3718 L 2295.0 3860" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2304.0" y="3789.0">伤害函数</text>
+</g>
+<g id="edge-E0042" class="edge main" data-source="D00" data-target="D01" data-edge="E0042" data-grade="A" data-name="建立命中事件与前快照经已验证调用链到达收集技能、角色与光环函数" data-condition="宿主流程中的固定路径"><title>E0042｜D00 → D01｜建立命中事件与前快照经已验证调用链到达收集技能、角色与光环函数｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 3914 L 2295.0 3952" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0043" class="edge branch" data-source="I08" data-target="D01" data-edge="E0043" data-grade="A" data-name="I08 GetBattleRoleCombinedFunctions 调用 D01 GetBattleRoleAllFunctions 取得待合并函数集合" data-condition="构造角色合并函数集合时"><title>E0043｜I08 → D01｜I08 GetBattleRoleCombinedFunctions 调用 D01 GetBattleRoleAllFunctions 取得待合并函数集合｜条件：构造角色合并函数集合时｜证据等级 A</title><path d="M 3500 2907.0 H 2995.0 V 3979.0 H 2490" marker-end="url(#arrow)"/>
+<text class="edge-label" x="3000.0" y="3443.0">构造角色合并函数集合时</text>
+</g>
+<g id="edge-E0044" class="edge main" data-source="D01" data-target="D02" data-edge="E0044" data-grade="A" data-name="同一宿主流程中，收集技能、角色与光环函数之后执行命中/闪避/暴击" data-condition="宿主流程中的固定路径"><title>E0044｜D01 → D02｜同一宿主流程中，收集技能、角色与光环函数之后执行命中/闪避/暴击｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 4006 L 2295.0 4044" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0045" class="edge main" data-source="D02" data-target="D03A" data-edge="E0045" data-grade="A" data-name="同一宿主流程中，命中/闪避/暴击之后执行常量攻击与条件攻击" data-condition="宿主流程中的固定路径"><title>E0045｜D02 → D03A｜同一宿主流程中，命中/闪避/暴击之后执行常量攻击与条件攻击｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 4098 L 2295.0 4136" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0046" class="edge main" data-source="D03A" data-target="D04" data-edge="E0046" data-grade="A" data-name="同一宿主流程中，常量攻击与条件攻击之后执行防御与三层贯穿" data-condition="宿主流程中的固定路径"><title>E0046｜D03A → D04｜同一宿主流程中，常量攻击与条件攻击之后执行防御与三层贯穿｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 4190 L 2295.0 4228" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0047" class="edge main" data-source="D04" data-target="D03B" data-edge="E0047" data-grade="A" data-name="同一宿主流程中，防御与三层贯穿之后执行技能倍率 GetSkillAttRate" data-condition="宿主流程中的固定路径"><title>E0047｜D04 → D03B｜同一宿主流程中，防御与三层贯穿之后执行技能倍率 GetSkillAttRate｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 4282 L 2295.0 4320" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0048" class="edge main" data-source="D03B" data-target="D05" data-edge="E0048" data-grade="A" data-name="同一宿主流程中，技能倍率 GetSkillAttRate之后执行攻方伤害增幅" data-condition="宿主流程中的固定路径"><title>E0048｜D03B → D05｜同一宿主流程中，技能倍率 GetSkillAttRate之后执行攻方伤害增幅｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 4374 L 2295.0 4412" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0049" class="edge main" data-source="D05" data-target="D06" data-edge="E0049" data-grade="A" data-name="同一宿主流程中，攻方伤害增幅之后执行目标及光环减伤" data-condition="宿主流程中的固定路径"><title>E0049｜D05 → D06｜同一宿主流程中，攻方伤害增幅之后执行目标及光环减伤｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 4466 L 2295.0 4504" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0050" class="edge main" data-source="D06" data-target="D07" data-edge="E0050" data-grade="A" data-name="同一宿主流程中，目标及光环减伤之后执行伤害上限与最终伤害" data-condition="宿主流程中的固定路径"><title>E0050｜D06 → D07｜同一宿主流程中，目标及光环减伤之后执行伤害上限与最终伤害｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 4558 L 2295.0 4596" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0051" class="edge main" data-source="D07" data-target="D08" data-edge="E0051" data-grade="A" data-name="伤害上限与最终伤害返回后，宿主流程继续执行事件提交前函数" data-condition="宿主流程中的固定路径"><title>E0051｜D07 → D08｜伤害上限与最终伤害返回后，宿主流程继续执行事件提交前函数｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 4650 L 2295.0 4688" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0052" class="edge branch" data-source="D08" data-target="D09" data-edge="E0052" data-grade="A" data-name="满足“有分摊”时，事件提交前函数递归调用选择最高分摊并先提交分摊者" data-condition="有分摊"><title>E0052｜D08 → D09｜满足“有分摊”时，事件提交前函数递归调用选择最高分摊并先提交分摊者｜条件：有分摊｜证据等级 A</title><path d="M 2490 4715.0 H 2693.0 V 4717.0 H 2920" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2698.0" y="4716.0">有分摊</text>
+</g>
+<g id="edge-E0053" class="edge branch" data-source="D09" data-target="D08" data-edge="E0053" data-grade="B" data-name="D09 分摊事件递归提交返回后，恢复 D08 原事件的提交前处理" data-condition="分摊事件的递归 ProcessEvent 返回后"><title>E0053｜D09 → D08｜D09 分摊事件递归提交返回后，恢复 D08 原事件的提交前处理｜条件：分摊事件的递归 ProcessEvent 返回后｜证据等级 B</title><path d="M 2920 4717.0 H 2705.0 V 4715.0 H 2490" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2710.0" y="4716.0">分摊事件的递归 ProcessEvent …</text>
+</g>
+<g id="edge-E0054" class="edge main" data-source="D08" data-target="D10" data-edge="E0054" data-grade="A" data-name="同一宿主流程中，事件提交前函数之后执行护盾与生命应用" data-condition="宿主流程中的固定路径"><title>E0054｜D08 → D10｜同一宿主流程中，事件提交前函数之后执行护盾与生命应用｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 4742 L 2295.0 4780" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0055" class="edge main" data-source="D10" data-target="D11" data-edge="E0055" data-grade="A" data-name="同一宿主流程中，护盾与生命应用之后执行实际生命损失与创伤提交" data-condition="宿主流程中的固定路径"><title>E0055｜D10 → D11｜同一宿主流程中，护盾与生命应用之后执行实际生命损失与创伤提交｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 4834 L 2295.0 4872" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0056" class="edge main" data-source="D11" data-target="D12A" data-edge="E0056" data-grade="A" data-name="同一宿主流程中，实际生命损失与创伤提交之后执行受击 SP/时间/阵营资源事件内变更" data-condition="宿主流程中的固定路径"><title>E0056｜D11 → D12A｜同一宿主流程中，实际生命损失与创伤提交之后执行受击 SP/时间/阵营资源事件内变更｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 4926 L 2295.0 4964" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0057" class="edge main" data-source="D12A" data-target="D13" data-edge="E0057" data-grade="A" data-name="同一宿主流程中，受击 SP/时间/阵营资源事件内变更之后执行目标与来源事件后函数" data-condition="宿主流程中的固定路径"><title>E0057｜D12A → D13｜同一宿主流程中，受击 SP/时间/阵营资源事件内变更之后执行目标与来源事件后函数｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 5018 L 2295.0 5056" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0058" class="edge main" data-source="D13" data-target="D14" data-edge="E0058" data-grade="A" data-name="目标与来源事件后函数返回后，宿主流程继续执行吸血检查与吸血事件" data-condition="宿主流程中的固定路径"><title>E0058｜D13 → D14｜目标与来源事件后函数返回后，宿主流程继续执行吸血检查与吸血事件｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 5110 L 2295.0 5148" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0059" class="edge branch" data-source="A07" data-target="B00" data-edge="E0059" data-grade="A" data-name="逐直接目标处理经已验证调用链到达抵抗、能力免疫、容器准入" data-condition="状态函数"><title>E0059｜A07 → B00｜逐直接目标处理经已验证调用链到达抵抗、能力免疫、容器准入｜条件：状态函数｜证据等级 A</title><path d="M 2490 3691.0 H 2717.0 V 3687.0 H 2920" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2722.0" y="3689.0">状态函数</text>
+</g>
+<g id="edge-E0060" class="edge branch" data-source="B00" data-target="B01" data-edge="E0060" data-grade="A" data-name="同一宿主流程中，抵抗、能力免疫、容器准入之后执行创建并提交状态事件" data-condition="准入成功"><title>E0060｜B00 → B01｜同一宿主流程中，抵抗、能力免疫、容器准入之后执行创建并提交状态事件｜条件：准入成功｜证据等级 A</title><path d="M 3115.0 3714 L 3115.0 3760" marker-end="url(#arrow)"/>
+<text class="edge-label" x="3124.0" y="3737.0">准入成功</text>
+</g>
+<g id="edge-E0061" class="edge back" data-source="B01" data-target="A07" data-edge="E0061" data-grade="B" data-name="B01 状态事件提交返回后，A07 的函数/目标迭代器继续" data-condition="当前状态函数返回且迭代器继续时"><title>E0061｜B01 → A07｜B01 状态事件提交返回后，A07 的函数/目标迭代器继续｜条件：当前状态函数返回且迭代器继续时｜证据等级 B</title><path d="M 3310 3787.0 H 3576 V 3691.0 H 2490" marker-end="url(#arrow)"/>
+<text class="edge-label" x="3581" y="3739.0">当前状态函数返回且迭代器继续时</text>
+</g>
+<g id="edge-E0062" class="edge branch" data-source="D00" data-target="D08" data-edge="E0062" data-grade="B" data-name="建立命中事件与前快照经已验证调用链到达事件提交前函数" data-condition="状态值直伤"><title>E0062｜D00 → D08｜建立命中事件与前快照经已验证调用链到达事件提交前函数｜条件：状态值直伤｜证据等级 B</title><path d="M 2295.0 3914 L 2295.0 4688" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2304.0" y="4301.0">状态值直伤</text>
+</g>
+<g id="edge-E0063" class="edge branch" data-source="D11" data-target="L00" data-edge="E0063" data-grade="A" data-name="ProcessEvent 应用生命损失后若仍为致死事件，调用 L00 的死亡前触发函数分发" data-condition="事件应用后目标仍处于致死状态"><title>E0063｜D11 → L00｜ProcessEvent 应用生命损失后若仍为致死事件，调用 L00 的死亡前触发函数分发｜条件：事件应用后目标仍处于致死状态｜证据等级 A</title><path d="M 2100 4899.0 H 1805.0 V 4947.0 H 1510" marker-end="url(#arrow)"/>
+<text class="edge-label" x="1810.0" y="4923.0">事件应用后目标仍处于致死状态</text>
+</g>
+<g id="edge-E0064" class="edge branch" data-source="L00" data-target="L01" data-edge="E0064" data-grade="A" data-name="PreOtherDead和PreSelfDead完成并复检仍死亡" data-condition="NowHP&lt;1 且 IsEventToDead"><title>E0064｜L00 → L01｜PreOtherDead和PreSelfDead完成并复检仍死亡｜条件：NowHP&lt;1 且 IsEventToDead｜证据等级 A</title><path d="M 1315.0 4974 L 1315.0 5020" marker-end="url(#arrow)"/>
+<text class="edge-label" x="1324.0" y="4997.0">NowHP&lt;1 且 IsEventToDe…</text>
+</g>
+<g id="edge-E0065" class="edge branch" data-source="L01" data-target="L02" data-edge="E0065" data-grade="A" data-name="同一宿主函数中，SelfDead / OtherDead回调之后执行清理存活者身上的死亡来源状态回调" data-condition="宿主流程中的固定路径"><title>E0065｜L01 → L02｜同一宿主函数中，SelfDead / OtherDead回调之后执行清理存活者身上的死亡来源状态回调｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 1315.0 5074 L 1315.0 5120" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0066" class="edge branch" data-source="L02" data-target="L03" data-edge="E0066" data-grade="A" data-name="L02 的死亡来源状态清理回调结束后，ProcessEvent 进入 L03 中的冷却处理与死亡同步提交" data-condition="致死事件完成死亡来源状态清理后"><title>E0066｜L02 → L03｜L02 的死亡来源状态清理回调结束后，ProcessEvent 进入 L03 中的冷却处理与死亡同步提交｜条件：致死事件完成死亡来源状态清理后｜证据等级 A</title><path d="M 1315.0 5174 L 1315.0 5220" marker-end="url(#arrow)"/>
+<text class="edge-label" x="1324.0" y="5197.0">致死事件完成死亡来源状态清理后</text>
+</g>
+<g id="edge-E0067" class="edge branch" data-source="L03" data-target="L04" data-edge="E0067" data-grade="B" data-name="清理死者状态并同步经已验证调用链到达OtherDeadAfter" data-condition="宿主流程中的固定路径"><title>E0067｜L03 → L04｜清理死者状态并同步经已验证调用链到达OtherDeadAfter｜条件：宿主流程中的固定路径｜证据等级 B</title><path d="M 1315.0 5274 L 1315.0 5320" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0068" class="edge branch" data-source="L04" data-target="L05" data-edge="E0068" data-grade="A" data-name="同一宿主流程中，OtherDeadAfter之后执行复活事件与 AfterRevive" data-condition="存在可用复活项"><title>E0068｜L04 → L05｜同一宿主流程中，OtherDeadAfter之后执行复活事件与 AfterRevive｜条件：存在可用复活项｜证据等级 A</title><path d="M 1315.0 5374 L 1315.0 5420" marker-end="url(#arrow)"/>
+<text class="edge-label" x="1324.0" y="5397.0">存在可用复活项</text>
+</g>
+<g id="edge-E0069" class="edge main" data-source="D14" data-target="Q00" data-edge="E0069" data-grade="A" data-name="D14 所在的逐目标处理返回后，ProcessRoleSkill 调用 Q00 当前角色 AfterSkill" data-condition="全部直接目标完成"><title>E0069｜D14 → Q00｜D14 所在的逐目标处理返回后，ProcessRoleSkill 调用 Q00 当前角色 AfterSkill｜条件：全部直接目标完成｜证据等级 A</title><path d="M 2295.0 5202 L 2295.0 5460" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2304.0" y="5331.0">全部直接目标完成</text>
+</g>
+<g id="edge-E0070" class="edge main" data-source="Q00" data-target="D12B" data-edge="E0070" data-grade="A" data-name="当前角色 ProcessAfterSkill直接调用技能后阵营魂 OnAfterSkill" data-condition="宿主流程中的固定路径"><title>E0070｜Q00 → D12B｜当前角色 ProcessAfterSkill直接调用技能后阵营魂 OnAfterSkill｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 5514 L 2295.0 5552" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0071" class="edge main" data-source="D12B" data-target="Q02" data-edge="E0071" data-grade="B" data-name="D12B 阵营魂处理随 Q00 返回后，ProcessRoleSkill 继续调用 Q02 目标及全场 AfterSkill" data-condition="宿主流程中的固定路径"><title>E0071｜D12B → Q02｜D12B 阵营魂处理随 Q00 返回后，ProcessRoleSkill 继续调用 Q02 目标及全场 AfterSkill｜条件：宿主流程中的固定路径｜证据等级 B</title><path d="M 2295.0 5606 L 2295.0 5644" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0072" class="edge branch" data-source="Q00" data-target="Q01" data-edge="E0072" data-grade="B" data-name="Q00 的触发函数向 Q01 追加动作队列登记动作" data-condition="触发函数成功登记追加动作时"><title>E0072｜Q00 → Q01｜Q00 的触发函数向 Q01 追加动作队列登记动作｜条件：触发函数成功登记追加动作时｜证据等级 B</title><path d="M 2490 5487.0 H 2693.0 V 5671.0 H 2920" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2698.0" y="5579.0">触发函数成功登记追加动作时</text>
+</g>
+<g id="edge-E0073" class="edge branch" data-source="Q02" data-target="Q01" data-edge="E0073" data-grade="B" data-name="Q02 的触发函数向 Q01 追加动作队列登记动作" data-condition="触发函数成功登记追加动作时"><title>E0073｜Q02 → Q01｜Q02 的触发函数向 Q01 追加动作队列登记动作｜条件：触发函数成功登记追加动作时｜证据等级 B</title><path d="M 2490 5671.0 H 2705.0 V 5671.0 H 2920" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2710.0" y="5671.0">触发函数成功登记追加动作时</text>
+</g>
+<g id="edge-E0074" class="edge main" data-source="Q02" data-target="Q04" data-edge="E0074" data-grade="B" data-name="Q02 返回 ProcessRoleSkill/ProcessRoleAction 后，外层流程进入 Q04 追加动作循环" data-condition="宿主流程中的固定路径"><title>E0074｜Q02 → Q04｜Q02 返回 ProcessRoleSkill/ProcessRoleAction 后，外层流程进入 Q04 追加动作循环｜条件：宿主流程中的固定路径｜证据等级 B</title><path d="M 2295.0 5698 L 2295.0 5736" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0075" class="edge branch" data-source="Q01" data-target="Q04" data-edge="E0075" data-grade="B" data-name="Q04 从 Q01 追加动作队列读取并执行已登记动作" data-condition="宿主流程中的固定路径"><title>E0075｜Q01 → Q04｜Q04 从 Q01 追加动作队列读取并执行已登记动作｜条件：宿主流程中的固定路径｜证据等级 B</title><path d="M 2920 5671.0 H 2729.0 V 5763.0 H 2490" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0076" class="edge back" data-source="Q04" data-target="A04" data-edge="E0076" data-grade="A" data-name="Q04 通过追加行动回调进入 ProcessRoleSkill，再由其调用 A04 StartNewSkillEvent" data-condition="Continue/Pinch/Counter/Addition 项被追加行动循环消费时"><title>E0076｜Q04 → A04｜Q04 通过追加行动回调进入 ProcessRoleSkill，再由其调用 A04 StartNewSkillEvent｜条件：Continue/Pinch/Counter/Addition 项被追加行动循环消费时｜证据等级 A</title><path d="M 2490 5763.0 H 2800 V 3231.0 H 2490" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2805" y="4497.0">Continue/Pinch/Counte…</text>
+</g>
+<g id="edge-E0077" class="edge main" data-source="Q04" data-target="E00" data-edge="E0077" data-grade="A" data-name="Q04 追加行动循环退出并完成死者处理后，ProcessRoleAction 调用 E00 当前角色 AfterRound" data-condition="追加行动队列为空或达到10批上限后"><title>E0077｜Q04 → E00｜Q04 追加行动循环退出并完成死者处理后，ProcessRoleAction 调用 E00 当前角色 AfterRound｜条件：追加行动队列为空或达到10批上限后｜证据等级 A</title><path d="M 2295.0 5790 L 2295.0 5828" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2304.0" y="5809.0">追加行动队列为空或达到10批上限后</text>
+</g>
+<g id="edge-E0078" class="edge main" data-source="E00" data-target="E01" data-edge="E0078" data-grade="A" data-name="当前角色冷却递减与 AfterRound的回调返回后，宿主流程继续执行全场回合后监听" data-condition="宿主流程中的固定路径"><title>E0078｜E00 → E01｜当前角色冷却递减与 AfterRound的回调返回后，宿主流程继续执行全场回合后监听｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 5882 L 2295.0 5920" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0079" class="edge main" data-source="E01" data-target="E02" data-edge="E0079" data-grade="A" data-name="全场回合后监听的回调返回后，宿主流程继续执行追加伤害、死亡与复活结算" data-condition="宿主流程中的固定路径"><title>E0079｜E01 → E02｜全场回合后监听的回调返回后，宿主流程继续执行追加伤害、死亡与复活结算｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 5974 L 2295.0 6012" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0080" class="edge main" data-source="E02" data-target="E03" data-edge="E0080" data-grade="A" data-name="同一宿主流程中，追加伤害、死亡与复活结算之后执行当前角色状态到期" data-condition="宿主流程中的固定路径"><title>E0080｜E02 → E03｜同一宿主流程中，追加伤害、死亡与复活结算之后执行当前角色状态到期｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 2295.0 6066 L 2295.0 6104" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0081" class="edge back" data-source="E03" data-target="T00" data-edge="E0081" data-grade="B" data-name="E03 完成后返回 CoBattleProcess，并在下一状态/周期恢复 T00 调度" data-condition="本回合动作与状态结算返回调度器后"><title>E0081｜E03 → T00｜E03 完成后返回 CoBattleProcess，并在下一状态/周期恢复 T00 调度｜条件：本回合动作与状态结算返回调度器后｜证据等级 B</title><path d="M 2490 6131.0 H 2624 V 1217.0 H 2490" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2629" y="3674.0">本回合动作与状态结算返回调度器后</text>
+</g>
+<g id="edge-E0082" class="edge branch" data-source="T07" data-target="Q03" data-edge="E0082" data-grade="B" data-name="回合前追加伤害经已验证调用链到达ProcessAdditionDamage / ProcessDirectHit" data-condition="DirectHitList"><title>E0082｜T07 → Q03｜回合前追加伤害经已验证调用链到达ProcessAdditionDamage / ProcessDirectHit｜条件：DirectHitList｜证据等级 B</title><path d="M 2490 2505.0 H 2693.0 V 6257.0 H 2920" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2698.0" y="4381.0">DirectHitList</text>
+</g>
+<g id="edge-E0083" class="edge branch" data-source="E02" data-target="Q03" data-edge="E0083" data-grade="A" data-name="追加伤害、死亡与复活结算通过已注册回调调用ProcessAdditionDamage / ProcessDirectHit" data-condition="DirectHitList"><title>E0083｜E02 → Q03｜追加伤害、死亡与复活结算通过已注册回调调用ProcessAdditionDamage / ProcessDirectHit｜条件：DirectHitList｜证据等级 A</title><path d="M 2490 6039.0 H 2705.0 V 6257.0 H 2920" marker-end="url(#arrow)"/>
+<text class="edge-label" x="2710.0" y="6148.0">DirectHitList</text>
+</g>
+<g id="edge-E0084" class="edge back" data-source="Q03" data-target="D00" data-edge="E0084" data-grade="A" data-name="满足“重新进入命中事件”时，ProcessAdditionDamage / ProcessDirectHit调用建立命中事件与前快照" data-condition="重新进入命中事件"><title>E0084｜Q03 → D00｜满足“重新进入命中事件”时，ProcessAdditionDamage / ProcessDirectHit调用建立命中事件与前快照｜条件：重新进入命中事件｜证据等级 A</title><path d="M 3310 6257.0 H 3510 V 3887.0 H 2490" marker-end="url(#arrow)"/>
+<text class="edge-label" x="3515" y="5072.0">重新进入命中事件</text>
+</g>
+<g id="edge-E0085" class="edge branch" data-source="W00" data-target="G00" data-edge="E0085" data-grade="B" data-name="W00 的 IsGameOver 判定为 true，对应 G00 战局结束条件成立" data-condition="BattleData.IsGameOver 返回 true"><title>E0085｜W00 → G00｜W00 的 IsGameOver 判定为 true，对应 G00 战局结束条件成立｜条件：BattleData.IsGameOver 返回 true｜证据等级 B</title><path d="M 2100 1309.0 H 1554.0 V 1401.0 H 960" marker-end="url(#arrow)"/>
+<text class="edge-label" x="1559.0" y="1355.0">BattleData.IsGameOver…</text>
+</g>
+<g id="edge-E0086" class="edge branch" data-source="G00" data-target="G02" data-edge="E0086" data-grade="C" data-name="外层 BattleStageControl/网络编排观察到 G00 后启动 G02 ProcessGameOver" data-condition="外层 BattleStageControl/网络编排观察到战斗结束"><title>E0086｜G00 → G02｜外层 BattleStageControl/网络编排观察到 G00 后启动 G02 ProcessGameOver｜条件：外层 BattleStageControl/网络编排观察到战斗结束｜证据等级 C</title><path d="M 765.0 1428 L 765.0 1510" marker-end="url(#arrow)"/>
+<text class="edge-label" x="774.0" y="1469.0">外层 BattleStageControl…</text>
+</g>
+<g id="edge-E0087" class="edge branch" data-source="G02" data-target="G01" data-edge="E0087" data-grade="A" data-name="ProcessGameOver / 网络结果边界直接调用GetBattleResultData" data-condition="宿主流程中的固定路径"><title>E0087｜G02 → G01｜ProcessGameOver / 网络结果边界直接调用GetBattleResultData｜条件：宿主流程中的固定路径｜证据等级 A</title><path d="M 570 1537.0 H 598.0 V 1687.0 H 650" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0088" class="edge branch" data-source="G02" data-target="G03" data-edge="E0088" data-grade="C" data-name="G02 在 PVE 或后台结算模式下交给 G03 奖励与账号进度处理" data-condition="PVE 或后台结算模式"><title>E0088｜G02 → G03｜G02 在 PVE 或后台结算模式下交给 G03 奖励与账号进度处理｜条件：PVE 或后台结算模式｜证据等级 C</title><path d="M 960 1537.0 H 920.0 V 1687.0 H 880" marker-end="url(#arrow)"/>
+<text class="edge-label" x="925.0" y="1612.0">PVE 或后台结算模式</text>
+</g>
+<g id="edge-E0089" class="edge trigger" data-source="S01" data-target="X00" data-edge="E0089" data-grade="A" data-name="FirstStartBattle对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="FirstStartBattle 存在匹配函数"><title>E0089｜S01 → X00｜FirstStartBattle对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：FirstStartBattle 存在匹配函数｜证据等级 A</title><path d="M 2490 1585.0 H 4126 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0090" class="edge trigger" data-source="S02" data-target="X00" data-edge="E0090" data-grade="A" data-name="PreStartBattle对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="PreStartBattle 存在匹配函数"><title>E0090｜S02 → X00｜PreStartBattle对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：PreStartBattle 存在匹配函数｜证据等级 A</title><path d="M 2490 1677.0 H 4144 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0091" class="edge trigger" data-source="S03" data-target="X00" data-edge="E0091" data-grade="A" data-name="StartBattle对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="StartBattle 存在匹配函数"><title>E0091｜S03 → X00｜StartBattle对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：StartBattle 存在匹配函数｜证据等级 A</title><path d="M 2490 1769.0 H 4162 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0092" class="edge trigger" data-source="S04" data-target="X00" data-edge="E0092" data-grade="A" data-name="PostStartBattle 0x25对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="PostStartBattle 存在匹配函数"><title>E0092｜S04 → X00｜PostStartBattle 0x25对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：PostStartBattle 存在匹配函数｜证据等级 A</title><path d="M 2490 1861.0 H 4180 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0093" class="edge trigger" data-source="T04" data-target="X00" data-edge="E0093" data-grade="A" data-name="全场 BeforeRound对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="AnyOneBeforeRound 存在匹配函数"><title>E0093｜T04 → X00｜全场 BeforeRound对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：AnyOneBeforeRound 存在匹配函数｜证据等级 A</title><path d="M 2490 2229.0 H 4198 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0094" class="edge trigger" data-source="T05" data-target="X00" data-edge="E0094" data-grade="A" data-name="当前角色 BeforeRound对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="BeforeRound 存在匹配函数"><title>E0094｜T05 → X00｜当前角色 BeforeRound对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：BeforeRound 存在匹配函数｜证据等级 A</title><path d="M 2490 2321.0 H 4216 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0095" class="edge trigger" data-source="T06" data-target="X00" data-edge="E0095" data-grade="A" data-name="持续状态跳动对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="BuffRound 存在匹配函数"><title>E0095｜T06 → X00｜持续状态跳动对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：BuffRound 存在匹配函数｜证据等级 A</title><path d="M 2490 2413.0 H 4234 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0096" class="edge trigger" data-source="A06" data-target="X00" data-edge="E0096" data-grade="A" data-name="BeforeSkill / AnyOneBeforeSkill / 夹击准备对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="BeforeSkill / AnyOneBeforeSkill 存在匹配函数"><title>E0096｜A06 → X00｜BeforeSkill / AnyOneBeforeSkill / 夹击准备对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：BeforeSkill / AnyOneBeforeSkill 存在匹配函数｜证据等级 A</title><path d="M 2490 3599.0 H 3910 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0097" class="edge trigger" data-source="A07" data-target="X00" data-edge="E0097" data-grade="A" data-name="逐直接目标处理对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="逐目标及技能命中函数 存在匹配函数"><title>E0097｜A07 → X00｜逐直接目标处理对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：逐目标及技能命中函数 存在匹配函数｜证据等级 A</title><path d="M 2490 3691.0 H 3928 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0098" class="edge trigger" data-source="D08" data-target="X00" data-edge="E0098" data-grade="A" data-name="事件提交前函数对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="BeforeEvent / SourceBeforeEvent 存在匹配函数"><title>E0098｜D08 → X00｜事件提交前函数对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：BeforeEvent / SourceBeforeEvent 存在匹配函数｜证据等级 A</title><path d="M 2490 4715.0 H 3946 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0099" class="edge trigger" data-source="D13" data-target="X00" data-edge="E0099" data-grade="A" data-name="目标与来源事件后函数对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="AfterEvent / SourceAfterEvent 存在匹配函数"><title>E0099｜D13 → X00｜目标与来源事件后函数对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：AfterEvent / SourceAfterEvent 存在匹配函数｜证据等级 A</title><path d="M 2490 5083.0 H 3964 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0100" class="edge trigger" data-source="Q00" data-target="X00" data-edge="E0100" data-grade="A" data-name="当前角色 ProcessAfterSkill对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="AfterSkill 存在匹配函数"><title>E0100｜Q00 → X00｜当前角色 ProcessAfterSkill对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：AfterSkill 存在匹配函数｜证据等级 A</title><path d="M 2490 5487.0 H 3982 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0101" class="edge trigger" data-source="Q02" data-target="X00" data-edge="E0101" data-grade="A" data-name="目标及全场 AfterSkill对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="TargetAfterSkill / Any*AfterSkill 存在匹配函数"><title>E0101｜Q02 → X00｜目标及全场 AfterSkill对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：TargetAfterSkill / Any*AfterSkill 存在匹配函数｜证据等级 A</title><path d="M 2490 5671.0 H 4000 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0102" class="edge trigger" data-source="L00" data-target="X00" data-edge="E0102" data-grade="A" data-name="PreOtherDead / PreSelfDead / 锁血复检对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="PreSelfDead / PreOtherDead 存在匹配函数"><title>E0102｜L00 → X00｜PreOtherDead / PreSelfDead / 锁血复检对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：PreSelfDead / PreOtherDead 存在匹配函数｜证据等级 A</title><path d="M 1510 4947.0 H 4018 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0103" class="edge trigger" data-source="L01" data-target="X00" data-edge="E0103" data-grade="A" data-name="SelfDead / OtherDead对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="SelfDead / OtherDead 存在匹配函数"><title>E0103｜L01 → X00｜SelfDead / OtherDead对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：SelfDead / OtherDead 存在匹配函数｜证据等级 A</title><path d="M 1510 5047.0 H 4036 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0104" class="edge trigger" data-source="L04" data-target="X00" data-edge="E0104" data-grade="A" data-name="OtherDeadAfter对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="OtherDeadAfter 存在匹配函数"><title>E0104｜L04 → X00｜OtherDeadAfter对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：OtherDeadAfter 存在匹配函数｜证据等级 A</title><path d="M 1510 5347.0 H 4054 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0105" class="edge trigger" data-source="L05" data-target="X00" data-edge="E0105" data-grade="A" data-name="复活事件与 AfterRevive对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="AfterRevive 存在匹配函数"><title>E0105｜L05 → X00｜复活事件与 AfterRevive对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：AfterRevive 存在匹配函数｜证据等级 A</title><path d="M 1510 5447.0 H 4072 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0106" class="edge trigger" data-source="E00" data-target="X00" data-edge="E0106" data-grade="A" data-name="当前角色冷却递减与 AfterRound对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="AfterRound 存在匹配函数"><title>E0106｜E00 → X00｜当前角色冷却递减与 AfterRound对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：AfterRound 存在匹配函数｜证据等级 A</title><path d="M 2490 5855.0 H 4090 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0107" class="edge trigger" data-source="E01" data-target="X00" data-edge="E0107" data-grade="A" data-name="全场回合后监听对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo" data-condition="Any*AfterRound 存在匹配函数"><title>E0107｜E01 → X00｜全场回合后监听对应触发器命中时调用收集当前触发器匹配的 SkillFunctionInfo｜条件：Any*AfterRound 存在匹配函数｜证据等级 A</title><path d="M 2490 5947.0 H 4108 V 3117.0 H 4340" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0108" class="edge branch" data-source="X00" data-target="X01" data-edge="E0108" data-grade="A" data-name="分发器从收集当前触发器匹配的 SkillFunctionInfo转入筛选触发器、状态、技能与组合函数" data-condition="分发器中的固定路径"><title>E0108｜X00 → X01｜分发器从收集当前触发器匹配的 SkillFunctionInfo转入筛选触发器、状态、技能与组合函数｜条件：分发器中的固定路径｜证据等级 A</title><path d="M 4535.0 3144 L 4535.0 3185" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0109" class="edge branch" data-source="X01" data-target="X02" data-edge="E0109" data-grade="A" data-name="分发器从筛选触发器、状态、技能与组合函数转入逐函数执行入口与目标选择" data-condition="筛选结果非空"><title>E0109｜X01 → X02｜分发器从筛选触发器、状态、技能与组合函数转入逐函数执行入口与目标选择｜条件：筛选结果非空｜证据等级 A</title><path d="M 4535.0 3239 L 4535.0 3280" marker-end="url(#arrow)"/>
+<text class="edge-label" x="4544.0" y="3259.5">筛选结果非空</text>
+</g>
+<g id="edge-E0110" class="edge branch" data-source="X02" data-target="X03" data-edge="E0110" data-grade="A" data-name="分发器从逐函数执行入口与目标选择转入逐目标条件、概率与作用域门" data-condition="目标列表非空且条件允许"><title>E0110｜X02 → X03｜分发器从逐函数执行入口与目标选择转入逐目标条件、概率与作用域门｜条件：目标列表非空且条件允许｜证据等级 A</title><path d="M 4535.0 3334 L 4535.0 3375" marker-end="url(#arrow)"/>
+<text class="edge-label" x="4544.0" y="3354.5">目标列表非空且条件允许</text>
+</g>
+<g id="edge-E0111" class="edge branch" data-source="X03" data-target="X04" data-edge="E0111" data-grade="A" data-name="分发器从逐目标条件、概率与作用域门转入EFunction 数字分派" data-condition="目标范围、条件与概率通过"><title>E0111｜X03 → X04｜分发器从逐目标条件、概率与作用域门转入EFunction 数字分派｜条件：目标范围、条件与概率通过｜证据等级 A</title><path d="M 4535.0 3429 L 4535.0 3470" marker-end="url(#arrow)"/>
+<text class="edge-label" x="4544.0" y="3449.5">目标范围、条件与概率通过</text>
+</g>
+<g id="edge-E0112" class="edge function" data-source="X04" data-target="F00" data-edge="E0112" data-grade="A" data-name="EFunction 数字分派在“opcode=0 (No)”分支执行No" data-condition="opcode=0 (No)"><title>E0112｜X04 → F00｜EFunction 数字分派在“opcode=0 (No)”分支执行No｜条件：opcode=0 (No)｜证据等级 A</title><path d="M 4535.0 3524 V 3608 H 3055.0 V 3890" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0113" class="edge function" data-source="X04" data-target="F01" data-edge="E0113" data-grade="A" data-name="EFunction 数字分派在“opcode=1 (AddStatus)”分支执行AddStatus" data-condition="opcode=1 (AddStatus)"><title>E0113｜X04 → F01｜EFunction 数字分派在“opcode=1 (AddStatus)”分支执行AddStatus｜条件：opcode=1 (AddStatus)｜证据等级 A</title><path d="M 4535.0 3524 V 3552 H 3395.0 V 3890" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0114" class="edge function" data-source="F01" data-target="B00" data-edge="E0114" data-grade="A" data-name="AddStatus处理器调用抵抗、能力免疫、容器准入" data-condition="进入状态抵抗与准入"><title>E0114｜F01 → B00｜AddStatus处理器调用抵抗、能力免疫、容器准入｜条件：进入状态抵抗与准入｜证据等级 A</title><path d="M 3520 3911.0 H 3808 V 3687.0 H 3310" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0115" class="edge function" data-source="X04" data-target="F02" data-edge="E0115" data-grade="A" data-name="EFunction 数字分派在“opcode=2 (AddTime)”分支执行AddTime" data-condition="opcode=2 (AddTime)"><title>E0115｜X04 → F02｜EFunction 数字分派在“opcode=2 (AddTime)”分支执行AddTime｜条件：opcode=2 (AddTime)｜证据等级 A</title><path d="M 4535.0 3524 V 3568 H 3735.0 V 3890" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0116" class="edge function" data-source="X04" data-target="F03" data-edge="E0116" data-grade="A" data-name="EFunction 数字分派在“opcode=3 (AddHP)”分支执行AddHP" data-condition="opcode=3 (AddHP)"><title>E0116｜X04 → F03｜EFunction 数字分派在“opcode=3 (AddHP)”分支执行AddHP｜条件：opcode=3 (AddHP)｜证据等级 A</title><path d="M 4535.0 3524 V 3576 H 4075.0 V 3890" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0117" class="edge function" data-source="X04" data-target="F04" data-edge="E0117" data-grade="A" data-name="EFunction 数字分派在“opcode=4 (RemoveDeBuf)”分支执行RemoveDeBuf" data-condition="opcode=4 (RemoveDeBuf)"><title>E0117｜X04 → F04｜EFunction 数字分派在“opcode=4 (RemoveDeBuf)”分支执行RemoveDeBuf｜条件：opcode=4 (RemoveDeBuf)｜证据等级 A</title><path d="M 4535.0 3524 V 3584 H 4415.0 V 3890" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0118" class="edge function" data-source="X04" data-target="F05" data-edge="E0118" data-grade="A" data-name="EFunction 数字分派在“opcode=5 (RemoveBuf)”分支执行RemoveBuf" data-condition="opcode=5 (RemoveBuf)"><title>E0118｜X04 → F05｜EFunction 数字分派在“opcode=5 (RemoveBuf)”分支执行RemoveBuf｜条件：opcode=5 (RemoveBuf)｜证据等级 A</title><path d="M 4535.0 3524 V 3592 H 4755.0 V 3890" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0119" class="edge function" data-source="F06" data-target="I08" data-edge="E0119" data-grade="A" data-name="F06 AddValue 不走逐角色分派，由 I08 CombineFunctionInfos 合并阶段读取" data-condition="合并 SkillFunctionInfo 数值时"><title>E0119｜F06 → I08｜F06 AddValue 不走逐角色分派，由 I08 CombineFunctionInfos 合并阶段读取｜条件：合并 SkillFunctionInfo 数值时｜证据等级 A</title><path d="M 3180 4056.0 H 4002 V 2907.0 H 3890" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0120" class="edge function" data-source="X04" data-target="F07" data-edge="E0120" data-grade="A" data-name="EFunction 数字分派在“opcode=7 (AdditionSkill)”分支执行AdditionSkill" data-condition="opcode=7 (AdditionSkill)"><title>E0120｜X04 → F07｜EFunction 数字分派在“opcode=7 (AdditionSkill)”分支执行AdditionSkill｜条件：opcode=7 (AdditionSkill)｜证据等级 A</title><path d="M 4535.0 3524 V 3608 H 3395.0 V 4035" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0121" class="edge function" data-source="F07" data-target="Q01" data-edge="E0121" data-grade="B" data-name="F07 AdditionSkill 登记普通追加技能" data-condition="注册追加技能"><title>E0121｜F07 → Q01｜F07 AdditionSkill 登记普通追加技能｜条件：注册追加技能｜证据等级 B</title><path d="M 3270 4056.0 H 3266.0 V 5671.0 H 3310" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0122" class="edge function" data-source="X04" data-target="F08" data-edge="E0122" data-grade="A" data-name="EFunction 数字分派在“opcode=8 (Revive)”分支执行Revive" data-condition="opcode=8 (Revive)"><title>E0122｜X04 → F08｜EFunction 数字分派在“opcode=8 (Revive)”分支执行Revive｜条件：opcode=8 (Revive)｜证据等级 A</title><path d="M 4535.0 3524 V 3560 H 3735.0 V 4035" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0123" class="edge function" data-source="F08" data-target="L05" data-edge="E0123" data-grade="B" data-name="F08 Revive 登记复活状态，随后由 L05 复活事件与 AfterRevive 路径结算" data-condition="登记/执行复活"><title>E0123｜F08 → L05｜F08 Revive 登记复活状态，随后由 L05 复活事件与 AfterRevive 路径结算｜条件：登记/执行复活｜证据等级 B</title><path d="M 3610 4056.0 H 2560.0 V 5447.0 H 1510" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0124" class="edge function" data-source="X04" data-target="F09" data-edge="E0124" data-grade="A" data-name="EFunction 数字分派在“opcode=9 (CounterSkill)”分支执行CounterSkill" data-condition="opcode=9 (CounterSkill)"><title>E0124｜X04 → F09｜EFunction 数字分派在“opcode=9 (CounterSkill)”分支执行CounterSkill｜条件：opcode=9 (CounterSkill)｜证据等级 A</title><path d="M 4535.0 3524 V 3576 H 4075.0 V 4035" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0125" class="edge function" data-source="F09" data-target="Q01" data-edge="E0125" data-grade="B" data-name="F09 CounterSkill 向 Q01 追加动作队列登记 Counter 动作" data-condition="注册反击技能"><title>E0125｜F09 → Q01｜F09 CounterSkill 向 Q01 追加动作队列登记 Counter 动作｜条件：注册反击技能｜证据等级 B</title><path d="M 3950 4056.0 H 3654.0 V 5671.0 H 3310" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0126" class="edge function" data-source="F10" data-target="A02" data-edge="E0126" data-grade="A" data-name="F10 ReplaceSkill 不走 X04 分派，由 A02 技能执行前替换阶段读取" data-condition="技能正式执行前处理替换技能时"><title>E0126｜F10 → A02｜F10 ReplaceSkill 不走 X04 分派，由 A02 技能执行前替换阶段读取｜条件：技能正式执行前处理替换技能时｜证据等级 A</title><path d="M 4540 4056.0 H 4806 V 3323.0 H 2490" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0127" class="edge function" data-source="X04" data-target="F11" data-edge="E0127" data-grade="A" data-name="EFunction 数字分派在“opcode=11 (ReSetSkillCoolDown)”分支执行ReSetSkillCoolDown" data-condition="opcode=11 (ReSetSkillCoolDown)"><title>E0127｜X04 → F11｜EFunction 数字分派在“opcode=11 (ReSetSkillCoolDown)”分支执行ReSetSkillCoolDown｜条件：opcode=11 (ReSetSkillCoolDown)｜证据等级 A</title><path d="M 4535.0 3524 V 3600 H 4755.0 V 4035" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0128" class="edge function" data-source="X04" data-target="F12" data-edge="E0128" data-grade="A" data-name="EFunction 数字分派在“opcode=12 (ImmortalAddHP)”分支执行ImmortalAddHP" data-condition="opcode=12 (ImmortalAddHP)"><title>E0128｜X04 → F12｜EFunction 数字分派在“opcode=12 (ImmortalAddHP)”分支执行ImmortalAddHP｜条件：opcode=12 (ImmortalAddHP)｜证据等级 A</title><path d="M 4535.0 3524 V 3608 H 3055.0 V 4180" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0129" class="edge function" data-source="X04" data-target="F13" data-edge="E0129" data-grade="A" data-name="EFunction 数字分派在“opcode=13 (AddSP)”分支执行AddSP" data-condition="opcode=13 (AddSP)"><title>E0129｜X04 → F13｜EFunction 数字分派在“opcode=13 (AddSP)”分支执行AddSP｜条件：opcode=13 (AddSP)｜证据等级 A</title><path d="M 4535.0 3524 V 3552 H 3395.0 V 4180" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0130" class="edge function" data-source="X04" data-target="F14" data-edge="E0130" data-grade="A" data-name="EFunction 数字分派在“opcode=14 (BuffAttack)”分支执行BuffAttack" data-condition="opcode=14 (BuffAttack)"><title>E0130｜X04 → F14｜EFunction 数字分派在“opcode=14 (BuffAttack)”分支执行BuffAttack｜条件：opcode=14 (BuffAttack)｜证据等级 A</title><path d="M 4535.0 3524 V 3560 H 3735.0 V 4180" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0131" class="edge function" data-source="F14" data-target="D00" data-edge="E0131" data-grade="A" data-name="BuffAttack处理器调用建立命中事件与前快照" data-condition="建立 BuffAttack 直伤事件"><title>E0131｜F14 → D00｜BuffAttack处理器调用建立命中事件与前快照｜条件：建立 BuffAttack 直伤事件｜证据等级 A</title><path d="M 3860 4201.0 H 3950 V 3887.0 H 2490" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0132" class="edge function" data-source="X04" data-target="F15" data-edge="E0132" data-grade="A" data-name="EFunction 数字分派在“opcode=15 (AddAllBuffRound)”分支执行AddAllBuffRound" data-condition="opcode=15 (AddAllBuffRound)"><title>E0132｜X04 → F15｜EFunction 数字分派在“opcode=15 (AddAllBuffRound)”分支执行AddAllBuffRound｜条件：opcode=15 (AddAllBuffRound)｜证据等级 A</title><path d="M 4535.0 3524 V 3576 H 4075.0 V 4180" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0133" class="edge function" data-source="X04" data-target="F16" data-edge="E0133" data-grade="A" data-name="EFunction 数字分派在“opcode=16 (AddAllDeBuffRound)”分支执行AddAllDeBuffRound" data-condition="opcode=16 (AddAllDeBuffRound)"><title>E0133｜X04 → F16｜EFunction 数字分派在“opcode=16 (AddAllDeBuffRound)”分支执行AddAllDeBuffRound｜条件：opcode=16 (AddAllDeBuffRound)｜证据等级 A</title><path d="M 4535.0 3524 V 3584 H 4415.0 V 4180" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0134" class="edge function" data-source="X04" data-target="F17" data-edge="E0134" data-grade="A" data-name="EFunction 数字分派在“opcode=17 (SetDieOut)”分支执行SetDieOut" data-condition="opcode=17 (SetDieOut)"><title>E0134｜X04 → F17｜EFunction 数字分派在“opcode=17 (SetDieOut)”分支执行SetDieOut｜条件：opcode=17 (SetDieOut)｜证据等级 A</title><path d="M 4535.0 3524 V 3592 H 4755.0 V 4180" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0135" class="edge function" data-source="X04" data-target="F18" data-edge="E0135" data-grade="A" data-name="EFunction 数字分派在“opcode=18 (AddSkillCoolDown)”分支执行AddSkillCoolDown" data-condition="opcode=18 (AddSkillCoolDown)"><title>E0135｜X04 → F18｜EFunction 数字分派在“opcode=18 (AddSkillCoolDown)”分支执行AddSkillCoolDown｜条件：opcode=18 (AddSkillCoolDown)｜证据等级 A</title><path d="M 4535.0 3524 V 3600 H 3055.0 V 4325" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0136" class="edge function" data-source="X04" data-target="F19" data-edge="E0136" data-grade="A" data-name="EFunction 数字分派在“opcode=19 (ClearAllSkillCoolDown)”分支执行ClearAllSkillCoolDown" data-condition="opcode=19 (ClearAllSkillCoolDown)"><title>E0136｜X04 → F19｜EFunction 数字分派在“opcode=19 (ClearAllSkillCoolDown)”分支执行ClearAllSkillCoolDown｜条件：opcode=19 (ClearAllSkillCoolDown)｜证据等级 A</title><path d="M 4535.0 3524 V 3608 H 3395.0 V 4325" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0137" class="edge function" data-source="X04" data-target="F20" data-edge="E0137" data-grade="A" data-name="EFunction 数字分派在“opcode=20 (SetTime)”分支执行SetTime" data-condition="opcode=20 (SetTime)"><title>E0137｜X04 → F20｜EFunction 数字分派在“opcode=20 (SetTime)”分支执行SetTime｜条件：opcode=20 (SetTime)｜证据等级 A</title><path d="M 4535.0 3524 V 3552 H 3735.0 V 4325" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0138" class="edge function" data-source="X04" data-target="F21" data-edge="E0138" data-grade="A" data-name="EFunction 数字分派在“opcode=21 (AddAllSkillCoolDown)”分支执行AddAllSkillCoolDown" data-condition="opcode=21 (AddAllSkillCoolDown)"><title>E0138｜X04 → F21｜EFunction 数字分派在“opcode=21 (AddAllSkillCoolDown)”分支执行AddAllSkillCoolDown｜条件：opcode=21 (AddAllSkillCoolDown)｜证据等级 A</title><path d="M 4535.0 3524 V 3560 H 4075.0 V 4325" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0139" class="edge function" data-source="X04" data-target="F22" data-edge="E0139" data-grade="A" data-name="EFunction 数字分派在“opcode=22 (RandomAddStatus)”分支执行RandomAddStatus" data-condition="opcode=22 (RandomAddStatus)"><title>E0139｜X04 → F22｜EFunction 数字分派在“opcode=22 (RandomAddStatus)”分支执行RandomAddStatus｜条件：opcode=22 (RandomAddStatus)｜证据等级 A</title><path d="M 4535.0 3524 V 3568 H 4415.0 V 4325" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0140" class="edge function" data-source="F22" data-target="B00" data-edge="E0140" data-grade="A" data-name="RandomAddStatus处理器调用抵抗、能力免疫、容器准入" data-condition="进入随机状态抵抗与准入"><title>E0140｜F22 → B00｜RandomAddStatus处理器调用抵抗、能力免疫、容器准入｜条件：进入随机状态抵抗与准入｜证据等级 A</title><path d="M 4540 4346.0 H 4828 V 3687.0 H 3310" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0141" class="edge function" data-source="X04" data-target="F23" data-edge="E0141" data-grade="A" data-name="EFunction 数字分派在“opcode=23 (SetStatusValue)”分支执行SetStatusValue" data-condition="opcode=23 (SetStatusValue)"><title>E0141｜X04 → F23｜EFunction 数字分派在“opcode=23 (SetStatusValue)”分支执行SetStatusValue｜条件：opcode=23 (SetStatusValue)｜证据等级 A</title><path d="M 4535.0 3524 V 3584 H 4755.0 V 4325" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0142" class="edge function" data-source="X04" data-target="F24" data-edge="E0142" data-grade="A" data-name="EFunction 数字分派在“opcode=24 (AddEventHPDiff)”分支执行AddEventHPDiff" data-condition="opcode=24 (AddEventHPDiff)"><title>E0142｜X04 → F24｜EFunction 数字分派在“opcode=24 (AddEventHPDiff)”分支执行AddEventHPDiff｜条件：opcode=24 (AddEventHPDiff)｜证据等级 A</title><path d="M 4535.0 3524 V 3592 H 3055.0 V 4470" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0143" class="edge function" data-source="X04" data-target="F25" data-edge="E0143" data-grade="A" data-name="EFunction 数字分派在“opcode=25 (SplitDamage)”分支执行SplitDamage" data-condition="opcode=25 (SplitDamage)"><title>E0143｜X04 → F25｜EFunction 数字分派在“opcode=25 (SplitDamage)”分支执行SplitDamage｜条件：opcode=25 (SplitDamage)｜证据等级 A</title><path d="M 4535.0 3524 V 3600 H 3395.0 V 4470" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0144" class="edge function" data-source="F25" data-target="D09" data-edge="E0144" data-grade="B" data-name="F25 SplitDamage 写入分摊参数，随后由 D09 选择分摊者并递归提交" data-condition="写入伤害分摊参数"><title>E0144｜F25 → D09｜F25 SplitDamage 写入分摊参数，随后由 D09 选择分摊者并递归提交｜条件：写入伤害分摊参数｜证据等级 B</title><path d="M 3270 4491.0 H 3302.0 V 4717.0 H 3310" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0145" class="edge function" data-source="X04" data-target="F26" data-edge="E0145" data-grade="A" data-name="EFunction 数字分派在“opcode=26 (AddSoul)”分支执行AddSoul" data-condition="opcode=26 (AddSoul)"><title>E0145｜X04 → F26｜EFunction 数字分派在“opcode=26 (AddSoul)”分支执行AddSoul｜条件：opcode=26 (AddSoul)｜证据等级 A</title><path d="M 4535.0 3524 V 3552 H 3735.0 V 4470" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0146" class="edge function" data-source="X04" data-target="F27" data-edge="E0146" data-grade="A" data-name="EFunction 数字分派在“opcode=27 (RandomOneAddSkillCooDown)”分支执行RandomOneAddSkillCooDown" data-condition="opcode=27 (RandomOneAddSkillCooDown)"><title>E0146｜X04 → F27｜EFunction 数字分派在“opcode=27 (RandomOneAddSkillCooDown)”分支执行RandomOneAddSkillCooDown｜条件：opcode=27 (RandomOneAddSkillCooDown)｜证据等级 A</title><path d="M 4535.0 3524 V 3560 H 4075.0 V 4470" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0147" class="edge function" data-source="X04" data-target="F28" data-edge="E0147" data-grade="A" data-name="EFunction 数字分派在“opcode=28 (AddPinchSkill)”分支执行AddPinchSkill" data-condition="opcode=28 (AddPinchSkill)"><title>E0147｜X04 → F28｜EFunction 数字分派在“opcode=28 (AddPinchSkill)”分支执行AddPinchSkill｜条件：opcode=28 (AddPinchSkill)｜证据等级 A</title><path d="M 4535.0 3524 V 3568 H 4415.0 V 4470" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0148" class="edge function" data-source="F28" data-target="Q01" data-edge="E0148" data-grade="B" data-name="F28 AddPinchSkill 向 Q01 追加动作队列登记 Pinch 动作" data-condition="注册夹击技能"><title>E0148｜F28 → Q01｜F28 AddPinchSkill 向 Q01 追加动作队列登记 Pinch 动作｜条件：注册夹击技能｜证据等级 B</title><path d="M 4290 4491.0 H 3800.0 V 5671.0 H 3310" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0149" class="edge function" data-source="X04" data-target="F29" data-edge="E0149" data-grade="A" data-name="EFunction 数字分派在“opcode=29 (RemoveBufsByID)”分支执行RemoveBufsByID" data-condition="opcode=29 (RemoveBufsByID)"><title>E0149｜X04 → F29｜EFunction 数字分派在“opcode=29 (RemoveBufsByID)”分支执行RemoveBufsByID｜条件：opcode=29 (RemoveBufsByID)｜证据等级 A</title><path d="M 4535.0 3524 V 3584 H 4755.0 V 4470" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0150" class="edge function" data-source="X04" data-target="F30" data-edge="E0150" data-grade="A" data-name="EFunction 数字分派在“opcode=30 (BlastBuff)”分支执行BlastBuff" data-condition="opcode=30 (BlastBuff)"><title>E0150｜X04 → F30｜EFunction 数字分派在“opcode=30 (BlastBuff)”分支执行BlastBuff｜条件：opcode=30 (BlastBuff)｜证据等级 A</title><path d="M 4535.0 3524 V 3592 H 3055.0 V 4615" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0151" class="edge function" data-source="X04" data-target="F31" data-edge="E0151" data-grade="A" data-name="EFunction 数字分派在“opcode=31 (SetHPRate)”分支执行SetHPRate" data-condition="opcode=31 (SetHPRate)"><title>E0151｜X04 → F31｜EFunction 数字分派在“opcode=31 (SetHPRate)”分支执行SetHPRate｜条件：opcode=31 (SetHPRate)｜证据等级 A</title><path d="M 4535.0 3524 V 3600 H 3395.0 V 4615" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0152" class="edge function" data-source="X04" data-target="F32" data-edge="E0152" data-grade="A" data-name="EFunction 数字分派在“opcode=32 (AddInjuryRate)”分支执行AddInjuryRate" data-condition="opcode=32 (AddInjuryRate)"><title>E0152｜X04 → F32｜EFunction 数字分派在“opcode=32 (AddInjuryRate)”分支执行AddInjuryRate｜条件：opcode=32 (AddInjuryRate)｜证据等级 A</title><path d="M 4535.0 3524 V 3608 H 3735.0 V 4615" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0153" class="edge function" data-source="F32" data-target="D11" data-edge="E0153" data-grade="B" data-name="F32 AddInjuryRate 写入创伤变化，由 D11 事件落账路径应用" data-condition="提交创伤变化"><title>E0153｜F32 → D11｜F32 AddInjuryRate 写入创伤变化，由 D11 事件落账路径应用｜条件：提交创伤变化｜证据等级 B</title><path d="M 3610 4636.0 H 3050.0 V 4899.0 H 2490" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0154" class="edge function" data-source="X04" data-target="F33" data-edge="E0154" data-grade="A" data-name="EFunction 数字分派在“opcode=33 (TransferDeBuff)”分支执行TransferDeBuff" data-condition="opcode=33 (TransferDeBuff)"><title>E0154｜X04 → F33｜EFunction 数字分派在“opcode=33 (TransferDeBuff)”分支执行TransferDeBuff｜条件：opcode=33 (TransferDeBuff)｜证据等级 A</title><path d="M 4535.0 3524 V 3560 H 4075.0 V 4615" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0155" class="edge function" data-source="X04" data-target="F34" data-edge="E0155" data-grade="A" data-name="EFunction 数字分派在“opcode=34 (MarkRoles)”分支执行MarkRoles" data-condition="opcode=34 (MarkRoles)"><title>E0155｜X04 → F34｜EFunction 数字分派在“opcode=34 (MarkRoles)”分支执行MarkRoles｜条件：opcode=34 (MarkRoles)｜证据等级 A</title><path d="M 4535.0 3524 V 3568 H 4415.0 V 4615" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0156" class="edge function" data-source="X04" data-target="F35" data-edge="E0156" data-grade="A" data-name="EFunction 数字分派在“opcode=35 (ClearMarkRoles)”分支执行ClearMarkRoles" data-condition="opcode=35 (ClearMarkRoles)"><title>E0156｜X04 → F35｜EFunction 数字分派在“opcode=35 (ClearMarkRoles)”分支执行ClearMarkRoles｜条件：opcode=35 (ClearMarkRoles)｜证据等级 A</title><path d="M 4535.0 3524 V 3576 H 4755.0 V 4615" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0157" class="edge function" data-source="X04" data-target="F36" data-edge="E0157" data-grade="A" data-name="EFunction 数字分派在“opcode=36 (SetEventHPDiff)”分支执行SetEventHPDiff" data-condition="opcode=36 (SetEventHPDiff)"><title>E0157｜X04 → F36｜EFunction 数字分派在“opcode=36 (SetEventHPDiff)”分支执行SetEventHPDiff｜条件：opcode=36 (SetEventHPDiff)｜证据等级 A</title><path d="M 4535.0 3524 V 3584 H 3055.0 V 4760" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0158" class="edge function" data-source="X04" data-target="F37" data-edge="E0158" data-grade="A" data-name="EFunction 数字分派在“opcode=37 (DirectHit)”分支执行DirectHit" data-condition="opcode=37 (DirectHit)"><title>E0158｜X04 → F37｜EFunction 数字分派在“opcode=37 (DirectHit)”分支执行DirectHit｜条件：opcode=37 (DirectHit)｜证据等级 A</title><path d="M 4535.0 3524 V 3592 H 3395.0 V 4760" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0159" class="edge function" data-source="F37" data-target="Q03" data-edge="E0159" data-grade="B" data-name="F37 DirectHit 登记直击项，随后由 Q03 ProcessAdditionDamage/ProcessDirectHit 消费" data-condition="登记 DirectHit"><title>E0159｜F37 → Q03｜F37 DirectHit 登记直击项，随后由 Q03 ProcessAdditionDamage/ProcessDirectHit 消费｜条件：登记 DirectHit｜证据等级 B</title><path d="M 3270 4781.0 H 3302.0 V 6257.0 H 3310" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0160" class="edge function" data-source="X04" data-target="F38" data-edge="E0160" data-grade="A" data-name="EFunction 数字分派在“opcode=38 (SpawnMonster)”分支执行SpawnMonster" data-condition="opcode=38 (SpawnMonster)"><title>E0160｜X04 → F38｜EFunction 数字分派在“opcode=38 (SpawnMonster)”分支执行SpawnMonster｜条件：opcode=38 (SpawnMonster)｜证据等级 A</title><path d="M 4535.0 3524 V 3608 H 3735.0 V 4760" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0161" class="edge function" data-source="F39" data-target="D03A" data-edge="E0161" data-grade="A" data-name="F39 ReduceHPConstAttack 不走 X04 分派，由 D03A 常量攻击公式阶段读取" data-condition="计算常量攻击修正时"><title>E0161｜F39 → D03A｜F39 ReduceHPConstAttack 不走 X04 分派，由 D03A 常量攻击公式阶段读取｜条件：计算常量攻击修正时｜证据等级 A</title><path d="M 4200 4781.0 H 4378 V 4163.0 H 2490" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0162" class="edge function" data-source="X04" data-target="F40" data-edge="E0162" data-grade="A" data-name="EFunction 数字分派在“opcode=40 (DirectHPValueHit)”分支执行DirectHPValueHit" data-condition="opcode=40 (DirectHPValueHit)"><title>E0162｜X04 → F40｜EFunction 数字分派在“opcode=40 (DirectHPValueHit)”分支执行DirectHPValueHit｜条件：opcode=40 (DirectHPValueHit)｜证据等级 A</title><path d="M 4535.0 3524 V 3560 H 4415.0 V 4760" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0163" class="edge function" data-source="F40" data-target="Q03" data-edge="E0163" data-grade="B" data-name="F40 DirectHPValueHit 登记直击项，随后由 Q03 ProcessAdditionDamage/ProcessDirectHit 消费" data-condition="登记 DirectHPValueHit"><title>E0163｜F40 → Q03｜F40 DirectHPValueHit 登记直击项，随后由 Q03 ProcessAdditionDamage/ProcessDirectHit 消费｜条件：登记 DirectHPValueHit｜证据等级 B</title><path d="M 4290 4781.0 H 3800.0 V 6257.0 H 3310" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0164" class="edge function" data-source="X04" data-target="F41" data-edge="E0164" data-grade="A" data-name="EFunction 数字分派在“opcode=41 (AddRound)”分支执行AddRound" data-condition="opcode=41 (AddRound)"><title>E0164｜X04 → F41｜EFunction 数字分派在“opcode=41 (AddRound)”分支执行AddRound｜条件：opcode=41 (AddRound)｜证据等级 A</title><path d="M 4535.0 3524 V 3576 H 4755.0 V 4760" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0165" class="edge function" data-source="X04" data-target="F42" data-edge="E0165" data-grade="A" data-name="EFunction 数字分派在“opcode=42 (ShowTip)”分支执行ShowTip" data-condition="opcode=42 (ShowTip)"><title>E0165｜X04 → F42｜EFunction 数字分派在“opcode=42 (ShowTip)”分支执行ShowTip｜条件：opcode=42 (ShowTip)｜证据等级 A</title><path d="M 4535.0 3524 V 3584 H 3055.0 V 4905" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0166" class="edge function" data-source="X04" data-target="F43" data-edge="E0166" data-grade="A" data-name="EFunction 数字分派在“opcode=43 (ReviveMonster)”分支执行ReviveMonster" data-condition="opcode=43 (ReviveMonster)"><title>E0166｜X04 → F43｜EFunction 数字分派在“opcode=43 (ReviveMonster)”分支执行ReviveMonster｜条件：opcode=43 (ReviveMonster)｜证据等级 A</title><path d="M 4535.0 3524 V 3592 H 3395.0 V 4905" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0167" class="edge function" data-source="F43" data-target="L05" data-edge="E0167" data-grade="B" data-name="F43 ReviveMonster 登记怪物复活状态，随后由 L05 复活结算路径处理" data-condition="复活怪物"><title>E0167｜F43 → L05｜F43 ReviveMonster 登记怪物复活状态，随后由 L05 复活结算路径处理｜条件：复活怪物｜证据等级 B</title><path d="M 3270 4926.0 H 2378.0 V 5447.0 H 1510" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0168" class="edge function" data-source="X04" data-target="F44" data-edge="E0168" data-grade="A" data-name="EFunction 数字分派在“opcode=44 (DirectRevive)”分支执行DirectRevive" data-condition="opcode=44 (DirectRevive)"><title>E0168｜X04 → F44｜EFunction 数字分派在“opcode=44 (DirectRevive)”分支执行DirectRevive｜条件：opcode=44 (DirectRevive)｜证据等级 A</title><path d="M 4535.0 3524 V 3608 H 3735.0 V 4905" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0169" class="edge function" data-source="F44" data-target="L05" data-edge="E0169" data-grade="B" data-name="F44 DirectRevive 登记直接复活状态，随后由 L05 复活结算路径处理" data-condition="直接复活"><title>E0169｜F44 → L05｜F44 DirectRevive 登记直接复活状态，随后由 L05 复活结算路径处理｜条件：直接复活｜证据等级 B</title><path d="M 3610 4926.0 H 2572.0 V 5447.0 H 1510" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0170" class="edge function" data-source="X04" data-target="F45" data-edge="E0170" data-grade="A" data-name="EFunction 数字分派在“opcode=45 (ReSetAllSkillCoolDown)”分支执行ReSetAllSkillCoolDown" data-condition="opcode=45 (ReSetAllSkillCoolDown)"><title>E0170｜X04 → F45｜EFunction 数字分派在“opcode=45 (ReSetAllSkillCoolDown)”分支执行ReSetAllSkillCoolDown｜条件：opcode=45 (ReSetAllSkillCoolDown)｜证据等级 A</title><path d="M 4535.0 3524 V 3560 H 4075.0 V 4905" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0171" class="edge function" data-source="F46" data-target="D14" data-edge="E0171" data-grade="B" data-name="F46 LifeSteal 不存在 X04 opcode 分支，由 D14 伤害事件提交后的吸血路径读取" data-condition="存在吸血属性且伤害事件已提交"><title>E0171｜F46 → D14｜F46 LifeSteal 不存在 X04 opcode 分支，由 D14 伤害事件提交后的吸血路径读取｜条件：存在吸血属性且伤害事件已提交｜证据等级 B</title><path d="M 4290 4926.0 H 3366.0 V 5175.0 H 2490" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0172" class="edge function" data-source="X04" data-target="F47" data-edge="E0172" data-grade="A" data-name="EFunction 数字分派在“opcode=47 (StatusValueDamage)”分支执行StatusValueDamage" data-condition="opcode=47 (StatusValueDamage)"><title>E0172｜X04 → F47｜EFunction 数字分派在“opcode=47 (StatusValueDamage)”分支执行StatusValueDamage｜条件：opcode=47 (StatusValueDamage)｜证据等级 A</title><path d="M 4535.0 3524 V 3576 H 4755.0 V 4905" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0173" class="edge function" data-source="F47" data-target="Q03" data-edge="E0173" data-grade="B" data-name="F47 StatusValueDamage 登记状态值直伤项，随后由 Q03 追加伤害路径消费" data-condition="登记 StatusValueDamage"><title>E0173｜F47 → Q03｜F47 StatusValueDamage 登记状态值直伤项，随后由 Q03 追加伤害路径消费｜条件：登记 StatusValueDamage｜证据等级 B</title><path d="M 4630 4926.0 H 3970.0 V 6257.0 H 3310" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0174" class="edge function" data-source="X04" data-target="F48" data-edge="E0174" data-grade="A" data-name="EFunction 数字分派在“opcode=48 (ClearSkillCoolDown)”分支执行ClearSkillCoolDown" data-condition="opcode=48 (ClearSkillCoolDown)"><title>E0174｜X04 → F48｜EFunction 数字分派在“opcode=48 (ClearSkillCoolDown)”分支执行ClearSkillCoolDown｜条件：opcode=48 (ClearSkillCoolDown)｜证据等级 A</title><path d="M 4535.0 3524 V 3592 H 3055.0 V 5050" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0175" class="edge function" data-source="X04" data-target="F49" data-edge="E0175" data-grade="A" data-name="EFunction 数字分派在“opcode=49 (ContinueSkill)”分支执行ContinueSkill" data-condition="opcode=49 (ContinueSkill)"><title>E0175｜X04 → F49｜EFunction 数字分派在“opcode=49 (ContinueSkill)”分支执行ContinueSkill｜条件：opcode=49 (ContinueSkill)｜证据等级 A</title><path d="M 4535.0 3524 V 3600 H 3395.0 V 5050" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0176" class="edge function" data-source="F49" data-target="Q01" data-edge="E0176" data-grade="B" data-name="F49 ContinueSkill 登记优先追加技能" data-condition="注册继续技能"><title>E0176｜F49 → Q01｜F49 ContinueSkill 登记优先追加技能｜条件：注册继续技能｜证据等级 B</title><path d="M 3270 5071.0 H 3266.0 V 5671.0 H 3310" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0177" class="edge function" data-source="X04" data-target="F50" data-edge="E0177" data-grade="A" data-name="EFunction 数字分派在“opcode=50 (TransferBuff)”分支执行TransferBuff" data-condition="opcode=50 (TransferBuff)"><title>E0177｜X04 → F50｜EFunction 数字分派在“opcode=50 (TransferBuff)”分支执行TransferBuff｜条件：opcode=50 (TransferBuff)｜证据等级 A</title><path d="M 4535.0 3524 V 3552 H 3735.0 V 5050" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0178" class="edge function" data-source="X04" data-target="F51" data-edge="E0178" data-grade="A" data-name="EFunction 数字分派在“opcode=51 (SetNowHPRate)”分支执行SetNowHPRate" data-condition="opcode=51 (SetNowHPRate)"><title>E0178｜X04 → F51｜EFunction 数字分派在“opcode=51 (SetNowHPRate)”分支执行SetNowHPRate｜条件：opcode=51 (SetNowHPRate)｜证据等级 A</title><path d="M 4535.0 3524 V 3560 H 4075.0 V 5050" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0179" class="edge function" data-source="X04" data-target="F52" data-edge="E0179" data-grade="A" data-name="EFunction 数字分派在“opcode=52 (AddStatusList)”分支执行AddStatusList" data-condition="opcode=52 (AddStatusList)"><title>E0179｜X04 → F52｜EFunction 数字分派在“opcode=52 (AddStatusList)”分支执行AddStatusList｜条件：opcode=52 (AddStatusList)｜证据等级 A</title><path d="M 4535.0 3524 V 3568 H 4415.0 V 5050" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0180" class="edge function" data-source="F52" data-target="B00" data-edge="E0180" data-grade="A" data-name="AddStatusList处理器调用抵抗、能力免疫、容器准入" data-condition="状态列表逐项进入准入"><title>E0180｜F52 → B00｜AddStatusList处理器调用抵抗、能力免疫、容器准入｜条件：状态列表逐项进入准入｜证据等级 A</title><path d="M 4540 5071.0 H 4850 V 3687.0 H 3310" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0181" class="edge function" data-source="X04" data-target="F53" data-edge="E0181" data-grade="A" data-name="EFunction 数字分派在“opcode=53 (RemoveBufsByIDList)”分支执行RemoveBufsByIDList" data-condition="opcode=53 (RemoveBufsByIDList)"><title>E0181｜X04 → F53｜EFunction 数字分派在“opcode=53 (RemoveBufsByIDList)”分支执行RemoveBufsByIDList｜条件：opcode=53 (RemoveBufsByIDList)｜证据等级 A</title><path d="M 4535.0 3524 V 3584 H 4755.0 V 5050" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0182" class="edge function" data-source="X04" data-target="F54" data-edge="E0182" data-grade="A" data-name="EFunction 数字分派在“opcode=54 (TransferBuffFrom)”分支执行TransferBuffFrom" data-condition="opcode=54 (TransferBuffFrom)"><title>E0182｜X04 → F54｜EFunction 数字分派在“opcode=54 (TransferBuffFrom)”分支执行TransferBuffFrom｜条件：opcode=54 (TransferBuffFrom)｜证据等级 A</title><path d="M 4535.0 3524 V 3592 H 3055.0 V 5195" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0183" class="edge function" data-source="X04" data-target="F55" data-edge="E0183" data-grade="A" data-name="EFunction 数字分派在“opcode=55 (TransferDeBuffFrom)”分支执行TransferDeBuffFrom" data-condition="opcode=55 (TransferDeBuffFrom)"><title>E0183｜X04 → F55｜EFunction 数字分派在“opcode=55 (TransferDeBuffFrom)”分支执行TransferDeBuffFrom｜条件：opcode=55 (TransferDeBuffFrom)｜证据等级 A</title><path d="M 4535.0 3524 V 3600 H 3395.0 V 5195" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0184" class="edge function" data-source="X04" data-target="F56" data-edge="E0184" data-grade="A" data-name="EFunction 数字分派在“opcode=56 (ResetEventSoulCost)”分支执行ResetEventSoulCost" data-condition="opcode=56 (ResetEventSoulCost)"><title>E0184｜X04 → F56｜EFunction 数字分派在“opcode=56 (ResetEventSoulCost)”分支执行ResetEventSoulCost｜条件：opcode=56 (ResetEventSoulCost)｜证据等级 A</title><path d="M 4535.0 3524 V 3608 H 3735.0 V 5195" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0185" class="edge function" data-source="X04" data-target="F57" data-edge="E0185" data-grade="A" data-name="EFunction 数字分派在“opcode=57 (MultiplySoul)”分支执行MultiplySoul" data-condition="opcode=57 (MultiplySoul)"><title>E0185｜X04 → F57｜EFunction 数字分派在“opcode=57 (MultiplySoul)”分支执行MultiplySoul｜条件：opcode=57 (MultiplySoul)｜证据等级 A</title><path d="M 4535.0 3524 V 3552 H 4075.0 V 5195" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0186" class="edge function" data-source="X04" data-target="F58" data-edge="E0186" data-grade="A" data-name="EFunction 数字分派在“opcode=58 (BlastBuffWithInjury)”分支执行BlastBuffWithInjury" data-condition="opcode=58 (BlastBuffWithInjury)"><title>E0186｜X04 → F58｜EFunction 数字分派在“opcode=58 (BlastBuffWithInjury)”分支执行BlastBuffWithInjury｜条件：opcode=58 (BlastBuffWithInjury)｜证据等级 A</title><path d="M 4535.0 3524 V 3560 H 4415.0 V 5195" marker-end="url(#arrow)"/>
+</g>
+<g id="edge-E0187" class="edge function" data-source="X04" data-target="F59" data-edge="E0187" data-grade="A" data-name="EFunction 数字分派在“opcode=59 (AddHPWithInjury)”分支执行AddHPWithInjury" data-condition="opcode=59 (AddHPWithInjury)"><title>E0187｜X04 → F59｜EFunction 数字分派在“opcode=59 (AddHPWithInjury)”分支执行AddHPWithInjury｜条件：opcode=59 (AddHPWithInjury)｜证据等级 A</title><path d="M 4535.0 3524 V 3568 H 4755.0 V 5195" marker-end="url(#arrow)"/>
+</g>
+</g>
+<g id="nodes">
+<g id="node-I00" class="node boundary" data-node="I00" data-name="接收入场载荷" data-grade="B" data-step="1" data-rvas="0x68B1C0, 0x68B280"><title>I00｜接收入场载荷｜P01</title><rect x="2100" y="180" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="202">I00</text>
+<text class="nname" x="2162" y="212.0">接收入场载荷</text>
+</g>
+<g id="node-I01" class="node boundary" data-node="I01" data-name="BattleData.StartBattle" data-grade="A" data-step="2" data-rvas="0x6599E0"><title>I01｜BattleData.StartBattle｜P02</title><rect x="2100" y="272" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="294">I01</text>
+<text class="nname" x="2162" y="304.0">BattleData.StartBattle</text>
+</g>
+<g id="node-I02" class="node boundary" data-node="I02" data-name="创建阵营与角色实体" data-grade="B" data-step="3" data-rvas="0x7209C0, 0x724980, 0x727790"><title>I02｜创建阵营与角色实体｜P03</title><rect x="2100" y="364" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="386">I02</text>
+<text class="nname" x="2162" y="396.0">创建阵营与角色实体</text>
+</g>
+<g id="node-I07" class="node boundary" data-node="I07" data-name="建立初始状态" data-grade="A" data-step="4" data-rvas="0x726E60, 0x7ACB10"><title>I07｜建立初始状态｜P04</title><rect x="2100" y="456" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="478">I07</text>
+<text class="nname" x="2162" y="488.0">建立初始状态</text>
+</g>
+<g id="node-I05" class="node boundary" data-node="I05" data-name="阵型与刻印属性" data-grade="A" data-step="5" data-rvas="0x727620"><title>I05｜阵型与刻印属性｜P05</title><rect x="2100" y="548" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="570">I05</text>
+<text class="nname" x="2162" y="580.0">阵型与刻印属性</text>
+</g>
+<g id="node-I03A" class="node boundary" data-node="I03A" data-name="基础与运行属性首轮计算" data-grade="A" data-step="6" data-rvas="0x727790"><title>I03A｜基础与运行属性首轮计算｜P06</title><rect x="2100" y="640" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="662">I03A</text>
+<text class="nname" x="2162" y="672.0">基础与运行属性首轮计算</text>
+</g>
+<g id="node-I04" class="node boundary" data-node="I04" data-name="AbilityData.Reset / 装备属性重建边界" data-grade="A" data-step="7" data-rvas="0x7197C0, 0x72BF80"><title>I04｜AbilityData.Reset / 装备属性重建边界｜P07</title><rect x="2100" y="732" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="754">I04</text>
+<text class="nname" x="2162" y="764.0">AbilityData.Reset / 装备属性重建边界</text>
+</g>
+<g id="node-I03B" class="node boundary" data-node="I03B" data-name="HP/SP 等运行值复算" data-grade="A" data-step="8" data-rvas="0x727790, 0x72BF80"><title>I03B｜HP/SP 等运行值复算｜P08</title><rect x="2100" y="824" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="846">I03B</text>
+<text class="nname" x="2162" y="856.0">HP/SP 等运行值复算</text>
+</g>
+<g id="node-I09A" class="node boundary" data-node="I09A" data-name="InitTime" data-grade="A" data-step="9" data-rvas="0x7389A0"><title>I09A｜InitTime｜P09</title><rect x="2100" y="916" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="938">I09A</text>
+<text class="nname" x="2162" y="948.0">InitTime</text>
+</g>
+<g id="node-I09B" class="node boundary" data-node="I09B" data-name="BattleSkillContainer.Init / 初始CD" data-grade="A" data-step="10" data-rvas="0x779A80"><title>I09B｜BattleSkillContainer.Init / 初始CD｜P10</title><rect x="2100" y="1008" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="1030">I09B</text>
+<text class="nname" x="2162" y="1040.0">BattleSkillContainer.Init / 初始CD</text>
+</g>
+<g id="node-I06" class="node dispatch" data-node="I06" data-name="收集角色、神器与状态函数" data-grade="A" data-step="" data-rvas="0x726F30"><title>I06｜收集角色、神器与状态函数</title><rect x="3500" y="2780" width="390" height="54" rx="4"/>
+<text class="nid" x="3510" y="2802">I06</text>
+<text class="nname" x="3562" y="2812.0">收集角色、神器与状态函数</text>
+</g>
+<g id="node-I08" class="node dispatch" data-node="I08" data-name="合并被动、状态与光环函数" data-grade="A" data-step="" data-rvas="0x720F20, 0x727400"><title>I08｜合并被动、状态与光环函数</title><rect x="3500" y="2880" width="390" height="54" rx="4"/>
+<text class="nid" x="3510" y="2902">I08</text>
+<text class="nname" x="3562" y="2912.0">合并被动、状态与光环函数</text>
+</g>
+<g id="node-T00" class="node action" data-node="T00" data-name="NextBattleProcess / CoBattleProcess" data-grade="A" data-step="11" data-rvas="0x655F70, 0x656C60, 0x660140"><title>T00｜NextBattleProcess / CoBattleProcess｜P11</title><rect x="2100" y="1190" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="1212">T00</text>
+<text class="nname" x="2162" y="1209">NextBattleProcess / CoBattleProces</text><text class="nname" x="2162" y="1228">s</text>
+</g>
+<g id="node-W00" class="node action" data-node="W00" data-name="结束/波完成/末波判定" data-grade="A" data-step="12" data-rvas="0x657740, 0x65A460, 0x65A4C0, 0x65A700"><title>W00｜结束/波完成/末波判定｜P12</title><rect x="2100" y="1282" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="1304">W00</text>
+<text class="nname" x="2162" y="1314.0">结束/波完成/末波判定</text>
+</g>
+<g id="node-W02" class="node action" data-node="W02" data-name="ProcessStartPVEWave" data-grade="A" data-step="" data-rvas="0x659180"><title>W02｜ProcessStartPVEWave</title><rect x="2900" y="1374" width="390" height="54" rx="4"/>
+<text class="nid" x="2910" y="1396">W02</text>
+<text class="nname" x="2962" y="1406.0">ProcessStartPVEWave</text>
+</g>
+<g id="node-S00" class="node action" data-node="S00" data-name="全局首次战斗包装" data-grade="A" data-step="" data-rvas="0x657540"><title>S00｜全局首次战斗包装</title><rect x="2900" y="1560" width="390" height="54" rx="4"/>
+<text class="nid" x="2910" y="1582">S00</text>
+<text class="nname" x="2962" y="1592.0">全局首次战斗包装</text>
+</g>
+<g id="node-W01" class="node action" data-node="W01" data-name="换波事件与状态处理" data-grade="A" data-step="13" data-rvas="0x657250, 0x7AEDA0"><title>W01｜换波事件与状态处理｜P13</title><rect x="2100" y="1374" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="1396">W01</text>
+<text class="nname" x="2162" y="1406.0">换波事件与状态处理</text>
+</g>
+<g id="node-W03" class="node action" data-node="W03" data-name="新波开始动作容器" data-grade="A" data-step="14" data-rvas="0x659370"><title>W03｜新波开始动作容器｜P14</title><rect x="2100" y="1466" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="1488">W03</text>
+<text class="nname" x="2162" y="1498.0">新波开始动作容器</text>
+</g>
+<g id="node-S01" class="node action" data-node="S01" data-name="FirstStartBattle" data-grade="A" data-step="15" data-rvas="0x72AA80"><title>S01｜FirstStartBattle｜P15</title><rect x="2100" y="1558" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="1580">S01</text>
+<text class="nname" x="2162" y="1590.0">FirstStartBattle</text>
+</g>
+<g id="node-S02" class="node action" data-node="S02" data-name="PreStartBattle" data-grade="A" data-step="16" data-rvas="0x72B2F0"><title>S02｜PreStartBattle｜P16</title><rect x="2100" y="1650" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="1672">S02</text>
+<text class="nname" x="2162" y="1682.0">PreStartBattle</text>
+</g>
+<g id="node-S03" class="node action" data-node="S03" data-name="StartBattle" data-grade="A" data-step="17" data-rvas="0x72BE90"><title>S03｜StartBattle｜P17</title><rect x="2100" y="1742" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="1764">S03</text>
+<text class="nname" x="2162" y="1774.0">StartBattle</text>
+</g>
+<g id="node-S04" class="node action" data-node="S04" data-name="PostStartBattle 0x25" data-grade="A" data-step="18" data-rvas="0x72BF40"><title>S04｜PostStartBattle 0x25｜P18</title><rect x="2100" y="1834" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="1856">S04</text>
+<text class="nname" x="2162" y="1866.0">PostStartBattle 0x25</text>
+</g>
+<g id="node-T01" class="node action" data-node="T01" data-name="StartRound" data-grade="A" data-step="19" data-rvas="0x659D00"><title>T01｜StartRound｜P19</title><rect x="2100" y="1926" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="1948">T01</text>
+<text class="nname" x="2162" y="1958.0">StartRound</text>
+</g>
+<g id="node-T02" class="node action" data-node="T02" data-name="选择行动者并复位其时间" data-grade="A" data-step="20" data-rvas="0x659060, 0x7256F0, 0x725D10, 0x738A30"><title>T02｜选择行动者并复位其时间｜P20</title><rect x="2100" y="2018" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="2040">T02</text>
+<text class="nname" x="2162" y="2050.0">选择行动者并复位其时间</text>
+</g>
+<g id="node-T03" class="node action" data-node="T03" data-name="重算全体能力与时间" data-grade="A" data-step="21" data-rvas="0x725850"><title>T03｜重算全体能力与时间｜P21</title><rect x="2100" y="2110" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="2132">T03</text>
+<text class="nname" x="2162" y="2142.0">重算全体能力与时间</text>
+</g>
+<g id="node-T04" class="node action" data-node="T04" data-name="全体角色 AnyOneBeforeRound（含行动者）" data-grade="A" data-step="22" data-rvas="0x72AB70"><title>T04｜全体角色 AnyOneBeforeRound（含行动者）｜P22</title><rect x="2100" y="2202" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="2224">T04</text>
+<text class="nname" x="2162" y="2234.0">全体角色 AnyOneBeforeRound（含行动者）</text>
+</g>
+<g id="node-T05" class="node action" data-node="T05" data-name="当前角色 BeforeRound" data-grade="A" data-step="23" data-rvas="0x657BF0, 0x728C00"><title>T05｜当前角色 BeforeRound｜P23</title><rect x="2100" y="2294" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="2316">T05</text>
+<text class="nname" x="2162" y="2326.0">当前角色 BeforeRound</text>
+</g>
+<g id="node-T06" class="node action" data-node="T06" data-name="持续状态跳动" data-grade="A" data-step="24" data-rvas="0x7AEF70"><title>T06｜持续状态跳动｜P24</title><rect x="2100" y="2386" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="2408">T06</text>
+<text class="nname" x="2162" y="2418.0">持续状态跳动</text>
+</g>
+<g id="node-T07" class="node action" data-node="T07" data-name="回合前 DirectHitList 追加伤害队列结算" data-grade="A" data-step="25" data-rvas="0x656E50"><title>T07｜回合前 DirectHitList 追加伤害队列结算｜P25</title><rect x="2100" y="2478" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="2500">T07</text>
+<text class="nname" x="2162" y="2510.0">回合前 DirectHitList 追加伤害队列结算</text>
+</g>
+<g id="node-T08" class="node action" data-node="T08" data-name="死亡/复活/Boss 条件结算" data-grade="A" data-step="26" data-rvas="0x656FC0, 0x657410, 0x657EF0"><title>T08｜死亡/复活/Boss 条件结算｜P26</title><rect x="2100" y="2570" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="2592">T08</text>
+<text class="nname" x="2162" y="2602.0">死亡/复活/Boss 条件结算</text>
+</g>
+<g id="node-T09" class="node action" data-node="T09" data-name="援军创建初始化" data-grade="A" data-step="27" data-rvas="0x659900"><title>T09｜援军创建初始化｜P27</title><rect x="2100" y="2662" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="2684">T09</text>
+<text class="nname" x="2162" y="2694.0">援军创建初始化</text>
+</g>
+<g id="node-T10" class="node action" data-node="T10" data-name="玩家输入或 AI 选择动作" data-grade="B" data-step="28" data-rvas="0x630AE0, 0x631470, 0x656BD0"><title>T10｜玩家输入或 AI 选择动作｜P28</title><rect x="2100" y="2754" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="2776">T10</text>
+<text class="nname" x="2162" y="2786.0">玩家输入或 AI 选择动作</text>
+</g>
+<g id="node-A01" class="node action" data-node="A01" data-name="技能可用性、CD与魂力检查" data-grade="A" data-step="29" data-rvas="0x6555B0, 0x7784C0, 0x778640, 0x778770"><title>A01｜技能可用性、CD与魂力检查｜P29</title><rect x="2100" y="3020" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="3042">A01</text>
+<text class="nname" x="2162" y="3052.0">技能可用性、CD与魂力检查</text>
+</g>
+<g id="node-A00" class="node action" data-node="A00" data-name="提交动作并校验 SourceID" data-grade="B" data-step="30" data-rvas="0x658240, 0x658370"><title>A00｜提交动作并校验 SourceID｜P30</title><rect x="2100" y="3112" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="3134">A00</text>
+<text class="nname" x="2162" y="3144.0">提交动作并校验 SourceID</text>
+</g>
+<g id="node-A04" class="node action" data-node="A04" data-name="StartNewSkillEvent" data-grade="A" data-step="31" data-rvas="0x67C4C0"><title>A04｜StartNewSkillEvent｜P31</title><rect x="2100" y="3204" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="3226">A04</text>
+<text class="nname" x="2162" y="3236.0">StartNewSkillEvent</text>
+</g>
+<g id="node-A02" class="node action" data-node="A02" data-name="替换技能与魂燃函数装填" data-grade="A" data-step="32" data-rvas="0x72B330"><title>A02｜替换技能与魂燃函数装填｜P32</title><rect x="2100" y="3296" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="3318">A02</text>
+<text class="nname" x="2162" y="3328.0">替换技能与魂燃函数装填</text>
+</g>
+<g id="node-A03" class="node action" data-node="A03" data-name="目标寻址与过滤" data-grade="A" data-step="33" data-rvas="0x7226B0"><title>A03｜目标寻址与过滤｜P33</title><rect x="2100" y="3388" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="3410">A03</text>
+<text class="nname" x="2162" y="3420.0">目标寻址与过滤</text>
+</g>
+<g id="node-A05" class="node action" data-node="A05" data-name="写入技能自身冷却" data-grade="A" data-step="34" data-rvas="0x77A080, 0x77A0C0"><title>A05｜写入技能自身冷却｜P34</title><rect x="2100" y="3480" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="3502">A05</text>
+<text class="nname" x="2162" y="3512.0">写入技能自身冷却</text>
+</g>
+<g id="node-A06" class="node action" data-node="A06" data-name="魂力→自身BeforeSkill→全体AnyOneBeforeSkill→夹击" data-grade="A" data-step="35" data-rvas="0x728CA0, 0x72AE30, 0x72BF40"><title>A06｜魂力→自身BeforeSkill→全体AnyOneBeforeSkill→夹击｜P35</title><rect x="2100" y="3572" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="3594">A06</text>
+<text class="nname" x="2162" y="3591">魂力→自身BeforeSkill→全体AnyOneBeforeSki</text><text class="nname" x="2162" y="3610">ll→夹击</text>
+</g>
+<g id="node-A07" class="node action" data-node="A07" data-name="逐直接目标处理" data-grade="A" data-step="36" data-rvas="0x72B700, 0x72BBF0"><title>A07｜逐直接目标处理｜P36</title><rect x="2100" y="3664" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="3686">A07</text>
+<text class="nname" x="2162" y="3696.0">逐直接目标处理</text>
+</g>
+<g id="node-D00" class="node damage" data-node="D00" data-name="建立命中事件与前快照" data-grade="A" data-step="37" data-rvas="0x65B5F0, 0x71F600, 0x71FF90"><title>D00｜建立命中事件与前快照｜P37</title><rect x="2100" y="3860" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="3882">D00</text>
+<text class="nname" x="2162" y="3892.0">建立命中事件与前快照</text>
+</g>
+<g id="node-D01" class="node damage" data-node="D01" data-name="收集技能、角色与光环函数" data-grade="A" data-step="38" data-rvas="0x726F30, 0x727400"><title>D01｜收集技能、角色与光环函数｜P38</title><rect x="2100" y="3952" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="3974">D01</text>
+<text class="nname" x="2162" y="3984.0">收集技能、角色与光环函数</text>
+</g>
+<g id="node-D02" class="node damage" data-node="D02" data-name="命中/闪避/暴击" data-grade="A" data-step="39" data-rvas="0x71AB00"><title>D02｜命中/闪避/暴击｜P39</title><rect x="2100" y="4044" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="4066">D02</text>
+<text class="nname" x="2162" y="4076.0">命中/闪避/暴击</text>
+</g>
+<g id="node-D03A" class="node damage" data-node="D03A" data-name="常量攻击与条件攻击" data-grade="A" data-step="40" data-rvas="0x71D840, 0x7979D0"><title>D03A｜常量攻击与条件攻击｜P40</title><rect x="2100" y="4136" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="4158">D03A</text>
+<text class="nname" x="2162" y="4168.0">常量攻击与条件攻击</text>
+</g>
+<g id="node-D04" class="node damage" data-node="D04" data-name="防御与三层贯穿" data-grade="A" data-step="41" data-rvas="0x71C970, 0x71CD60, 0x71CF60, 0x71D160"><title>D04｜防御与三层贯穿｜P41</title><rect x="2100" y="4228" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="4250">D04</text>
+<text class="nname" x="2162" y="4260.0">防御与三层贯穿</text>
+</g>
+<g id="node-D03B" class="node damage" data-node="D03B" data-name="技能倍率 GetSkillAttRate" data-grade="A" data-step="42" data-rvas="0x71D360"><title>D03B｜技能倍率 GetSkillAttRate｜P42</title><rect x="2100" y="4320" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="4342">D03B</text>
+<text class="nname" x="2162" y="4352.0">技能倍率 GetSkillAttRate</text>
+</g>
+<g id="node-D05" class="node damage" data-node="D05" data-name="攻方伤害增幅" data-grade="A" data-step="43" data-rvas="0x71FA10"><title>D05｜攻方伤害增幅｜P43</title><rect x="2100" y="4412" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="4434">D05</text>
+<text class="nname" x="2162" y="4444.0">攻方伤害增幅</text>
+</g>
+<g id="node-D06" class="node damage" data-node="D06" data-name="目标及光环减伤" data-grade="A" data-step="44" data-rvas="0x71EDE0"><title>D06｜目标及光环减伤｜P44</title><rect x="2100" y="4504" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="4526">D06</text>
+<text class="nname" x="2162" y="4536.0">目标及光环减伤</text>
+</g>
+<g id="node-D07" class="node damage" data-node="D07" data-name="伤害上限与最终伤害" data-grade="A" data-step="45" data-rvas="0x71B9E0, 0x71CC20"><title>D07｜伤害上限与最终伤害｜P45</title><rect x="2100" y="4596" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="4618">D07</text>
+<text class="nname" x="2162" y="4628.0">伤害上限与最终伤害</text>
+</g>
+<g id="node-D08" class="node damage" data-node="D08" data-name="事件提交前函数" data-grade="A" data-step="46" data-rvas="0x728670, 0x72BDA0"><title>D08｜事件提交前函数｜P46</title><rect x="2100" y="4688" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="4710">D08</text>
+<text class="nname" x="2162" y="4720.0">事件提交前函数</text>
+</g>
+<g id="node-D09" class="node damage" data-node="D09" data-name="选择最高分摊并先提交分摊者" data-grade="A" data-step="" data-rvas="0x65B9B0, 0x728670, 0x79C520"><title>D09｜选择最高分摊并先提交分摊者</title><rect x="2920" y="4690" width="390" height="54" rx="4"/>
+<text class="nid" x="2930" y="4712">D09</text>
+<text class="nname" x="2982" y="4722.0">选择最高分摊并先提交分摊者</text>
+</g>
+<g id="node-D10" class="node damage" data-node="D10" data-name="护盾与生命应用" data-grade="A" data-step="47" data-rvas="0x7AE860"><title>D10｜护盾与生命应用｜P47</title><rect x="2100" y="4780" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="4802">D10</text>
+<text class="nname" x="2162" y="4812.0">护盾与生命应用</text>
+</g>
+<g id="node-D11" class="node damage" data-node="D11" data-name="实际生命损失与创伤提交" data-grade="A" data-step="48" data-rvas="0x65EFC0, 0x7267A0, 0x729650, 0x794030"><title>D11｜实际生命损失与创伤提交｜P48</title><rect x="2100" y="4872" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="4894">D11</text>
+<text class="nname" x="2162" y="4904.0">实际生命损失与创伤提交</text>
+</g>
+<g id="node-D12A" class="node damage" data-node="D12A" data-name="受击 SP/时间/阵营资源事件内变更" data-grade="A" data-step="49" data-rvas="0x729650"><title>D12A｜受击 SP/时间/阵营资源事件内变更｜P49</title><rect x="2100" y="4964" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="4986">D12A</text>
+<text class="nname" x="2162" y="4996.0">受击 SP/时间/阵营资源事件内变更</text>
+</g>
+<g id="node-D13" class="node damage" data-node="D13" data-name="目标与来源事件后函数" data-grade="A" data-step="50" data-rvas="0x727D80, 0x72BCB0"><title>D13｜目标与来源事件后函数｜P50</title><rect x="2100" y="5056" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="5078">D13</text>
+<text class="nname" x="2162" y="5088.0">目标与来源事件后函数</text>
+</g>
+<g id="node-D14" class="node damage" data-node="D14" data-name="吸血检查与吸血事件" data-grade="A" data-step="51" data-rvas="0x71F410"><title>D14｜吸血检查与吸血事件｜P51</title><rect x="2100" y="5148" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="5170">D14</text>
+<text class="nname" x="2162" y="5180.0">吸血检查与吸血事件</text>
+</g>
+<g id="node-B00" class="node damage" data-node="B00" data-name="抵抗、能力免疫、容器准入" data-grade="A" data-step="" data-rvas="0x71DF10, 0x798380, 0x7ACEE0, 0x7AD0B0, 0x7ADE40"><title>B00｜抵抗、能力免疫、容器准入</title><rect x="2920" y="3660" width="390" height="54" rx="4"/>
+<text class="nid" x="2930" y="3682">B00</text>
+<text class="nname" x="2982" y="3692.0">抵抗、能力免疫、容器准入</text>
+</g>
+<g id="node-B01" class="node damage" data-node="B01" data-name="创建并提交状态事件" data-grade="A" data-step="" data-rvas="0x65B3B0, 0x729650, 0x7AE860, 0x7AF5D0"><title>B01｜创建并提交状态事件</title><rect x="2920" y="3760" width="390" height="54" rx="4"/>
+<text class="nid" x="2930" y="3782">B01</text>
+<text class="nname" x="2982" y="3792.0">创建并提交状态事件</text>
+</g>
+<g id="node-L00" class="node life" data-node="L00" data-name="PreOtherDead→PreSelfDead→血量复检" data-grade="A" data-step="" data-rvas="0x729650, 0x79E2A0"><title>L00｜PreOtherDead→PreSelfDead→血量复检</title><rect x="1120" y="4920" width="390" height="54" rx="4"/>
+<text class="nid" x="1130" y="4942">L00</text>
+<text class="nname" x="1182" y="4952.0">PreOtherDead→PreSelfDead→血量复检</text>
+</g>
+<g id="node-L01" class="node life" data-node="L01" data-name="SelfDead / OtherDead" data-grade="A" data-step="" data-rvas="0x727AD0, 0x727B40, 0x729650"><title>L01｜SelfDead / OtherDead</title><rect x="1120" y="5020" width="390" height="54" rx="4"/>
+<text class="nid" x="1130" y="5042">L01</text>
+<text class="nname" x="1182" y="5052.0">SelfDead / OtherDead</text>
+</g>
+<g id="node-L02" class="node life" data-node="L02" data-name="清除存活者身上的死者来源嘲讽" data-grade="A" data-step="" data-rvas="0x7294A0, 0x729650"><title>L02｜清除存活者身上的死者来源嘲讽</title><rect x="1120" y="5120" width="390" height="54" rx="4"/>
+<text class="nid" x="1130" y="5142">L02</text>
+<text class="nname" x="1182" y="5152.0">清除存活者身上的死者来源嘲讽</text>
+</g>
+<g id="node-L03" class="node life" data-node="L03" data-name="清理死者状态并同步（时间/CD保留）" data-grade="A" data-step="" data-rvas="0x657410, 0x727B80, 0x7AF2F0"><title>L03｜清理死者状态并同步（时间/CD保留）</title><rect x="1120" y="5220" width="390" height="54" rx="4"/>
+<text class="nid" x="1130" y="5242">L03</text>
+<text class="nname" x="1182" y="5252.0">清理死者状态并同步（时间/CD保留）</text>
+</g>
+<g id="node-L04" class="node life" data-node="L04" data-name="OtherDeadAfter" data-grade="A" data-step="" data-rvas="0x727A80"><title>L04｜OtherDeadAfter</title><rect x="1120" y="5320" width="390" height="54" rx="4"/>
+<text class="nid" x="1130" y="5342">L04</text>
+<text class="nname" x="1182" y="5352.0">OtherDeadAfter</text>
+</g>
+<g id="node-L05" class="node life" data-node="L05" data-name="复活事件与 AfterRevive" data-grade="A" data-step="" data-rvas="0x657EF0, 0x727A10"><title>L05｜复活事件与 AfterRevive</title><rect x="1120" y="5420" width="390" height="54" rx="4"/>
+<text class="nid" x="1130" y="5442">L05</text>
+<text class="nname" x="1182" y="5452.0">复活事件与 AfterRevive</text>
+</g>
+<g id="node-Q00" class="node life" data-node="Q00" data-name="当前角色 ProcessAfterSkill" data-grade="A" data-step="52" data-rvas="0x728410"><title>Q00｜当前角色 ProcessAfterSkill｜P52</title><rect x="2100" y="5460" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="5482">Q00</text>
+<text class="nname" x="2162" y="5492.0">当前角色 ProcessAfterSkill</text>
+</g>
+<g id="node-D12B" class="node damage" data-node="D12B" data-name="技能后阵营魂 OnAfterSkill" data-grade="A" data-step="53" data-rvas="0x655820"><title>D12B｜技能后阵营魂 OnAfterSkill｜P53</title><rect x="2100" y="5552" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="5574">D12B</text>
+<text class="nname" x="2162" y="5584.0">技能后阵营魂 OnAfterSkill</text>
+</g>
+<g id="node-Q02" class="node life" data-node="Q02" data-name="目标及全场 AfterSkill" data-grade="A" data-step="54" data-rvas="0x727EF0, 0x72BF00"><title>Q02｜目标及全场 AfterSkill｜P54</title><rect x="2100" y="5644" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="5666">Q02</text>
+<text class="nname" x="2162" y="5676.0">目标及全场 AfterSkill</text>
+</g>
+<g id="node-Q01" class="node life" data-node="Q01" data-name="反击、夹击与追加技能队列" data-grade="A" data-step="" data-rvas="0x67C280, 0x728FD0, 0x72AE30, 0x794960"><title>Q01｜反击、夹击与追加技能队列</title><rect x="2920" y="5644" width="390" height="54" rx="4"/>
+<text class="nid" x="2930" y="5666">Q01</text>
+<text class="nname" x="2982" y="5676.0">反击、夹击与追加技能队列</text>
+</g>
+<g id="node-Q04" class="node life" data-node="Q04" data-name="优先追加技能（Continue）→夹击→反击→死亡→普通追加技能（Addition）" data-grade="A" data-step="55" data-rvas="0x658240, 0x658370"><title>Q04｜优先追加技能（Continue）→夹击→反击→死亡→普通追加技能（Addition）｜P55</title><rect x="2100" y="5736" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="5758">Q04</text>
+<text class="nname" x="2162" y="5755">优先追加技能（Continue）→夹击→反击→死亡→普通追加技能（A</text><text class="nname" x="2162" y="5774">ddition）</text>
+</g>
+<g id="node-E00" class="node life" data-node="E00" data-name="当前角色冷却递减与 AfterRound" data-grade="A" data-step="56" data-rvas="0x727E10, 0x779EE0"><title>E00｜当前角色冷却递减与 AfterRound｜P56</title><rect x="2100" y="5828" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="5850">E00</text>
+<text class="nname" x="2162" y="5860.0">当前角色冷却递减与 AfterRound</text>
+</g>
+<g id="node-E01" class="node life" data-node="E01" data-name="全场回合后监听" data-grade="A" data-step="57" data-rvas="0x7292F0, 0x72ABB0"><title>E01｜全场回合后监听｜P57</title><rect x="2100" y="5920" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="5942">E01</text>
+<text class="nname" x="2162" y="5952.0">全场回合后监听</text>
+</g>
+<g id="node-E02" class="node life" data-node="E02" data-name="追加伤害、死亡与复活结算" data-grade="A" data-step="58" data-rvas="0x656E50, 0x657410, 0x657EF0"><title>E02｜追加伤害、死亡与复活结算｜P58</title><rect x="2100" y="6012" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="6034">E02</text>
+<text class="nname" x="2162" y="6044.0">追加伤害、死亡与复活结算</text>
+</g>
+<g id="node-E03" class="node life" data-node="E03" data-name="当前角色状态到期" data-grade="A" data-step="59" data-rvas="0x72BED0, 0x7AD7B0, 0x7AE220"><title>E03｜当前角色状态到期｜P59</title><rect x="2100" y="6104" width="390" height="54" rx="4"/>
+<text class="nid" x="2110" y="6126">E03</text>
+<text class="nname" x="2162" y="6136.0">当前角色状态到期</text>
+</g>
+<g id="node-Q03" class="node life" data-node="Q03" data-name="ProcessAdditionDamage / ProcessDirectHit" data-grade="A" data-step="" data-rvas="0x656E50, 0x71E9D0"><title>Q03｜ProcessAdditionDamage / ProcessDirectHit</title><rect x="2920" y="6230" width="390" height="54" rx="4"/>
+<text class="nid" x="2930" y="6252">Q03</text>
+<text class="nname" x="2982" y="6249">ProcessAdditionDamage / ProcessDir</text><text class="nname" x="2982" y="6268">ectHit</text>
+</g>
+<g id="node-G00" class="node life" data-node="G00" data-name="战局结束条件成立" data-grade="A" data-step="" data-rvas="0x6567A0, 0x65A4C0"><title>G00｜战局结束条件成立</title><rect x="570" y="1374" width="390" height="54" rx="4"/>
+<text class="nid" x="580" y="1396">G00</text>
+<text class="nname" x="632" y="1406.0">战局结束条件成立</text>
+</g>
+<g id="node-G02" class="node life" data-node="G02" data-name="ProcessGameOver / 网络结果边界" data-grade="B" data-step="" data-rvas="0x55DE20, 0x68B1C0, 0x68B280, 0x6993D0"><title>G02｜ProcessGameOver / 网络结果边界</title><rect x="570" y="1510" width="390" height="54" rx="4"/>
+<text class="nid" x="580" y="1532">G02</text>
+<text class="nname" x="632" y="1542.0">ProcessGameOver / 网络结果边界</text>
+</g>
+<g id="node-G01" class="node life" data-node="G01" data-name="GetBattleResultData" data-grade="A" data-step="" data-rvas="0x656390"><title>G01｜GetBattleResultData</title><rect x="260" y="1660" width="390" height="54" rx="4"/>
+<text class="nid" x="270" y="1682">G01</text>
+<text class="nname" x="322" y="1692.0">GetBattleResultData</text>
+</g>
+<g id="node-G03" class="node life" data-node="G03" data-name="奖励与账号进度" data-grade="B" data-step="" data-rvas="0x556EB0"><title>G03｜奖励与账号进度</title><rect x="880" y="1660" width="390" height="54" rx="4"/>
+<text class="nid" x="890" y="1682">G03</text>
+<text class="nname" x="942" y="1692.0">奖励与账号进度</text>
+</g>
+<g id="node-R00" class="node boundary" data-node="R00" data-name="展示事件归并" data-grade="B" data-step="" data-rvas="0x653E80, 0x65F270"><title>R00｜展示事件归并</title><rect x="260" y="1880" width="390" height="54" rx="4"/>
+<text class="nid" x="270" y="1902">R00</text>
+<text class="nname" x="322" y="1912.0">展示事件归并</text>
+</g>
+<g id="node-R01" class="node boundary" data-node="R01" data-name="客户端逐事件应用" data-grade="B" data-step="" data-rvas="0x655940, 0x655E10, 0x72C060"><title>R01｜客户端逐事件应用</title><rect x="260" y="1980" width="390" height="54" rx="4"/>
+<text class="nid" x="270" y="2002">R01</text>
+<text class="nname" x="322" y="2012.0">客户端逐事件应用</text>
+</g>
+<g id="node-R02" class="node boundary" data-node="R02" data-name="全量同步快照创建" data-grade="B" data-step="" data-rvas="0x655FE0, 0x727B80"><title>R02｜全量同步快照创建</title><rect x="260" y="2080" width="390" height="54" rx="4"/>
+<text class="nid" x="270" y="2102">R02</text>
+<text class="nname" x="322" y="2112.0">全量同步快照创建</text>
+</g>
+<g id="node-X00" class="node dispatch" data-node="X00" data-name="收集当前触发器匹配的 SkillFunctionInfo" data-grade="A" data-step="" data-rvas="0x79E2A0"><title>X00｜收集当前触发器匹配的 SkillFunctionInfo</title><rect x="4340" y="3090" width="390" height="54" rx="4"/>
+<text class="nid" x="4350" y="3112">X00</text>
+<text class="nname" x="4402" y="3122.0">收集当前触发器匹配的 SkillFunctionInfo</text>
+</g>
+<g id="node-X01" class="node dispatch" data-node="X01" data-name="筛选触发器、状态、技能与组合函数" data-grade="A" data-step="" data-rvas="0x7A8370, 0x7A83D0"><title>X01｜筛选触发器、状态、技能与组合函数</title><rect x="4340" y="3185" width="390" height="54" rx="4"/>
+<text class="nid" x="4350" y="3207">X01</text>
+<text class="nname" x="4402" y="3217.0">筛选触发器、状态、技能与组合函数</text>
+</g>
+<g id="node-X02" class="node dispatch" data-node="X02" data-name="逐函数执行入口与目标选择" data-grade="A" data-step="" data-rvas="0x7994C0"><title>X02｜逐函数执行入口与目标选择</title><rect x="4340" y="3280" width="390" height="54" rx="4"/>
+<text class="nid" x="4350" y="3302">X02</text>
+<text class="nname" x="4402" y="3312.0">逐函数执行入口与目标选择</text>
+</g>
+<g id="node-X03" class="node dispatch" data-node="X03" data-name="逐目标条件、概率与作用域门" data-grade="A" data-step="" data-rvas="0x7A8B80"><title>X03｜逐目标条件、概率与作用域门</title><rect x="4340" y="3375" width="390" height="54" rx="4"/>
+<text class="nid" x="4350" y="3397">X03</text>
+<text class="nname" x="4402" y="3407.0">逐目标条件、概率与作用域门</text>
+</g>
+<g id="node-X04" class="node dispatch" data-node="X04" data-name="EFunction 数字分派" data-grade="A" data-step="" data-rvas="0x798A10"><title>X04｜EFunction 数字分派</title><rect x="4340" y="3470" width="390" height="54" rx="4"/>
+<text class="nid" x="4350" y="3492">X04</text>
+<text class="nname" x="4402" y="3502.0">EFunction 数字分派</text>
+</g>
+<g id="node-F00" class="node operator" data-node="F00" data-name="No" data-grade="A" data-step="" data-rvas="无独立 RVA"><title>F00｜No</title><rect x="2930" y="3890" width="250" height="42" rx="4"/>
+<text class="nid" x="2940" y="3908">F00</text>
+<text class="nname" x="2976" y="3916.0">No</text>
+</g>
+<g id="node-F01" class="node operator" data-node="F01" data-name="AddStatus" data-grade="A" data-step="" data-rvas="0x7953B0, 0x7958B0"><title>F01｜AddStatus</title><rect x="3270" y="3890" width="250" height="42" rx="4"/>
+<text class="nid" x="3280" y="3908">F01</text>
+<text class="nname" x="3316" y="3916.0">AddStatus</text>
+</g>
+<g id="node-F02" class="node operator" data-node="F02" data-name="AddTime" data-grade="A" data-step="" data-rvas="0x7958D0"><title>F02｜AddTime</title><rect x="3610" y="3890" width="250" height="42" rx="4"/>
+<text class="nid" x="3620" y="3908">F02</text>
+<text class="nname" x="3656" y="3916.0">AddTime</text>
+</g>
+<g id="node-F03" class="node operator" data-node="F03" data-name="AddHP" data-grade="A" data-step="" data-rvas="0x793740"><title>F03｜AddHP</title><rect x="3950" y="3890" width="250" height="42" rx="4"/>
+<text class="nid" x="3960" y="3908">F03</text>
+<text class="nname" x="3996" y="3916.0">AddHP</text>
+</g>
+<g id="node-F04" class="node operator" data-node="F04" data-name="RemoveDeBuf" data-grade="A" data-step="" data-rvas="0x79AD60"><title>F04｜RemoveDeBuf</title><rect x="4290" y="3890" width="250" height="42" rx="4"/>
+<text class="nid" x="4300" y="3908">F04</text>
+<text class="nname" x="4336" y="3916.0">RemoveDeBuf</text>
+</g>
+<g id="node-F05" class="node operator" data-node="F05" data-name="RemoveBuf" data-grade="A" data-step="" data-rvas="0x79AD60"><title>F05｜RemoveBuf</title><rect x="4630" y="3890" width="250" height="42" rx="4"/>
+<text class="nid" x="4640" y="3908">F05</text>
+<text class="nname" x="4676" y="3916.0">RemoveBuf</text>
+</g>
+<g id="node-F06" class="node operator" data-node="F06" data-name="AddValue" data-grade="A" data-step="" data-rvas="0x793BF0"><title>F06｜AddValue</title><rect x="2930" y="4035" width="250" height="42" rx="4"/>
+<text class="nid" x="2940" y="4053">F06</text>
+<text class="nname" x="2976" y="4061.0">AddValue</text>
+</g>
+<g id="node-F07" class="node operator" data-node="F07" data-name="AdditionSkill" data-grade="A" data-step="" data-rvas="0x794960"><title>F07｜AdditionSkill</title><rect x="3270" y="4035" width="250" height="42" rx="4"/>
+<text class="nid" x="3280" y="4053">F07</text>
+<text class="nname" x="3316" y="4061.0">AdditionSkill</text>
+</g>
+<g id="node-F08" class="node operator" data-node="F08" data-name="Revive" data-grade="A" data-step="" data-rvas="0x79B1F0"><title>F08｜Revive</title><rect x="3610" y="4035" width="250" height="42" rx="4"/>
+<text class="nid" x="3620" y="4053">F08</text>
+<text class="nname" x="3656" y="4061.0">Revive</text>
+</g>
+<g id="node-F09" class="node operator" data-node="F09" data-name="CounterSkill" data-grade="A" data-step="" data-rvas="0x794960"><title>F09｜CounterSkill</title><rect x="3950" y="4035" width="250" height="42" rx="4"/>
+<text class="nid" x="3960" y="4053">F09</text>
+<text class="nname" x="3996" y="4061.0">CounterSkill</text>
+</g>
+<g id="node-F10" class="node operator" data-node="F10" data-name="ReplaceSkill" data-grade="A" data-step="" data-rvas="0x72B330"><title>F10｜ReplaceSkill</title><rect x="4290" y="4035" width="250" height="42" rx="4"/>
+<text class="nid" x="4300" y="4053">F10</text>
+<text class="nname" x="4336" y="4061.0">ReplaceSkill</text>
+</g>
+<g id="node-F11" class="node operator" data-node="F11" data-name="ReSetSkillCoolDown" data-grade="A" data-step="" data-rvas="0x79A8D0"><title>F11｜ReSetSkillCoolDown</title><rect x="4630" y="4035" width="250" height="42" rx="4"/>
+<text class="nid" x="4640" y="4053">F11</text>
+<text class="nname" x="4676" y="4061.0">ReSetSkillCoolDown</text>
+</g>
+<g id="node-F12" class="node operator" data-node="F12" data-name="ImmortalAddHP" data-grade="A" data-step="" data-rvas="0x7980C0"><title>F12｜ImmortalAddHP</title><rect x="2930" y="4180" width="250" height="42" rx="4"/>
+<text class="nid" x="2940" y="4198">F12</text>
+<text class="nname" x="2976" y="4206.0">ImmortalAddHP</text>
+</g>
+<g id="node-F13" class="node operator" data-node="F13" data-name="AddSP" data-grade="A" data-step="" data-rvas="0x7945C0"><title>F13｜AddSP</title><rect x="3270" y="4180" width="250" height="42" rx="4"/>
+<text class="nid" x="3280" y="4198">F13</text>
+<text class="nname" x="3316" y="4206.0">AddSP</text>
+</g>
+<g id="node-F14" class="node operator" data-node="F14" data-name="BuffAttack" data-grade="A" data-step="" data-rvas="0x796540"><title>F14｜BuffAttack</title><rect x="3610" y="4180" width="250" height="42" rx="4"/>
+<text class="nid" x="3620" y="4198">F14</text>
+<text class="nname" x="3656" y="4206.0">BuffAttack</text>
+</g>
+<g id="node-F15" class="node operator" data-node="F15" data-name="AddAllBuffRound" data-grade="A" data-step="" data-rvas="0x792D50"><title>F15｜AddAllBuffRound</title><rect x="3950" y="4180" width="250" height="42" rx="4"/>
+<text class="nid" x="3960" y="4198">F15</text>
+<text class="nname" x="3996" y="4206.0">AddAllBuffRound</text>
+</g>
+<g id="node-F16" class="node operator" data-node="F16" data-name="AddAllDeBuffRound" data-grade="A" data-step="" data-rvas="0x792D50"><title>F16｜AddAllDeBuffRound</title><rect x="4290" y="4180" width="250" height="42" rx="4"/>
+<text class="nid" x="4300" y="4198">F16</text>
+<text class="nname" x="4336" y="4206.0">AddAllDeBuffRound</text>
+</g>
+<g id="node-F17" class="node operator" data-node="F17" data-name="SetDieOut" data-grade="A" data-step="" data-rvas="0x79B4F0"><title>F17｜SetDieOut</title><rect x="4630" y="4180" width="250" height="42" rx="4"/>
+<text class="nid" x="4640" y="4198">F17</text>
+<text class="nname" x="4676" y="4206.0">SetDieOut</text>
+</g>
+<g id="node-F18" class="node operator" data-node="F18" data-name="AddSkillCoolDown" data-grade="A" data-step="" data-rvas="0x7946A0"><title>F18｜AddSkillCoolDown</title><rect x="2930" y="4325" width="250" height="42" rx="4"/>
+<text class="nid" x="2940" y="4343">F18</text>
+<text class="nname" x="2976" y="4351.0">AddSkillCoolDown</text>
+</g>
+<g id="node-F19" class="node operator" data-node="F19" data-name="ClearAllSkillCoolDown" data-grade="A" data-step="" data-rvas="0x7968E0"><title>F19｜ClearAllSkillCoolDown</title><rect x="3270" y="4325" width="250" height="42" rx="4"/>
+<text class="nid" x="3280" y="4343">F19</text>
+<text class="nname" x="3316" y="4351.0">ClearAllSkillCoolDown</text>
+</g>
+<g id="node-F20" class="node operator" data-node="F20" data-name="SetTime" data-grade="A" data-step="" data-rvas="0x79BD30"><title>F20｜SetTime</title><rect x="3610" y="4325" width="250" height="42" rx="4"/>
+<text class="nid" x="3620" y="4343">F20</text>
+<text class="nname" x="3656" y="4351.0">SetTime</text>
+</g>
+<g id="node-F21" class="node operator" data-node="F21" data-name="AddAllSkillCoolDown" data-grade="A" data-step="" data-rvas="0x793360"><title>F21｜AddAllSkillCoolDown</title><rect x="3950" y="4325" width="250" height="42" rx="4"/>
+<text class="nid" x="3960" y="4343">F21</text>
+<text class="nname" x="3996" y="4351.0">AddAllSkillCoolDown</text>
+</g>
+<g id="node-F22" class="node operator" data-node="F22" data-name="RandomAddStatus" data-grade="A" data-step="" data-rvas="0x794270"><title>F22｜RandomAddStatus</title><rect x="4290" y="4325" width="250" height="42" rx="4"/>
+<text class="nid" x="4300" y="4343">F22</text>
+<text class="nname" x="4336" y="4351.0">RandomAddStatus</text>
+</g>
+<g id="node-F23" class="node operator" data-node="F23" data-name="SetStatusValue" data-grade="A" data-step="" data-rvas="0x79BBD0"><title>F23｜SetStatusValue</title><rect x="4630" y="4325" width="250" height="42" rx="4"/>
+<text class="nid" x="4640" y="4343">F23</text>
+<text class="nname" x="4676" y="4351.0">SetStatusValue</text>
+</g>
+<g id="node-F24" class="node operator" data-node="F24" data-name="AddEventHPDiff" data-grade="A" data-step="" data-rvas="0x7935C0"><title>F24｜AddEventHPDiff</title><rect x="2930" y="4470" width="250" height="42" rx="4"/>
+<text class="nid" x="2940" y="4488">F24</text>
+<text class="nname" x="2976" y="4496.0">AddEventHPDiff</text>
+</g>
+<g id="node-F25" class="node operator" data-node="F25" data-name="SplitDamage" data-grade="A" data-step="" data-rvas="0x79C520"><title>F25｜SplitDamage</title><rect x="3270" y="4470" width="250" height="42" rx="4"/>
+<text class="nid" x="3280" y="4488">F25</text>
+<text class="nname" x="3316" y="4496.0">SplitDamage</text>
+</g>
+<g id="node-F26" class="node operator" data-node="F26" data-name="AddSoul" data-grade="A" data-step="" data-rvas="0x795110"><title>F26｜AddSoul</title><rect x="3610" y="4470" width="250" height="42" rx="4"/>
+<text class="nid" x="3620" y="4488">F26</text>
+<text class="nname" x="3656" y="4496.0">AddSoul</text>
+</g>
+<g id="node-F27" class="node operator" data-node="F27" data-name="RandomOneAddSkillCooDown" data-grade="A" data-step="" data-rvas="0x79A4C0"><title>F27｜RandomOneAddSkillCooDown</title><rect x="3950" y="4470" width="250" height="42" rx="4"/>
+<text class="nid" x="3960" y="4488">F27</text>
+<text class="nname" x="3996" y="4496.0">RandomOneAddSkillCooDown</text>
+</g>
+<g id="node-F28" class="node operator" data-node="F28" data-name="AddPinchSkill" data-grade="A" data-step="" data-rvas="0x794960"><title>F28｜AddPinchSkill</title><rect x="4290" y="4470" width="250" height="42" rx="4"/>
+<text class="nid" x="4300" y="4488">F28</text>
+<text class="nname" x="4336" y="4496.0">AddPinchSkill</text>
+</g>
+<g id="node-F29" class="node operator" data-node="F29" data-name="RemoveBufsByID" data-grade="A" data-step="" data-rvas="0x799F50"><title>F29｜RemoveBufsByID</title><rect x="4630" y="4470" width="250" height="42" rx="4"/>
+<text class="nid" x="4640" y="4488">F29</text>
+<text class="nname" x="4676" y="4496.0">RemoveBufsByID</text>
+</g>
+<g id="node-F30" class="node operator" data-node="F30" data-name="BlastBuff" data-grade="A" data-step="" data-rvas="0x795FC0"><title>F30｜BlastBuff</title><rect x="2930" y="4615" width="250" height="42" rx="4"/>
+<text class="nid" x="2940" y="4633">F30</text>
+<text class="nname" x="2976" y="4641.0">BlastBuff</text>
+</g>
+<g id="node-F31" class="node operator" data-node="F31" data-name="SetHPRate" data-grade="A" data-step="" data-rvas="0x79B770"><title>F31｜SetHPRate</title><rect x="3270" y="4615" width="250" height="42" rx="4"/>
+<text class="nid" x="3280" y="4633">F31</text>
+<text class="nname" x="3316" y="4641.0">SetHPRate</text>
+</g>
+<g id="node-F32" class="node operator" data-node="F32" data-name="AddInjuryRate" data-grade="A" data-step="" data-rvas="0x794030"><title>F32｜AddInjuryRate</title><rect x="3610" y="4615" width="250" height="42" rx="4"/>
+<text class="nid" x="3620" y="4633">F32</text>
+<text class="nname" x="3656" y="4641.0">AddInjuryRate</text>
+</g>
+<g id="node-F33" class="node operator" data-node="F33" data-name="TransferDeBuff" data-grade="A" data-step="" data-rvas="0x79D2D0"><title>F33｜TransferDeBuff</title><rect x="3950" y="4615" width="250" height="42" rx="4"/>
+<text class="nid" x="3960" y="4633">F33</text>
+<text class="nname" x="3996" y="4641.0">TransferDeBuff</text>
+</g>
+<g id="node-F34" class="node operator" data-node="F34" data-name="MarkRoles" data-grade="A" data-step="" data-rvas="0x798810"><title>F34｜MarkRoles</title><rect x="4290" y="4615" width="250" height="42" rx="4"/>
+<text class="nid" x="4300" y="4633">F34</text>
+<text class="nname" x="4336" y="4641.0">MarkRoles</text>
+</g>
+<g id="node-F35" class="node operator" data-node="F35" data-name="ClearMarkRoles" data-grade="A" data-step="" data-rvas="0x796B60"><title>F35｜ClearMarkRoles</title><rect x="4630" y="4615" width="250" height="42" rx="4"/>
+<text class="nid" x="4640" y="4633">F35</text>
+<text class="nname" x="4676" y="4641.0">ClearMarkRoles</text>
+</g>
+<g id="node-F36" class="node operator" data-node="F36" data-name="SetEventHPDiff" data-grade="A" data-step="" data-rvas="0x79B630"><title>F36｜SetEventHPDiff</title><rect x="2930" y="4760" width="250" height="42" rx="4"/>
+<text class="nid" x="2940" y="4778">F36</text>
+<text class="nname" x="2976" y="4786.0">SetEventHPDiff</text>
+</g>
+<g id="node-F37" class="node operator" data-node="F37" data-name="DirectHit" data-grade="A" data-step="" data-rvas="0x797370"><title>F37｜DirectHit</title><rect x="3270" y="4760" width="250" height="42" rx="4"/>
+<text class="nid" x="3280" y="4778">F37</text>
+<text class="nname" x="3316" y="4786.0">DirectHit</text>
+</g>
+<g id="node-F38" class="node operator" data-node="F38" data-name="SpawnMonster" data-grade="A" data-step="" data-rvas="0x79BFB0"><title>F38｜SpawnMonster</title><rect x="3610" y="4760" width="250" height="42" rx="4"/>
+<text class="nid" x="3620" y="4778">F38</text>
+<text class="nname" x="3656" y="4786.0">SpawnMonster</text>
+</g>
+<g id="node-F39" class="node operator" data-node="F39" data-name="ReduceHPConstAttack" data-grade="A" data-step="" data-rvas="0x71D840"><title>F39｜ReduceHPConstAttack</title><rect x="3950" y="4760" width="250" height="42" rx="4"/>
+<text class="nid" x="3960" y="4778">F39</text>
+<text class="nname" x="3996" y="4786.0">ReduceHPConstAttack</text>
+</g>
+<g id="node-F40" class="node operator" data-node="F40" data-name="DirectHPValueHit" data-grade="A" data-step="" data-rvas="0x797370"><title>F40｜DirectHPValueHit</title><rect x="4290" y="4760" width="250" height="42" rx="4"/>
+<text class="nid" x="4300" y="4778">F40</text>
+<text class="nname" x="4336" y="4786.0">DirectHPValueHit</text>
+</g>
+<g id="node-F41" class="node operator" data-node="F41" data-name="AddRound" data-grade="A" data-step="" data-rvas="0x794520"><title>F41｜AddRound</title><rect x="4630" y="4760" width="250" height="42" rx="4"/>
+<text class="nid" x="4640" y="4778">F41</text>
+<text class="nname" x="4676" y="4786.0">AddRound</text>
+</g>
+<g id="node-F42" class="node operator" data-node="F42" data-name="ShowTip" data-grade="A" data-step="" data-rvas="0x79BF00"><title>F42｜ShowTip</title><rect x="2930" y="4905" width="250" height="42" rx="4"/>
+<text class="nid" x="2940" y="4923">F42</text>
+<text class="nname" x="2976" y="4931.0">ShowTip</text>
+</g>
+<g id="node-F43" class="node operator" data-node="F43" data-name="ReviveMonster" data-grade="A" data-step="" data-rvas="0x79B020"><title>F43｜ReviveMonster</title><rect x="3270" y="4905" width="250" height="42" rx="4"/>
+<text class="nid" x="3280" y="4923">F43</text>
+<text class="nname" x="3316" y="4931.0">ReviveMonster</text>
+</g>
+<g id="node-F44" class="node operator" data-node="F44" data-name="DirectRevive" data-grade="A" data-step="" data-rvas="0x79B1F0"><title>F44｜DirectRevive</title><rect x="3610" y="4905" width="250" height="42" rx="4"/>
+<text class="nid" x="3620" y="4923">F44</text>
+<text class="nname" x="3656" y="4931.0">DirectRevive</text>
+</g>
+<g id="node-F45" class="node operator" data-node="F45" data-name="ReSetAllSkillCoolDown" data-grade="A" data-step="" data-rvas="0x79A700"><title>F45｜ReSetAllSkillCoolDown</title><rect x="3950" y="4905" width="250" height="42" rx="4"/>
+<text class="nid" x="3960" y="4923">F45</text>
+<text class="nname" x="3996" y="4931.0">ReSetAllSkillCoolDown</text>
+</g>
+<g id="node-F46" class="node operator" data-node="F46" data-name="LifeSteal" data-grade="A" data-step="" data-rvas="0x71F410"><title>F46｜LifeSteal</title><rect x="4290" y="4905" width="250" height="42" rx="4"/>
+<text class="nid" x="4300" y="4923">F46</text>
+<text class="nname" x="4336" y="4931.0">LifeSteal</text>
+</g>
+<g id="node-F47" class="node operator" data-node="F47" data-name="StatusValueDamage" data-grade="A" data-step="" data-rvas="0x79C8A0"><title>F47｜StatusValueDamage</title><rect x="4630" y="4905" width="250" height="42" rx="4"/>
+<text class="nid" x="4640" y="4923">F47</text>
+<text class="nname" x="4676" y="4931.0">StatusValueDamage</text>
+</g>
+<g id="node-F48" class="node operator" data-node="F48" data-name="ClearSkillCoolDown" data-grade="A" data-step="" data-rvas="0x796BC0"><title>F48｜ClearSkillCoolDown</title><rect x="2930" y="5050" width="250" height="42" rx="4"/>
+<text class="nid" x="2940" y="5068">F48</text>
+<text class="nname" x="2976" y="5076.0">ClearSkillCoolDown</text>
+</g>
+<g id="node-F49" class="node operator" data-node="F49" data-name="ContinueSkill" data-grade="A" data-step="" data-rvas="0x794960"><title>F49｜ContinueSkill</title><rect x="3270" y="5050" width="250" height="42" rx="4"/>
+<text class="nid" x="3280" y="5068">F49</text>
+<text class="nname" x="3316" y="5076.0">ContinueSkill</text>
+</g>
+<g id="node-F50" class="node operator" data-node="F50" data-name="TransferBuff" data-grade="A" data-step="" data-rvas="0x79CFB0"><title>F50｜TransferBuff</title><rect x="3610" y="5050" width="250" height="42" rx="4"/>
+<text class="nid" x="3620" y="5068">F50</text>
+<text class="nname" x="3656" y="5076.0">TransferBuff</text>
+</g>
+<g id="node-F51" class="node operator" data-node="F51" data-name="SetNowHPRate" data-grade="A" data-step="" data-rvas="0x79BBB0"><title>F51｜SetNowHPRate</title><rect x="3950" y="5050" width="250" height="42" rx="4"/>
+<text class="nid" x="3960" y="5068">F51</text>
+<text class="nname" x="3996" y="5076.0">SetNowHPRate</text>
+</g>
+<g id="node-F52" class="node operator" data-node="F52" data-name="AddStatusList" data-grade="A" data-step="" data-rvas="0x7951F0"><title>F52｜AddStatusList</title><rect x="4290" y="5050" width="250" height="42" rx="4"/>
+<text class="nid" x="4300" y="5068">F52</text>
+<text class="nname" x="4336" y="5076.0">AddStatusList</text>
+</g>
+<g id="node-F53" class="node operator" data-node="F53" data-name="RemoveBufsByIDList" data-grade="A" data-step="" data-rvas="0x79ABE0"><title>F53｜RemoveBufsByIDList</title><rect x="4630" y="5050" width="250" height="42" rx="4"/>
+<text class="nid" x="4640" y="5068">F53</text>
+<text class="nname" x="4676" y="5076.0">RemoveBufsByIDList</text>
+</g>
+<g id="node-F54" class="node operator" data-node="F54" data-name="TransferBuffFrom" data-grade="A" data-step="" data-rvas="0x79CDC0"><title>F54｜TransferBuffFrom</title><rect x="2930" y="5195" width="250" height="42" rx="4"/>
+<text class="nid" x="2940" y="5213">F54</text>
+<text class="nname" x="2976" y="5221.0">TransferBuffFrom</text>
+</g>
+<g id="node-F55" class="node operator" data-node="F55" data-name="TransferDeBuffFrom" data-grade="A" data-step="" data-rvas="0x79D100"><title>F55｜TransferDeBuffFrom</title><rect x="3270" y="5195" width="250" height="42" rx="4"/>
+<text class="nid" x="3280" y="5213">F55</text>
+<text class="nname" x="3316" y="5221.0">TransferDeBuffFrom</text>
+</g>
+<g id="node-F56" class="node operator" data-node="F56" data-name="ResetEventSoulCost" data-grade="A" data-step="" data-rvas="0x79AFB0"><title>F56｜ResetEventSoulCost</title><rect x="3610" y="5195" width="250" height="42" rx="4"/>
+<text class="nid" x="3620" y="5213">F56</text>
+<text class="nname" x="3656" y="5221.0">ResetEventSoulCost</text>
+</g>
+<g id="node-F57" class="node operator" data-node="F57" data-name="MultiplySoul" data-grade="A" data-step="" data-rvas="0x798890"><title>F57｜MultiplySoul</title><rect x="3950" y="5195" width="250" height="42" rx="4"/>
+<text class="nid" x="3960" y="5213">F57</text>
+<text class="nname" x="3996" y="5221.0">MultiplySoul</text>
+</g>
+<g id="node-F58" class="node operator" data-node="F58" data-name="BlastBuffWithInjury" data-grade="A" data-step="" data-rvas="0x795FC0"><title>F58｜BlastBuffWithInjury</title><rect x="4290" y="5195" width="250" height="42" rx="4"/>
+<text class="nid" x="4300" y="5213">F58</text>
+<text class="nname" x="4336" y="5221.0">BlastBuffWithInjury</text>
+</g>
+<g id="node-F59" class="node operator" data-node="F59" data-name="AddHPWithInjury" data-grade="A" data-step="" data-rvas="0x793740"><title>F59｜AddHPWithInjury</title><rect x="4630" y="5195" width="250" height="42" rx="4"/>
+<text class="nid" x="4640" y="5213">F59</text>
+<text class="nname" x="4676" y="5221.0">AddHPWithInjury</text>
+</g>
+</g>
+<g id="detail" visibility="hidden" pointer-events="none"><rect class="detail-bg" x="0" y="0" width="520" height="112" rx="6"/><text id="detail-title" class="detail-title" x="14" y="25"></text><text id="detail-line1" class="detail-text" x="14" y="50"></text><text id="detail-line2" class="detail-text" x="14" y="73"></text><text id="detail-line3" class="detail-text" x="14" y="96"></text></g>
+    <script><![CDATA[
+    const svg=document.documentElement,nodes=[...svg.querySelectorAll('.node')],edges=[...svg.querySelectorAll('.edge')],detail=svg.querySelector('#detail');
+    const dt=svg.querySelector('#detail-title'),d1=svg.querySelector('#detail-line1'),d2=svg.querySelector('#detail-line2'),d3=svg.querySelector('#detail-line3');
+    function clear(){nodes.forEach(n=>n.classList.remove('active','dim'));edges.forEach(e=>e.classList.remove('active','dim'));detail.setAttribute('visibility','hidden')}
+    function popup(x,y,title,l1,l2,l3){detail.setAttribute('transform',`translate(${Math.min(x,4540)} ${Math.max(105,Math.min(y,7440))})`);dt.textContent=title;d1.textContent=l1;d2.textContent=l2;d3.textContent=l3;detail.setAttribute('visibility','visible')}
+    nodes.forEach(n=>n.addEventListener('click',ev=>{ev.stopPropagation();clear();const id=n.dataset.node,inc=edges.filter(e=>e.dataset.source===id||e.dataset.target===id),near=new Set([id]);inc.forEach(e=>{e.classList.add('active');near.add(e.dataset.source);near.add(e.dataset.target)});nodes.forEach(x=>{if(!near.has(x.dataset.node))x.classList.add('dim')});edges.forEach(e=>{if(!inc.includes(e))e.classList.add('dim')});n.classList.add('active');const r=n.querySelector('rect');popup(+r.getAttribute('x')+30,+r.getAttribute('y')+70,`${id}  ${n.dataset.name}`,n.dataset.step?`主流程位置 P${String(n.dataset.step).padStart(2,'0')}　证据等级 ${n.dataset.grade}`:`非线性主流程节点　证据等级 ${n.dataset.grade}`,`RVA：${n.dataset.rvas}`,`相邻真实边：${inc.length} 条`) }));
+    edges.forEach(e=>e.addEventListener('click',ev=>{ev.stopPropagation();clear();e.classList.add('active');nodes.forEach(n=>{if(n.dataset.node!==e.dataset.source&&n.dataset.node!==e.dataset.target)n.classList.add('dim')});edges.forEach(x=>{if(x!==e)x.classList.add('dim')});popup(ev.offsetX+25,ev.offsetY+25,`${e.dataset.edge}  ${e.dataset.source} → ${e.dataset.target}`,e.dataset.name,`条件：${e.dataset.condition||'无额外条件'}`,`证据等级：${e.dataset.grade}`)}));
+    svg.addEventListener('click',clear);
+    ]]></script>
+</svg>

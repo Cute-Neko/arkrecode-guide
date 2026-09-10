@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="基于 GameAssembly.dll 逆向与 master.db 解包数据整理的 Ark Re:Code 伤害计算乘区说明">
+<title>伤害计算乘区与结算顺序｜Ark Re:Code 资料库</title>
+<style>
+:root{color-scheme:light;--ink:#172033;--muted:#5f6b7a;--line:#dbe3ee;--blue:#2563eb;--soft:#f6f9fd;--green:#047857;--amber:#b45309;--red:#be123c}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:"Microsoft YaHei UI","Noto Sans SC",Arial,sans-serif;line-height:1.72}main{width:min(1180px,calc(100% - 32px));margin:auto;padding:30px 0 70px}h1{margin:0;font-size:clamp(28px,4vw,42px);line-height:1.25}h2{margin:38px 0 12px;padding-top:8px;border-top:2px solid var(--line);font-size:24px}h3{margin:24px 0 8px;font-size:18px}p,li{color:#334155}.subtitle{color:var(--muted);font-size:16px}.nav{position:sticky;top:0;z-index:5;display:flex;gap:8px;flex-wrap:wrap;padding:12px 0;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}.nav a,.back{padding:7px 11px;border-radius:999px;background:#eff6ff;color:#1d4ed8;text-decoration:none;font-size:13px;font-weight:700}.formula{margin:18px 0;padding:18px;border:1px solid #bfdbfe;border-left:5px solid var(--blue);border-radius:12px;background:#f8fbff;overflow:auto}.formula code{font:700 15px/1.8 Consolas,monospace;color:#1e3a8a;white-space:normal}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}.step{padding:13px;border:1px solid var(--line);border-radius:10px;background:var(--soft)}.step b{display:block;color:var(--blue)}table{width:100%;border-collapse:collapse;margin:12px 0 20px}th,td{padding:10px 12px;border:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f1f5f9;color:#334155}td:first-child{white-space:nowrap;font-weight:700}.verified,.boundary,.warning{padding:12px 14px;border-radius:10px;margin:12px 0}.verified{background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46}.boundary{background:#fffbeb;border:1px solid #fde68a;color:#92400e}.warning{background:#fff1f2;border:1px solid #fecdd3;color:#9f1239}.tag{display:inline-block;padding:2px 7px;border-radius:999px;background:#e2e8f0;color:#334155;font-size:12px}code{font-family:Consolas,monospace}.sources li{margin:6px 0}.small{font-size:13px;color:var(--muted)}@media(max-width:850px){.flow{grid-template-columns:repeat(2,1fr)}table{display:block;overflow:auto}}@media(max-width:520px){.flow{grid-template-columns:1fr}}</style>
+</head><body><main><a class="back" href="../index.html">← 返回资料库</a><h1>伤害计算乘区与结算顺序</h1><p class="subtitle">依据 GameAssembly.dll 的客户端反编译主函数、dump.cs 类型定义、master.db 全局常数与完整战斗节点图整理。面向玩家解释“哪些量先相加、哪些量彼此相乘、什么时候贯穿、什么时候减伤”。</p>
+<nav class="nav"><a href="#formula">总公式</a><a href="#buckets">乘区逐项</a><a href="#penetration">三层贯穿</a><a href="#post">公式后处理</a><a href="#special">特殊伤害</a><a href="#evidence">证据边界</a></nav>
+<section id="formula"><h2>一、普通技能直伤的主公式</h2><div class="verified"><b>已由 CalculateSkillDamage 方法体确认计算顺序。</b>下面的字母是为了阅读方便，不是游戏内字段名。</div>
+<div class="formula"><code>公式伤害 = [(攻击力 × 技能攻击倍率 + 常量攻击) × 1.871 × Pow × 条件攻击倍率 × 克制倍率 × 命中类型倍率] ÷ [1 + 防御力 × 防御率 × 贯穿剩余1 × 贯穿剩余2 × 贯穿剩余3 ÷ 300]</code><br><code>随后：× 攻方伤害倍率区 → × 受方增减伤区 → 伤害上限钳制 → 事件前改值/分摊 → 护盾与生命</code></div>
+<p>这条式子最关键的地方有三个：常量攻击加在“攻击力×技能倍率”之后；三种贯穿不是直接加到伤害上，而是共同缩小进入分母的防御；攻方增伤和受方减伤在基础攻防公式算完后才执行。</p>
+<div class="flow"><div class="step"><b>D01–D02</b>收集双方函数，决定命中、闪避、暴击或重击</div><div class="step"><b>D03A–D03B</b>组成攻击项、常量攻击、AttRate、Pow和条件倍率</div><div class="step"><b>D04</b>目标防御率与三层贯穿进入防御分母</div><div class="step"><b>D05–D07</b>攻方增伤、目标减伤、伤害上限</div><div class="step"><b>D08–D09</b>事件前函数可改伤害，并建立分摊事件</div><div class="step"><b>D10–D11</b>先扣护盾，再确认实际生命损失与创伤</div><div class="step"><b>D13</b>伤害后的目标和来源事件函数</div><div class="step"><b>D14</b>以已提交的实际伤害处理吸血</div></div></section>
+<section id="buckets"><h2>二、每个乘区具体包含什么</h2>
+<table><thead><tr><th>阶段</th><th>内容</th><th>同阶段关系</th><th>玩家理解</th></tr></thead><tbody>
+<tr><td>面板攻击力</td><td>角色白值、固定攻击、攻击百分比、最终攻击率、装备、套装、觉醒、自阵、Bond、状态与光环最终汇入运行时 Attack。</td><td>先在属性系统中合成，伤害函数读取合成后的攻击整数。</td><td>攻击 Buff 通常先改变这里，而不是在最后再独立乘一次。</td></tr>
+<tr><td>技能倍率 AttRate</td><td>Skill.AttRate，加上技能函数中的 AttRate/RateConvert/EnhanceRate 等动态换算。</td><td>形成 GetSkillAttRate 的结果，再与攻击力相乘。</td><td>技能强化写“伤害提升”时，常见落点在这个技能倍率体系；必须按具体技能字段确认。</td></tr>
+<tr><td>常量攻击</td><td>ConstAttack、F39 ReduceHPConstAttack、ConstAttEnhance，以及来源/目标函数对常量攻击的追加或削减。</td><td>多项在 GetSkillConstantAttack 内合成；最终与“攻击×AttRate”相加。</td><td>它不是固定最终伤害。加入攻击项后仍要经过1.871、Pow、防御、增减伤和上限。</td></tr>
+<tr><td>全局攻击常数</td><td>master.db PublicVariable.AttackPowerRate = <b>1.871</b>。</td><td>独立相乘。</td><td>角色技能页中常见的1.871来源。</td></tr>
+<tr><td>Pow</td><td>Skill.Pow。</td><td>独立相乘。</td><td>看起来像技能的第二个基础倍率；为1时不改变结果。</td></tr>
+<tr><td>条件攻击倍率</td><td>ConditionAttack、ConditionAttackRate、ConditionAttEnhance及其 ValueEnhancer。条件可读取当前/最大/损失生命、状态层数、Buff/Debuff数量、敌我人数、速度或其他属性等。</td><td>同类条件先由 GetSkillConditionAttack 合并为一个倍率，再整体相乘。</td><td>“目标生命越高伤害越高”“自身损失生命越多伤害越高”等通常落在这里，但每个角色要看原始函数。</td></tr>
+<tr><td>属性克制倍率</td><td>IsSkillConquer 判定；成立时使用 ConquerAttackRate = <b>1.1</b>，否则1。</td><td>独立相乘。</td><td>克制时基础伤害乘1.1；同时命中类型判定还可能得到15%暴击率等克制规则。</td></tr>
+<tr><td>命中类型倍率</td><td>普通命中1；暴击使用角色最终暴击伤害；重击使用 BigHitAttackRate = <b>1.3</b>；闪避命中使用 DodgeAttackRate = <b>0.75</b>。</td><td>一次命中只采用最终判定出的那一种类型倍率。</td><td>暴击率决定是否进入暴击，暴击伤害才是该次暴击的伤害倍率。暴击、重击和闪避不是三项同时相乘。</td></tr>
+<tr><td>防御率</td><td>目标 Defence 与 GetDefenceRate 返回值。防御 Buff、破甲、技能函数 DefenceRate 等通过该倍率改变有效防御。</td><td>防御力×防御率后再乘三层“剩余防御”。</td><td>破甲与贯穿都减少有效防御，但处在不同字段和步骤。</td></tr>
+<tr><td>攻方伤害倍率区</td><td>SourceDamageRate 及来源属性中的同类正负修正。</td><td>正向和负向数值在区内求和，最终系数为 <code>max(0, 1 + 增伤合计 + 减伤合计)</code>。</td><td>同属 SourceDamageRate 的多个效果是同区加减；整个区对前面的攻防结果乘一次。</td></tr>
+<tr><td>受方增减伤区</td><td>HurtReduction/HurtReductionRate、目标与友方光环提供的受伤修正；IgnoreHurtReduction、IgnoreBeHurtReduction 可使部分减伤失效。</td><td>函数与属性先归入“受伤增加/受伤减少”，再形成一个整体系数；客户端随后乘到事件伤害。</td><td>护盾不在这里。减伤是在防御结算之后再乘。</td></tr>
+<tr><td>伤害上限</td><td>MaxSkillDamage 与对应 SkillValueConvert。</td><td>在攻方增伤和受方减伤之后比较并钳制。</td><td>上限限制的是已经过防御和减伤的结果；它不是一个常规乘区。</td></tr>
+</tbody></table>
+<div class="boundary">“所有增伤都彼此独立相乘”是不成立的。反编译明确显示 SourceDamageRate 在自己的容器中先相加；HurtReduction 也先合成后一次性作用。某个具体状态究竟写入哪个区，仍需读取该状态的 DynamicField/SkillValueConvert。</div></section>
+<section id="penetration"><h2>三、三层贯穿如何叠加</h2><p>客户端连续调用 GetPenetrateRate、GetPenetrate2Rate、GetPenetrate3Rate。每层都返回“该层处理后还剩多少防御”的因子，三个因子在防御项中相乘：</p>
+<div class="formula"><code>有效防御 = 防御力 × 防御率 × R1 × R2 × R3</code><br><code>Ri = max(0, 1 − 该层贯穿率 × 目标的抗贯穿修正)</code></div>
+<p>因此技能70%贯穿与贯穿套15%如果分别进入不同层，剩余防御按 <code>0.30 × 0.85 = 0.255</code> 计算，等价于总计忽略74.5%防御，不是70%+15%=85%。第三层给其他独立贯穿来源使用。三层内部都会读取来源的技能/状态/神器/套装函数，并受目标 DePenetrateRate 调整。</p><p>100%贯穿会令对应剩余因子成为0，此时后续贯穿层再怎么变化也不会进一步降低防御，这也是“100%贯穿场景中贯穿套权重不影响承伤”的原因。</p></section>
+<section id="post"><h2>四、公式算完之后仍可能改变实际扣血</h2>
+<table><thead><tr><th>顺序</th><th>节点</th><th>影响</th></tr></thead><tbody>
+<tr><td>1</td><td>D08 BeforeEvent / SourceBeforeEvent</td><td>AddEventHPDiff 可以追加当前事件生命变化；SetEventHPDiff 可以覆盖当前事件数值。它们发生在公式与伤害上限之后，所以最终包中的伤害不一定等于理论公式。</td></tr>
+<tr><td>2</td><td>D09 SplitDamage</td><td>在候选分摊中选择绝对分摊伤害最大的一项；从主目标伤害中扣除分摊部分，并递归、优先提交分摊者事件。</td></tr>
+<tr><td>3</td><td>D10 护盾与生命</td><td>最终事件先由状态容器处理护盾和生命。护盾是伤害去向，不是前述伤害乘区。</td></tr>
+<tr><td>4</td><td>D11 创伤</td><td>以实际生命损失计算和提交创伤。当前一击新增创伤不会倒过来修改当前一击公式；它影响之后读取最大生命的条件。</td></tr>
+<tr><td>5</td><td>D13 事件后函数</td><td>目标 AfterEvent、来源 SourceAfterEvent 在扣盾扣血和同步后触发，可派生状态、资源或后续事件。</td></tr>
+<tr><td>6</td><td>D14 吸血</td><td>ProcessLifeSteal 在原伤害事件完整提交返回后执行，以已提交的实际伤害派生治疗事件。</td></tr>
+</tbody></table></section>
+<section id="special"><h2>五、不能直接套普通技能公式的伤害</h2>
+<h3>状态值直伤与 BuffAttack</h3><p>ProcessStatusHit 建立 BuffHit，并走 CalculateDirectHit/ProcessEvent。它绕过普通技能的 Attack×AttRate×Pow 主链，但仍可能经过受伤减免和事件提交链。流血、燃烧、炸弹、状态引爆必须看各自 BuffAttackRate、StatusValue 或状态函数，不能只拿角色普通技能倍率代入。</p>
+<h3>DirectHit 与无防御直伤</h3><p>DirectHit、DirectHPValueHit、StatusValueDamage、CalculateDirectHitNoDefence 是独立入口。部分按指定数值、当前/最大生命比例或状态值建立事件；标记为无防御的分支不会经过普通防御分母。</p>
+<h3>百分比生命扣除、自损和治疗反转</h3><p>SetHPRate、SetNowHPRate、AddHPDiffHPMaxRate 等直接构造生命变化，它们不等价于“攻击造成的伤害”。是否可分摊、是否受护盾、是否触发受击或死亡前监听，取决于它最终创建的 BattleRoleEvent 类型以及是否进入 ProcessEvent。</p>
+<h3>追加伤害、神器伤害与分摊</h3><p>追加伤害可能先排入 DirectHitList，也可能从状态函数立即提交。只要最终进入共同 ProcessEvent 且未带 NoSplitDamage/BeDamageNoSplit 排除条件，就可能经过事件前的分摊检查；不能因为它不是主技能第一段就默认不可分摊。</p></section>
+<section id="evidence"><h2>六、证据、已知范围与使用方式</h2>
+<ul class="sources"><li><b>主公式：</b><code>Game.BattleCalculator.CalculateSkillDamage</code>，RVA <code>0x71B9E0</code>。</li><li><b>攻击项：</b><code>GetSkillConstantAttack 0x71D840</code>、<code>GetSkillConditionAttack 0x71D530</code>、<code>GetSkillAttRate 0x71D360</code>。</li><li><b>防御与贯穿：</b><code>GetDefenceRate 0x71C970</code>、三层贯穿 <code>0x71D160 / 0x71CD60 / 0x71CF60</code>。</li><li><b>后置乘区：</b><code>ProcessSourceDamageRate 0x71FA10</code>、<code>ProcessHurtReduction 0x71EDE0</code>、<code>GetMaxSkillDamage 0x71CC20</code>。</li><li><b>解包常数：</b>master.db 的 PublicVariable 表：1.871、300、克制1.1、重击1.3、闪避0.75。</li><li><b>字段全集：</b>dump.cs 的 EProperty、SkillFunctionInfo、SkillValueConvert；包括 AttRate、ConstAttack、ConditionAttack、Penetrate1/2/3、SourceDamageRate、HurtReduction、MaxSkillDamage、IgnoreHurtReduction 等。</li></ul>
+<div class="warning"><b>精度边界：</b>客户端反编译足以确认调用顺序、公式骨架和字段归属；具体角色某个中文效果对应的 ValueEnhancer 条件、同类函数的合并方式及服务器最终取整，仍应使用该角色的 master.db 原始函数和实战包逐条验证。角色页面目前展示的是基础 AttRate×1.871×Pow、技能强化、暴击与已识别贯穿的理论值，不会擅自把未解析的条件增伤、减伤、易伤或事件前改值算进去。</div><p class="small">文档版本：2026-09-10。对应完整战斗节点图 V9，伤害主链 D00–D14。</p></section>
+</main></body></html>
