@@ -18,48 +18,48 @@
           <p class="description">運用手術刀攻擊敵人，並解除 1 名我方成員的 1 個負向狀態。「你什麼都沒看到！」冷卻時間減少 1 回合</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">RemoveDeBuf</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F04</span><span class="node-name">RemoveDeBuf</span></span></div>
-      <p class="effect-copy">RemoveDeBuf；目标=HaveDeBuffOne；阵营=My；数值=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">RemoveDeBuf；目标=HaveDeBuffOne；阵营=My；数值=1<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">技能冷却变化</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F18</span><span class="node-name">AddSkillCoolDown</span></span></div>
-      <p class="effect-copy">自身 H157S3 冷却时间减少 1 回合｜数据：AddSkillCoolDown；状态 H157S3 (H157S3)；目标=Self；阵营=My；数值=-1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">自身 H157S3 冷却时间减少 1 回合｜数据：AddSkillCoolDown；状态 H157S3 (H157S3)；目标=Self；阵营=My；数值=-1<span class="proof">｜入口：技能静态函数</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 10%</li><li><b>Lv.4</b>　伤害量提升 15%</li></ul></details>
         </section><section class="section" id="H157S2">
           <div class="section-title"><h2>H157S2　奇想医术</h2><span class="meta">非伤害技能｜目标 My / All｜CD 3</span></div>
           <p class="description">施展医术使全体我方成员[附加[护盾:Shield:StatusFun]( 2 回合)、[贯穿抵抗提升:IncreasePenetrateResistance:StatusFun]( 2 回合)、行动值提升 15%。护盾效果根据目标最大生命力等比提升:AWAKEN]</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加护盾（Shield）；基础概率 10%；持续 2 回合｜数据：AddStatus；状态 护盾 (Shield)；目标=All；阵营=My；属性=MaxHP；概率/倍率=10%；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加护盾（Shield）；状态保存值＝施加时受益目标的最大生命 × 10%；持续 2 回合｜数据：AddStatus；状态 护盾 (Shield)；目标=All；阵营=My；持续回合=2；状态保存值换算={&quot;Who&quot;:&quot;Target&quot;,&quot;Rate&quot;:0.1,&quot;Property&quot;:&quot;MaxHP&quot;}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加贯穿抵抗提升（IncreasePenetrateResistance）；持续 2 回合｜数据：AddStatus；状态 贯穿抵抗提升 (IncreasePenetrateResistance)；目标=All；阵营=My；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加贯穿抵抗提升（IncreasePenetrateResistance）；持续 2 回合｜数据：AddStatus；状态 贯穿抵抗提升 (IncreasePenetrateResistance)；目标=All；阵营=My；持续回合=2<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">行动值变化</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F02</span><span class="node-name">AddTime</span></span></div>
-      <p class="effect-copy">目标行动值提升 15%｜数据：AddTime；目标=All；阵营=My；数值=0.15<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">目标行动值提升 15%｜数据：AddTime；目标=All；阵营=My；数值=0.15<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">生命恢复</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F03</span><span class="node-name">AddHP</span></span></div>
-      <p class="effect-copy">恢复生命；恢复量为MaxHP的 23%｜数据：AddHP；目标=All；阵营=My；属性=MaxHP；概率/倍率=23%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">恢复生命；恢复量为MaxHP的 23%｜数据：AddHP；目标=All；阵营=My；数值换算={&quot;Who&quot;:&quot;Target&quot;,&quot;Rate&quot;:0.23,&quot;Property&quot;:&quot;MaxHP&quot;}<span class="proof">｜入口：觉醒技能函数；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　护盾提升 5%</li><li><b>Lv.3</b>　护盾提升 5%</li><li><b>Lv.4</b>　护盾提升 5%</li><li><b>Lv.5</b>　护盾提升 10%</li><li><b>Lv.6</b>　护盾提升 10%</li><li><b>Lv.7</b>　护盾提升 15%</li></ul></details>
         </section><section class="section" id="H157S3">
           <div class="section-title"><h2>H157S3　你什麽都没看到！</h2><span class="meta">非伤害技能｜目标 My / All｜CD 5｜魂燃 10</span></div>
           <p class="description">解除全体我方成员所有负向状态后，附加[免疫:Immune:StatusFun]( 2 回合)并恢復生命力，自身附加[防禦力提升:AddDefence:StatusFun]( 2 回合)。恢復量根据目标最大生命力等比提升&lt;br&gt;基础状态抗性提升 40%</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">RemoveDeBuf</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F04</span><span class="node-name">RemoveDeBuf</span></span></div>
-      <p class="effect-copy">RemoveDeBuf；目标=All；阵营=My；数值=-1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">RemoveDeBuf；目标=All；阵营=My；数值=-1<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加免疫（Immune）；持续 2 回合｜数据：AddStatus；状态 免疫 (Immune)；目标=All；阵营=My；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加免疫（Immune）；持续 2 回合｜数据：AddStatus；状态 免疫 (Immune)；目标=All；阵营=My；持续回合=2<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">生命恢复</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F03</span><span class="node-name">AddHP</span></span></div>
-      <p class="effect-copy">恢复生命；恢复量为MaxHP的 15%｜数据：AddHP；目标=All；阵营=My；属性=MaxHP；概率/倍率=15%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">恢复生命；恢复量为MaxHP的 15%｜数据：AddHP；目标=All；阵营=My；数值换算={&quot;Who&quot;:&quot;Target&quot;,&quot;Rate&quot;:0.15,&quot;Property&quot;:&quot;MaxHP&quot;}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加防御力提升（AddDefence）；持续 2 回合｜数据：AddStatus；状态 防御力提升 (AddDefence)；目标=Self；阵营=My；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加防御力提升（AddDefence）；持续 2 回合｜数据：AddStatus；状态 防御力提升 (AddDefence)；目标=Self；阵营=My；持续回合=2<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">ResistanceRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">ResistanceRate = 0.4｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">ResistanceRate = 0.4｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">数值强化</span><span class="node operator"><span class="node-id">F06</span><span class="node-name">AddValue</span></span></div>
-      <p class="effect-copy">AddValue；持续回合=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">AddValue；持续回合=1<span class="proof">｜入口：A02替换魂燃函数后，于A07执行；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　恢复量提升 5%</li><li><b>Lv.3</b>　恢复量提升 10%</li><li><b>Lv.4</b>　冷却时间减少 1 回合</li><li><b>Lv.5</b>　恢复量提升 10%</li><li><b>Lv.6</b>　恢复量提升 10%</li><li><b>Lv.7</b>　恢复量提升 15%</li></ul></details>
         </section><section class="section" id="damage-chain">
           <div class="section-title"><h2>直接目标的完整伤害链</h2><span class="meta">H157S1 使用</span></div>
@@ -71,37 +71,37 @@
           <p class="description">受到伤害时，会代替生命力吸收部分的伤害</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">Shield</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">Shield = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">Shield = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>IncreasePenetrateResistance　贯穿抵抗提升</h3><span class="meta">基础回合 2｜最大层数 0｜常驻 0</span></div>
           <p class="description">贯穿抵抗提升 50%</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">DePenetrateRate</span><span class="node damage"><span class="node-id">D04</span><span class="node-name">防御与三层贯穿</span></span></div>
-      <p class="effect-copy">DePenetrateRate = 0.5｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">DePenetrateRate = 0.5｜数据：属性/条件函数<span class="proof">｜入口：防御贯穿公式阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>Immune　免疫</h3><span class="meta">基础回合 2｜最大层数 0｜常驻 0</span></div>
           <p class="description">目标不会受到任何负向状态及部分有害效果的影响</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">Immune</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">Immune = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">Immune = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>AddDefence　防御力提升</h3><span class="meta">基础回合 2｜最大层数 0｜常驻 0</span></div>
           <p class="description">防御力提升 60%</p>
           <div class="effect">
-      <div class="lane"><span class="lane-label">DefenceFinalRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">DefenceFinalRate = 0.6｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">防御力提升</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
+      <p class="effect-copy">防御力提高 60%（最终防御倍率）｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article></div></section>
 </main></body></html>

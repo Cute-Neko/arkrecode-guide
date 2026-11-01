@@ -18,57 +18,63 @@
           <p class="description">投掷小煤炭攻击包含目标在内的 2 名敌人，以 50% 机率造成[无法强化:CannotBuff:StatusFun]( 1 回合)。若非自身回合施展时，机率提高为 100%。伤害量根据自身速度等比提升</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加无法强化（CannotBuff）；基础概率 50%；持续 1 回合｜数据：AddStatus；状态 无法强化 (CannotBuff)；目标=RandomTwo；属性=ValueOne；概率/倍率=50%；持续回合=1；条件=IsNotMainRound<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加无法强化（CannotBuff）；持续 1 回合｜数据：AddStatus；状态 无法强化 (CannotBuff)；目标=RandomTwo；持续回合=1；条件=IsNotMainRound<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">条件伤害倍率</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">满足条件时，条件攻击倍率为 0.00081｜数据：属性/条件函数；属性=Speed；概率/倍率=0.081%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　伤害量提升 5%</li><li><b>Lv.5</b>　伤害量提升 5%</li><li><b>Lv.6</b>　伤害量提升 10%</li></ul></details>
         </section><section class="section" id="H608S2">
           <div class="section-title"><h2>H608S2　所向披靡的舞蹈才能</h2><span class="meta">被动技能｜目标 数据库未标注｜CD 0</span></div>
           <p class="description">基础状态命中提升 50%&lt;br&gt;战斗开始及回合结束时，若「这是改良过的唷！」未处于冷却状态，则获得媚舞姿态。回合结束时，若「这是改良过的唷！」处于冷却状态，则获得艳舞姿态&lt;br&gt;媚舞姿态：受到的伤害量下降 20%，回合开始时附加[攻击力提升:AddAttack:StatusFun]( 1 回合)&lt;br&gt;艳舞姿态：速度提升  [10%:2_1:UIRate]、追击率提升 [10%:2_2:UIRate]</p>
           <div class="note">该技能没有玩家主动施放入口；效果从下方标出的 Trigger 宿主阶段进入。</div><div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">EffectHitRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">EffectHitRate = 0.5｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">EffectHitRate = 0.5｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
-      <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加媚舞姿态（H608S2_1）｜数据：AddStatus；状态 媚舞姿态 (H608S2_1)；目标=Self；阵营=My；触发=StartBattle；数值=1；条件=CheckSkillCooldown<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">施加状态</span><span class="node trigger"><span class="node-id">S03</span><span class="node-name">StartBattle</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
+      <p class="effect-copy">施加媚舞姿态（H608S2_1）｜数据：AddStatus；状态 媚舞姿态 (H608S2_1)；目标=Self；阵营=My；触发=StartBattle；条件=CheckSkillCooldown；条件详情={&quot;CheckFun&quot;:&quot;CheckSkillCooldown&quot;,&quot;CheckID&quot;:&quot;H608S3&quot;}<span class="proof">｜入口：StartBattle</span></p>
     </div><div class="effect">
-      <div class="lane"><span class="lane-label">RemoveBufsByID</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F29</span><span class="node-name">RemoveBufsByID</span></span></div>
-      <p class="effect-copy">RemoveBufsByID；状态 媚舞姿态 (H608S2_1)；目标=Self；阵营=My；触发=StartBattle；数值=1；条件=CheckSkillCooldown<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">RemoveBufsByID</span><span class="node trigger"><span class="node-id">S03</span><span class="node-name">StartBattle</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F29</span><span class="node-name">RemoveBufsByID</span></span></div>
+      <p class="effect-copy">子效果：在父效果的执行条件下运行；RemoveBufsByID；状态 艳舞姿态 (H608S2_2)；目标=Self；阵营=My；触发=StartBattle；数值=1<span class="proof">｜入口：StartBattle</span></p>
+    </div><div class="effect">
+      <div class="lane"><span class="lane-label">RemoveBufsByID</span><span class="node trigger"><span class="node-id">S03</span><span class="node-name">StartBattle</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F29</span><span class="node-name">RemoveBufsByID</span></span></div>
+      <p class="effect-copy">子效果：在父效果的执行条件下运行；RemoveBufsByID；状态 H608S2_3 (H608S2_3)；目标=Self；阵营=My；触发=StartBattle；数值=1<span class="proof">｜入口：StartBattle</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node queue"><span class="node-id">E00</span><span class="node-name">当前角色冷却递减与 AfterRound</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加媚舞姿态（H608S2_1）｜数据：AddStatus；状态 媚舞姿态 (H608S2_1)；目标=Self；阵营=My；触发=AfterRound；数值=1；条件=CheckSkillCooldown<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加媚舞姿态（H608S2_1）｜数据：AddStatus；状态 媚舞姿态 (H608S2_1)；目标=Self；阵营=My；触发=AfterRound；条件=CheckSkillCooldown；条件详情={&quot;CheckFun&quot;:&quot;CheckSkillCooldown&quot;,&quot;CheckID&quot;:&quot;H608S3&quot;}<span class="proof">｜入口：AfterRound</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">RemoveBufsByID</span><span class="node queue"><span class="node-id">E00</span><span class="node-name">当前角色冷却递减与 AfterRound</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F29</span><span class="node-name">RemoveBufsByID</span></span></div>
-      <p class="effect-copy">RemoveBufsByID；状态 媚舞姿态 (H608S2_1)；目标=Self；阵营=My；触发=AfterRound；数值=1；条件=CheckSkillCooldown<span class="proof">｜已验证连续边</span></p>
-    </div><div class="effect">
-      <div class="lane"><span class="lane-label">施加状态</span><span class="node queue"><span class="node-id">E00</span><span class="node-name">当前角色冷却递减与 AfterRound</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加艳舞姿态（H608S2_2）｜数据：AddStatus；状态 艳舞姿态 (H608S2_2)；目标=Self；阵营=My；触发=AfterRound；数值=0.1；条件=CheckSkillNoUse<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">子效果：在父效果的执行条件下运行；RemoveBufsByID；状态 艳舞姿态 (H608S2_2)；目标=Self；阵营=My；触发=AfterRound；数值=1<span class="proof">｜入口：AfterRound</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">RemoveBufsByID</span><span class="node queue"><span class="node-id">E00</span><span class="node-name">当前角色冷却递减与 AfterRound</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F29</span><span class="node-name">RemoveBufsByID</span></span></div>
-      <p class="effect-copy">RemoveBufsByID；状态 艳舞姿态 (H608S2_2)；目标=Self；阵营=My；触发=AfterRound；数值=0.1；条件=CheckSkillNoUse<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">子效果：在父效果的执行条件下运行；RemoveBufsByID；状态 H608S2_3 (H608S2_3)；目标=Self；阵营=My；触发=AfterRound；数值=1<span class="proof">｜入口：AfterRound</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node queue"><span class="node-id">E00</span><span class="node-name">当前角色冷却递减与 AfterRound</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加H608S2_3（H608S2_3）｜数据：AddStatus；状态 H608S2_3 (H608S2_3)；目标=Self；阵营=My；触发=AfterRound；数值=0.1；条件=CheckSkillNoUse<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加艳舞姿态（H608S2_2）｜数据：AddStatus；状态 艳舞姿态 (H608S2_2)；目标=Self；阵营=My；触发=AfterRound；数值=0.1；条件=CheckSkillNoUse；条件详情={&quot;CheckFun&quot;:&quot;CheckSkillNoUse&quot;,&quot;CheckID&quot;:&quot;H608S3&quot;}<span class="proof">｜入口：AfterRound</span></p>
+    </div><div class="effect">
+      <div class="lane"><span class="lane-label">RemoveBufsByID</span><span class="node queue"><span class="node-id">E00</span><span class="node-name">当前角色冷却递减与 AfterRound</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F29</span><span class="node-name">RemoveBufsByID</span></span></div>
+      <p class="effect-copy">子效果：在父效果的执行条件下运行；RemoveBufsByID；状态 媚舞姿态 (H608S2_1)；目标=Self；阵营=My；触发=AfterRound；数值=1<span class="proof">｜入口：AfterRound</span></p>
+    </div><div class="effect">
+      <div class="lane"><span class="lane-label">施加状态</span><span class="node queue"><span class="node-id">E00</span><span class="node-name">当前角色冷却递减与 AfterRound</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
+      <p class="effect-copy">施加H608S2_3（H608S2_3）｜数据：AddStatus；状态 H608S2_3 (H608S2_3)；目标=Self；阵营=My；触发=AfterRound；数值=0.1；条件=CheckSkillNoUse；条件详情={&quot;CheckFun&quot;:&quot;CheckSkillNoUse&quot;,&quot;CheckID&quot;:&quot;H608S3&quot;}<span class="proof">｜入口：AfterRound</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　速度、追击率提升 1%</li><li><b>Lv.3</b>　速度、追击率提升 2%</li><li><b>Lv.4</b>　速度、追击率提升 2%</li><li><b>Lv.5</b>　速度、追击率提升 2%</li><li><b>Lv.6</b>　速度、追击率提升 3%</li></ul></details>
         </section><section class="section" id="H608S3">
           <div class="section-title"><h2>H608S3　这是改良过的唷！</h2><span class="meta">伤害技能｜目标 All｜CD 4｜AttRate 1｜Pow 1｜魂燃 10</span></div>
           <p class="description">操控智慧机械攻击全体敌人，以 [90%:3_1:Rate] 机率解除 1 个正向状态后，使全体我方成员附加[攻击力提升:AddAttack:StatusFun]( 2 回合)[:AWAKEN]。伤害量根据自身速度等比提升</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">RemoveBuf</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F05</span><span class="node-name">RemoveBuf</span></span></div>
-      <p class="effect-copy">RemoveBuf；目标=All；概率/倍率=90%；数值=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">RemoveBuf；目标=All；概率/倍率=90%；数值=1<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加攻击力提升（AddAttack）；持续 2 回合｜数据：AddStatus；状态 攻击力提升 (AddAttack)；目标=All；阵营=My；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加攻击力提升（AddAttack）；持续 2 回合｜数据：AddStatus；状态 攻击力提升 (AddAttack)；目标=All；阵营=My；持续回合=2<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">条件伤害倍率</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">满足条件时，条件攻击倍率为 0.001215｜数据：属性/条件函数；属性=Speed；概率/倍率=0.1215%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">数值强化</span><span class="node operator"><span class="node-id">F06</span><span class="node-name">AddValue</span></span></div>
-      <p class="effect-copy">AddValue；持续回合=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">AddValue；持续回合=1<span class="proof">｜入口：A02替换魂燃函数后，于A07执行；需核查执行宿主</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加速度提升（IncreaseSpeed）；持续 2 回合｜数据：AddStatus；状态 速度提升 (IncreaseSpeed)；目标=All；阵营=My；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加速度提升（IncreaseSpeed）；持续 2 回合｜数据：AddStatus；状态 速度提升 (IncreaseSpeed)；目标=All；阵营=My；持续回合=2<span class="proof">｜入口：觉醒技能函数；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　效果发生率提升 10%</li><li><b>Lv.4</b>　冷却时间减少 1 回合</li><li><b>Lv.5</b>　伤害量提升 10%</li><li><b>Lv.6</b>　伤害量提升 15%</li></ul></details>
         </section><section class="section" id="damage-chain">
           <div class="section-title"><h2>直接目标的完整伤害链</h2><span class="meta">H608S1、H608S3 使用</span></div>
@@ -80,54 +86,54 @@
           <p class="description">无法获得任何正向状态</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">SealBuff</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">SealBuff = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">SealBuff = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>H608S2_1　媚舞姿态</h3><span class="meta">基础回合 -1｜最大层数 1｜常驻 TRUE</span></div>
           <p class="description">数据库无状态说明</p>
           <div class="effect">
-      <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；目标=Self；阵营=My；触发=BeforeEvent；属性=ValueOne；概率/倍率=20%<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">属性与条件</span><span class="node damage"><span class="node-id">D08</span><span class="node-name">事件提交前函数</span></span></div>
+      <p class="effect-copy">属性/条件函数；目标=Self；阵营=My；触发=BeforeEvent<span class="proof">｜入口：BeforeEvent</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node trigger"><span class="node-id">T05</span><span class="node-name">当前角色 BeforeRound</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加攻击力提升（AddAttack）；持续 1 回合｜数据：AddStatus；状态 攻击力提升 (AddAttack)；目标=Self；阵营=My；触发=BeforeRound；持续回合=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加攻击力提升（AddAttack）；持续 1 回合｜数据：AddStatus；状态 攻击力提升 (AddAttack)；目标=Self；阵营=My；触发=BeforeRound；持续回合=1<span class="proof">｜入口：BeforeRound</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>H608S2_2　艳舞姿态</h3><span class="meta">基础回合 -1｜最大层数 1｜常驻 TRUE</span></div>
           <p class="description">数据库无状态说明</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">SpeedFinalRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">SpeedFinalRate = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">SpeedFinalRate = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>H608S2_3　H608S2_3</h3><span class="meta">基础回合 -1｜最大层数 1｜常驻 TRUE</span></div>
           <p class="description">数据库无状态说明</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">PinchRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">PinchRate = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">PinchRate = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>AddAttack　攻击力提升</h3><span class="meta">基础回合 2｜最大层数 0｜常驻 0</span></div>
           <p class="description">攻击力提升 50%</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">攻击力提升</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">攻击力提高 50%（最终攻击倍率）｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">攻击力提高 50%（最终攻击倍率）｜数据：属性/条件函数<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>IncreaseSpeed　速度提升</h3><span class="meta">基础回合 2｜最大层数 0｜常驻 0</span></div>
           <p class="description">速度提升 30%</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">SpeedFinalRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">SpeedFinalRate = 0.3｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">SpeedFinalRate = 0.3｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article></div></section>
 </main></body></html>

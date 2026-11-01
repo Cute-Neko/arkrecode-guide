@@ -18,42 +18,42 @@
           <p class="description">斩击敌人，使自身行动值提升 15%。自身回合施展时，行动值追加提升 15%，[贯穿:Penetrate:StatusFun]目标 50% 防禦力。此技能不会发动[追击:AddPinchSkill:StatusFun]</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">行动值变化</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F02</span><span class="node-name">AddTime</span></span></div>
-      <p class="effect-copy">自身行动值提升 15%｜数据：AddTime；目标=Self；阵营=My；数值=0.15<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">自身行动值提升 15%｜数据：AddTime；目标=Self；阵营=My；数值=0.15<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">行动值变化</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F02</span><span class="node-name">AddTime</span></span></div>
-      <p class="effect-copy">自身行动值提升 15%｜数据：AddTime；目标=Self；阵营=My；数值=0.15；条件=IsMainRound<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">自身行动值提升 15%｜数据：AddTime；目标=Self；阵营=My；数值=0.15；条件=IsMainRound；条件详情={&quot;CheckFun&quot;:&quot;IsMainRound&quot;}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">防御贯穿</span><span class="node damage"><span class="node-id">D04</span><span class="node-name">防御与三层贯穿</span></span></div>
-      <p class="effect-copy">本次攻击贯穿目标 50% 防御力｜数据：属性/条件函数；属性=ValueOne；概率/倍率=50%；条件=IsMainRound<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数；条件=IsMainRound；条件详情={&quot;CheckFun&quot;:&quot;IsMainRound&quot;}<span class="proof">｜入口：防御贯穿公式阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">NoPinch</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">NoPinch = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">NoPinch = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">AddRound</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F41</span><span class="node-name">AddRound</span></span></div>
-      <p class="effect-copy">AddRound；目标=Self；阵营=My<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">AddRound；目标=Self；阵营=My<span class="proof">｜入口：A02替换魂燃函数后，于A07执行；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　伤害量提升 5%</li><li><b>Lv.5</b>　伤害量提升 5%</li><li><b>Lv.6</b>　伤害量提升 10%</li></ul></details>
         </section><section class="section" id="H199S2">
           <div class="section-title"><h2>H199S2　孤身旅路</h2><span class="meta">被动技能｜目标 数据库未标注｜CD 0</span></div>
           <p class="description">首次战斗开始时，获得 40 点战意，并附加[漂泊者:H199S2:StatusFun]状态。受到攻击时，单次受到的伤害量不会超过最大生命力的 [70%:2_1:UIRate]</p>
           <div class="note">该技能没有玩家主动施放入口；效果从下方标出的 Trigger 宿主阶段进入。</div><div class="effects"><div class="effect">
-      <div class="lane"><span class="lane-label">AddSP</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F13</span><span class="node-name">AddSP</span></span></div>
-      <p class="effect-copy">AddSP；目标=Self；阵营=My；触发=FirstStartBattle；数值=40<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">AddSP</span><span class="node trigger"><span class="node-id">S01</span><span class="node-name">FirstStartBattle</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F13</span><span class="node-name">AddSP</span></span></div>
+      <p class="effect-copy">AddSP；目标=Self；阵营=My；触发=FirstStartBattle；数值=40<span class="proof">｜入口：FirstStartBattle</span></p>
     </div><div class="effect">
-      <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加漂泊者（H199S2）｜数据：AddStatus；状态 漂泊者 (H199S2)；目标=Self；阵营=My；触发=FirstStartBattle<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">施加状态</span><span class="node trigger"><span class="node-id">S01</span><span class="node-name">FirstStartBattle</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
+      <p class="effect-copy">施加漂泊者（H199S2）｜数据：AddStatus；状态 漂泊者 (H199S2)；目标=Self；阵营=My；触发=FirstStartBattle<span class="proof">｜入口：FirstStartBattle</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；属性=MaxHP；概率/倍率=70%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　受到的伤害量上限下降 3%</li><li><b>Lv.3</b>　受到的伤害量上限下降 3%</li><li><b>Lv.4</b>　受到的伤害量上限下降 4%</li><li><b>Lv.5</b>　受到的伤害量上限下降 4%</li><li><b>Lv.6</b>　受到的伤害量上限下降 5%</li></ul></details>
         </section><section class="section" id="H199S3">
           <div class="section-title"><h2>H199S3　灼华乱舞</h2><span class="meta">伤害技能｜目标 All｜CD 1｜AttRate 1.2｜Pow 0.9</span></div>
           <p class="description">[:AWAKEN]乱舞斩击全体敌人。敌人目标为 3 位以下时，目标越少则伤害量越高</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">条件伤害倍率</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">满足条件时，条件攻击倍率为 0.2｜数据：属性/条件函数；属性=FewEnemyCount；概率/倍率=20%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A06</span><span class="node-name">魂力→自身BeforeSkill→全体AnyOneBeforeSkill→夹击</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加攻击力提升（AddAttack）；持续 3 回合｜数据：AddStatus；状态 攻击力提升 (AddAttack)；目标=Self；阵营=My；触发=BeforeSkill；持续回合=3<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加攻击力提升（AddAttack）；持续 3 回合｜数据：AddStatus；状态 攻击力提升 (AddAttack)；目标=Self；阵营=My；触发=BeforeSkill；持续回合=3<span class="proof">｜入口：BeforeSkill</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　伤害量提升 5%</li><li><b>Lv.5</b>　伤害量提升 10%</li><li><b>Lv.6</b>　伤害量提升 15%</li></ul></details>
         </section><section class="section" id="damage-chain">
           <div class="section-title"><h2>直接目标的完整伤害链</h2><span class="meta">H199S1、H199S3 使用</span></div>
@@ -65,20 +65,20 @@
           <p class="description">命中率、攻击力提升 20%。此状态不会被解除。復活时，此状态仍会存在</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">HitRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">HitRate = 0.2｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">HitRate = 0.2｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">攻击力提升</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">攻击力提高 20%（最终攻击倍率）｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">攻击力提高 20%（最终攻击倍率）｜数据：属性/条件函数<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>AddAttack　攻击力提升</h3><span class="meta">基础回合 2｜最大层数 0｜常驻 0</span></div>
           <p class="description">攻击力提升 50%</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">攻击力提升</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">攻击力提高 50%（最终攻击倍率）｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">攻击力提高 50%（最终攻击倍率）｜数据：属性/条件函数<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article></div></section>
 </main></body></html>

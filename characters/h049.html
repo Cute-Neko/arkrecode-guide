@@ -18,30 +18,30 @@
           <p class="description">攻击敌人并以 [75%:1_1:Rate] 机率造成[嘲讽:Taunt:StatusFun]( 1 回合)。伤害量根据自身防御力等比提升</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加嘲讽（Taunt）；基础概率 75%；持续 1 回合｜数据：AddStatus；状态 嘲讽 (Taunt)；概率/倍率=75%；持续回合=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加嘲讽（Taunt）；基础概率 75%；持续 1 回合｜数据：AddStatus；状态 嘲讽 (Taunt)；概率/倍率=75%；持续回合=1<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；属性=Defence；概率/倍率=60%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　效果发生率提升 5%</li><li><b>Lv.4</b>　伤害量提升 10%</li><li><b>Lv.5</b>　效果发生率提升 5%</li><li><b>Lv.6</b>　效果发生率提升 15%</li><li><b>Lv.7</b>　伤害量提升 15%</li></ul></details>
         </section><section class="section" id="H049S2">
           <div class="section-title"><h2>H049S2　专业经理人</h2><span class="meta">被动技能｜目标 数据库未标注｜CD 0</span></div>
           <p class="description">展现专业，使我方全体受到的伤害量下降 [10.0%:H049S2:UIRate]。伤害下降效果重复时，只套用最高效果</p>
           <div class="note">该技能没有玩家主动施放入口；效果从下方标出的 Trigger 宿主阶段进入。</div><div class="effects"><div class="effect">
-      <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；目标=Self；阵营=My；触发=BeforeEvent；属性=ValueOne；概率/倍率=10%<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">属性与条件</span><span class="node damage"><span class="node-id">D08</span><span class="node-name">事件提交前函数</span></span></div>
+      <p class="effect-copy">属性/条件函数；目标=Self；阵营=My；触发=BeforeEvent<span class="proof">｜入口：BeforeEvent</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　受到的伤害量追加下降 0.5%</li><li><b>Lv.3</b>　受到的伤害量追加下降 0.5%</li><li><b>Lv.4</b>　受到的伤害量追加下降 0.5%</li><li><b>Lv.5</b>　受到的伤害量追加下降 0.5%</li><li><b>Lv.6</b>　受到的伤害量追加下降 1%</li><li><b>Lv.7</b>　受到的伤害量追加下降 1%</li><li><b>Lv.8</b>　受到的伤害量追加下降 1%</li></ul></details>
         </section><section class="section" id="H049S3">
           <div class="section-title"><h2>H049S3　开心吗？狗狗？</h2><span class="meta">非伤害技能｜目标 My / All｜CD 6｜魂燃 10</span></div>
           <p class="description">增幅全体我方，附加[免疫:Immune:StatusFun]( 2 回合)[:AWAKEN]</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加免疫（Immune）；持续 2 回合｜数据：AddStatus；状态 免疫 (Immune)；目标=All；阵营=My；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加免疫（Immune）；持续 2 回合｜数据：AddStatus；状态 免疫 (Immune)；目标=All；阵营=My；持续回合=2<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">技能冷却变化</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F18</span><span class="node-name">AddSkillCoolDown</span></span></div>
-      <p class="effect-copy">自身 H049S3 冷却时间减少 2 回合｜数据：AddSkillCoolDown；状态 H049S3 (H049S3)；目标=Self；阵营=My；数值=-2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">自身 H049S3 冷却时间减少 2 回合｜数据：AddSkillCoolDown；状态 H049S3 (H049S3)；目标=Self；阵营=My；数值=-2<span class="proof">｜入口：A02替换魂燃函数后，于A07执行；需核查执行宿主</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加无敌（Invincible）；持续 1 回合｜数据：AddStatus；状态 无敌 (Invincible)；目标=All；阵营=My；持续回合=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加无敌（Invincible）；持续 1 回合｜数据：AddStatus；状态 无敌 (Invincible)；目标=All；阵营=My；持续回合=1<span class="proof">｜入口：觉醒技能函数；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　增加 2 点星源</li><li><b>Lv.3</b>　冷却时间减少 1 回合</li></ul></details>
         </section><section class="section" id="damage-chain">
           <div class="section-title"><h2>直接目标的完整伤害链</h2><span class="meta">H049S1 使用</span></div>
@@ -53,36 +53,36 @@
           <p class="description">回合开始时，会被迫向施展嘲讽的目标施展基本技能</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">Taunt</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">Taunt = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">Taunt = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">IsSourceDeadRemove</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">IsSourceDeadRemove = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">IsSourceDeadRemove = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>Immune　免疫</h3><span class="meta">基础回合 2｜最大层数 0｜常驻 0</span></div>
           <p class="description">目标不会受到任何负向状态及部分有害效果的影响</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">Immune</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">Immune = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">Immune = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>Invincible　无敌</h3><span class="meta">基础回合 1｜最大层数 0｜常驻 0</span></div>
           <p class="description">受到的所有伤害无效</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">Invincible</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">Invincible = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">Invincible = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article></div></section>
 </main></body></html>

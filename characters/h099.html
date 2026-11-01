@@ -18,27 +18,27 @@
           <p class="description">劈斩目标[:AWAKEN]。伤害量根据目标最大生命力等比提升</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；属性=MaxHP；概率/倍率=2%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">行动值变化</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F02</span><span class="node-name">AddTime</span></span></div>
-      <p class="effect-copy">自身行动值提升 20%｜数据：AddTime；目标=Self；阵营=My；数值=0.2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">自身行动值提升 20%｜数据：AddTime；目标=Self；阵营=My；数值=0.2<span class="proof">｜入口：觉醒技能函数；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　伤害量提升 10%</li><li><b>Lv.5</b>　伤害量提升 10%</li><li><b>Lv.6</b>　伤害量提升 10%</li></ul></details>
         </section><section class="section" id="H099S2">
           <div class="section-title"><h2>H099S2　蓄能武装</h2><span class="meta">被动技能｜目标 数据库未标注｜CD 0</span></div>
           <p class="description">每次攻击时，攻击力提升 [10%:2_1:Value]。此效果最多重迭 5 次</p>
           <div class="note">该技能没有玩家主动施放入口；效果从下方标出的 Trigger 宿主阶段进入。</div><div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加攻击力提升（H099S2）｜数据：AddStatus；状态 攻击力提升 (H099S2)；目标=Self；阵营=My；数值=0.1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加攻击力提升（H099S2）｜数据：AddStatus；状态 攻击力提升 (H099S2)；目标=Self；阵营=My；数值=0.1<span class="proof">｜入口：技能静态函数</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　攻击力提升 0.5%</li><li><b>Lv.3</b>　攻击力提升 0.5%</li><li><b>Lv.4</b>　攻击力提升 1%</li><li><b>Lv.5</b>　攻击力提升 1%</li><li><b>Lv.6</b>　攻击力提升 2%</li></ul></details>
         </section><section class="section" id="H099S3">
           <div class="section-title"><h2>H099S3　爆能劈砍</h2><span class="meta">伤害技能｜目标 数据库未标注｜CD 4｜AttRate 1.5｜Pow 0.95｜魂燃 20</span></div>
           <p class="description">连续噼砍目标。伤害量根据目标丧失的生命力比例等比提升</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">条件伤害倍率</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">满足条件时，条件攻击倍率为 0.005｜数据：属性/条件函数；属性=LastHPRate；概率/倍率=0.5%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">AddRound</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F41</span><span class="node-name">AddRound</span></span></div>
-      <p class="effect-copy">AddRound；目标=Self；阵营=My<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">AddRound；目标=Self；阵营=My<span class="proof">｜入口：A02替换魂燃函数后，于A07执行；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　冷却时间减少 1 回合</li><li><b>Lv.5</b>　伤害量提升 10%</li><li><b>Lv.6</b>　伤害量提升 15%</li></ul></details>
         </section><section class="section" id="damage-chain">
           <div class="section-title"><h2>直接目标的完整伤害链</h2><span class="meta">H099S1、H099S3 使用</span></div>
@@ -50,7 +50,7 @@
           <p class="description">数据库无状态说明</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">攻击力提升</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">攻击力提高 100%（最终攻击倍率）｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">攻击力提高 100%（最终攻击倍率）｜数据：属性/条件函数<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div>
         </article></div></section>
 </main></body></html>

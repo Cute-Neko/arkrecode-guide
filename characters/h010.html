@@ -18,49 +18,49 @@
           <p class="description">拳击敌人[并以 50% 机率:AWAKEN]造成[无法恢復:Unhealable:StatusFun]( 1 回合)。&lt;br&gt;于自身回合施展此技能后，若目标生命力为 50% 以下时，追加施展「破碎击」。&lt;br&gt;破碎击(获得 1 点星源)：攻击全体敌人并以 50% 机率造成无法恢復( 1 回合)。伤害量根据目标丧失的生命力比例等比提升</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加无法恢复（Unhealable）；基础概率 50%｜数据：AddStatus；状态 无法恢复 (Unhealable)；概率/倍率=50%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加无法恢复（Unhealable）；基础概率 50%｜数据：AddStatus；状态 无法恢复 (Unhealable)；概率/倍率=50%<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">追加技能</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F07</span><span class="node-name">AdditionSkill</span></span><span class="arrow">→</span><span class="node queue"><span class="node-id">Q01</span><span class="node-name">反击、夹击与追加技能队列</span></span><span class="arrow">→</span><span class="node queue"><span class="node-id">Q04</span><span class="node-name">优先追加技能（Continue）→夹击→反击→死亡→普通追加技能（Addition）</span></span><span class="arrow">→</span><span class="node action"><span class="node-id">A04</span><span class="node-name">StartNewSkillEvent</span></span></div>
-      <p class="effect-copy">满足条件时，追加施展 H010S4｜数据：AdditionSkill；状态 H010S4 (H010S4)；属性=NowHPRate；数值=0.5；条件=IsMainRound/SkillID<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">满足条件时，追加施展 H010S4｜数据：AdditionSkill；状态 H010S4 (H010S4)；条件=IsMainRound/SkillID；条件详情={&quot;CheckFun&quot;:&quot;SkillID&quot;,&quot;CheckID&quot;:&quot;H010S1&quot;,&quot;Conditions&quot;:[{&quot;Who&quot;:&quot;SelectTarget&quot;,&quot;Property&quot;:&quot;NowHPRate&quot;,&quot;Comparer&quot;:&quot;Lt&quot;,&quot;Value&quot;:0.5},{&quot;CheckFun&quot;:&quot;IsMainRound&quot;}]}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加无法恢复（Unhealable）｜数据：AddStatus；状态 无法恢复 (Unhealable)<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加无法恢复（Unhealable）｜数据：AddStatus；状态 无法恢复 (Unhealable)<span class="proof">｜入口：觉醒技能函数；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　伤害量提升 5%</li><li><b>Lv.5</b>　伤害量提升 10%</li><li><b>Lv.6</b>　伤害量提升 10%</li></ul></details>
         </section><section class="section" id="H010S2">
           <div class="section-title"><h2>H010S2　绝不认输</h2><span class="meta">被动技能｜目标 数据库未标注｜CD 0</span></div>
           <p class="description">受到攻击时对自身附加潜伏( 1 回合)。 该效果 1 回合只会发生 1 次。单次受到的伤害不会超过最大生命力的 [70%:2_1:UIRate]</p>
           <div class="note">该技能没有玩家主动施放入口；效果从下方标出的 Trigger 宿主阶段进入。</div><div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；属性=MaxHP；概率/倍率=70%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
-      <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加潜伏（Stealth）；持续 1 回合｜数据：AddStatus；状态 潜伏 (Stealth)；目标=Self；阵营=My；触发=TargetAfterSkill；持续回合=1；条件=IsDamageSkill<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">施加状态</span><span class="node queue"><span class="node-id">Q02</span><span class="node-name">目标及全场 AfterSkill</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
+      <p class="effect-copy">施加潜伏（Stealth）；持续 1 回合｜数据：AddStatus；状态 潜伏 (Stealth)；目标=Self；阵营=My；触发=TargetAfterSkill；持续回合=1；条件=IsDamageSkill；条件详情={&quot;CheckFun&quot;:&quot;IsDamageSkill&quot;}<span class="proof">｜入口：TargetAfterSkill</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　受到的伤害量上限下降 3%</li><li><b>Lv.3</b>　受到的伤害量上限下降 3%</li><li><b>Lv.4</b>　受到的伤害量上限下降 4%</li><li><b>Lv.5</b>　受到的伤害量上限下降 4%</li><li><b>Lv.6</b>　受到的伤害量上限下降 5%</li></ul></details>
         </section><section class="section" id="H010S3">
           <div class="section-title"><h2>H010S3　射入你的心</h2><span class="meta">伤害技能｜目标 数据库未标注｜CD 6｜AttRate 2｜Pow 0.95｜魂燃 20</span></div>
           <p class="description">施展致命攻击，消灭敌人时造成[灭绝:SetDieOut:StatusFun]，并对目标除外的所有敌人造成自身攻击力等比的追加伤害，伤害量根据目标丧失的生命力比例等比提升</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">消灭判定</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F17</span><span class="node-name">SetDieOut</span></span></div>
-      <p class="effect-copy">目标生命降至 0 时，提交消灭判定｜数据：SetDieOut；属性=NowHP；数值=0<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">目标生命降至 0 时，提交消灭判定｜数据：SetDieOut；条件详情={&quot;Who&quot;:&quot;SelectTarget&quot;,&quot;Property&quot;:&quot;NowHP&quot;,&quot;Comparer&quot;:&quot;Lt&quot;,&quot;Value&quot;:0}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">条件伤害倍率</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">满足条件时，条件攻击倍率为 0.003｜数据：属性/条件函数；属性=LastHPRate；概率/倍率=0.3%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">DirectHit</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F37</span><span class="node-name">DirectHit</span></span><span class="arrow">→</span><span class="node queue"><span class="node-id">Q03</span><span class="node-name">ProcessAdditionDamage / ProcessDirectHit</span></span><span class="arrow">→</span><span class="node damage"><span class="node-id">D00</span><span class="node-name">建立命中事件与前快照</span></span></div>
-      <p class="effect-copy">DirectHit；目标=All；属性=Attack；概率/倍率=1.5；数值=0<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">DirectHit；目标=All；条件详情={&quot;Who&quot;:&quot;SelectTarget&quot;,&quot;Property&quot;:&quot;NowHP&quot;,&quot;Comparer&quot;:&quot;Lt&quot;,&quot;Value&quot;:0}；数值换算={&quot;Rate&quot;:1.5,&quot;Property&quot;:&quot;Attack&quot;}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">条件伤害倍率</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">满足条件时，条件攻击倍率为 0.007｜数据：属性/条件函数；属性=LastHPRate；概率/倍率=0.7%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">满足条件时，条件攻击倍率为 0.007｜数据：属性/条件函数；属性=LastHPRate；概率/倍率=0.7%<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　冷却时间减少 1 回合</li><li><b>Lv.5</b>　伤害量提升 10%</li><li><b>Lv.6</b>　伤害量提升 15%</li></ul></details>
         </section><section class="section" id="H010S4">
           <div class="section-title"><h2>H010S4　破碎击</h2><span class="meta">伤害技能｜目标 All｜CD 1｜AttRate 0.5｜Pow 1</span></div>
           <p class="description">数据库无技能说明</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加无法恢复（Unhealable）；基础概率 50%｜数据：AddStatus；状态 无法恢复 (Unhealable)；目标=All；概率/倍率=50%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加无法恢复（Unhealable）；基础概率 50%｜数据：AddStatus；状态 无法恢复 (Unhealable)；目标=All；概率/倍率=50%<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">条件伤害倍率</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">满足条件时，条件攻击倍率为 0.003｜数据：属性/条件函数；属性=LastHPRate；概率/倍率=0.3%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div></div>
         </section><section class="section" id="damage-chain">
           <div class="section-title"><h2>直接目标的完整伤害链</h2><span class="meta">H010S1、H010S3、H010S4 使用</span></div>
@@ -72,23 +72,23 @@
           <p class="description">无法恢复生命力</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">SealHeal</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">SealHeal = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">SealHeal = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>Stealth　潜伏</h3><span class="meta">基础回合 1｜最大层数 0｜常驻 0</span></div>
           <p class="description">如果有其他我方的话，不会成为攻击目标。受到广域攻击时伤害下降，受到攻击造成的伤害时则会解除</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">Stealth</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">Stealth = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">Stealth = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
-      <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；触发=BeforeEvent；属性=ValueOne；概率/倍率=50%；条件=TargetIsAll<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">属性与条件</span><span class="node damage"><span class="node-id">D08</span><span class="node-name">事件提交前函数</span></span></div>
+      <p class="effect-copy">属性/条件函数；触发=BeforeEvent；条件=TargetIsAll；条件详情={&quot;CheckFun&quot;:&quot;TargetIsAll&quot;}<span class="proof">｜入口：BeforeEvent</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article></div></section>
 </main></body></html>

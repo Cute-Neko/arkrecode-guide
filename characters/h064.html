@@ -18,33 +18,33 @@
           <p class="description">重击目标，以 [35%:1_1:Rate] 机率造成[嘲讽:Taunt:StatusFun]( 1 回合)。伤害量根据自身最大生命力等比提升</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加嘲讽（Taunt）；基础概率 35%；持续 1 回合｜数据：AddStatus；状态 嘲讽 (Taunt)；概率/倍率=35%；持续回合=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加嘲讽（Taunt）；基础概率 35%；持续 1 回合｜数据：AddStatus；状态 嘲讽 (Taunt)；概率/倍率=35%；持续回合=1<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；属性=MaxHP；概率/倍率=2.5%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　效果发生率提升 5%</li><li><b>Lv.4</b>　伤害量提升 10%</li><li><b>Lv.5</b>　效果发生率提升 10%</li><li><b>Lv.6</b>　伤害量提升 15%</li></ul></details>
         </section><section class="section" id="H064S2">
           <div class="section-title"><h2>H064S2　反弹盾牌</h2><span class="meta">被动技能｜目标 数据库未标注｜CD 0</span></div>
           <p class="description">受到暴击攻击时，反弹伤害量的 [30%:2_1:UIRate] 给攻击者。反弹的伤害量最高可达自身最大生命力</p>
           <div class="note">该技能没有玩家主动施放入口；效果从下方标出的 Trigger 宿主阶段进入。</div><div class="effects"><div class="effect">
-      <div class="lane"><span class="lane-label">生命恢复</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F03</span><span class="node-name">AddHP</span></span></div>
-      <p class="effect-copy">恢复生命；恢复量为EventHPDiff的 30%｜数据：AddHP；目标=SkillSource；触发=AfterEvent；属性=EventHPDiff；概率/倍率=30%；数值=0；条件=IsBeCriticalHit<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">生命恢复</span><span class="node action"><span class="node-id">UNRESOLVED</span><span class="node-name">未登记节点</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F03</span><span class="node-name">AddHP</span></span></div>
+      <p class="effect-copy">恢复生命；恢复量为EventHPDiff的 30%｜数据：AddHP；目标=SkillSource；触发=AfterEvent；条件=IsBeCriticalHit；条件详情={&quot;CheckFun&quot;:&quot;IsBeCriticalHit&quot;,&quot;Conditions&quot;:[{&quot;Property&quot;:&quot;NowHPRate&quot;,&quot;Comparer&quot;:&quot;Gtn&quot;,&quot;Value&quot;:0}]}；数值换算={&quot;Rate&quot;:0.3,&quot;Property&quot;:&quot;EventHPDiff&quot;,&quot;FinalMaxValueConvert&quot;:{&quot;Rate&quot;:1,&quot;Property&quot;:&quot;MaxHP&quot;}}<span class="proof">｜入口：AfterEvent（宿主待核查）；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　反弹伤害提升 2%</li><li><b>Lv.3</b>　反弹伤害提升 3%</li><li><b>Lv.4</b>　反弹伤害提升 5%</li><li><b>Lv.5</b>　反弹伤害提升 5%</li><li><b>Lv.6</b>　反弹伤害提升 5%</li></ul></details>
         </section><section class="section" id="H064S3">
           <div class="section-title"><h2>H064S3　直传剑术</h2><span class="meta">伤害技能｜目标 数据库未标注｜CD 4｜AttRate 1.5｜Pow 0.95｜魂燃 10</span></div>
           <p class="description">运用普利蔓亲自传授的剑术进行攻击，解除所有正向状态[:AWAKEN]。伤害量根据自身最大生命力等比提升</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">RemoveBuf</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F05</span><span class="node-name">RemoveBuf</span></span></div>
-      <p class="effect-copy">RemoveBuf；数值=-1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">RemoveBuf；数值=-1<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；属性=MaxHP；概率/倍率=5%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：A02替换魂燃函数后，于A07执行；需核查执行宿主</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">生命恢复</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F03</span><span class="node-name">AddHP</span></span></div>
-      <p class="effect-copy">恢复生命；恢复量为AllDamage的 100%｜数据：AddHP；目标=Self；阵营=My；属性=AllDamage；概率/倍率=100%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">恢复生命；恢复量为AllDamage的 100%｜数据：AddHP；目标=Self；阵营=My；数值换算={&quot;Who&quot;:&quot;Source&quot;,&quot;Rate&quot;:1,&quot;Property&quot;:&quot;AllDamage&quot;}<span class="proof">｜入口：觉醒技能函数；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　冷却时间减少 1 回合</li><li><b>Lv.5</b>　伤害量提升 10%</li><li><b>Lv.6</b>　伤害量提升 15%</li></ul></details>
         </section><section class="section" id="damage-chain">
           <div class="section-title"><h2>直接目标的完整伤害链</h2><span class="meta">H064S1、H064S3 使用</span></div>
@@ -56,16 +56,16 @@
           <p class="description">回合开始时，会被迫向施展嘲讽的目标施展基本技能</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">Taunt</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">Taunt = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">Taunt = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">IsSourceDeadRemove</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">IsSourceDeadRemove = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">IsSourceDeadRemove = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article></div></section>
 </main></body></html>

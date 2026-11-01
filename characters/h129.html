@@ -18,45 +18,45 @@
           <p class="description">拳击敌人，以 [35%:1_1:Rate] 机率造成[无法强化:CannotBuff:StatusFun]( 2 回合)</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加无法强化（CannotBuff）；基础概率 35%；持续 2 回合｜数据：AddStatus；状态 无法强化 (CannotBuff)；概率/倍率=35%；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加无法强化（CannotBuff）；基础概率 35%；持续 2 回合｜数据：AddStatus；状态 无法强化 (CannotBuff)；概率/倍率=35%；持续回合=2<span class="proof">｜入口：技能静态函数</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　效果发生率提升 5%</li><li><b>Lv.4</b>　伤害量提升 10%</li><li><b>Lv.5</b>　效果发生率提升 10%</li><li><b>Lv.6</b>　伤害量提升 15%</li></ul></details>
         </section><section class="section" id="H129S2">
           <div class="section-title"><h2>H129S2　风风狂舞</h2><span class="meta">伤害技能｜目标 数据库未标注｜CD 3｜AttRate 1.5｜Pow 1</span></div>
           <p class="description">解除自身所有负向状态后猛烈攻击敌人，各以 [60%:2_1:Rate] 机率造成 3 个[流血:Bleed:StatusFun]( 2 回合)后，使自身行动值提升 50%[:AWAKEN]</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">RemoveDeBuf</span><span class="node action"><span class="node-id">A06</span><span class="node-name">魂力→自身BeforeSkill→全体AnyOneBeforeSkill→夹击</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F04</span><span class="node-name">RemoveDeBuf</span></span></div>
-      <p class="effect-copy">RemoveDeBuf；目标=Self；阵营=My；触发=BeforeSkill；数值=-1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">RemoveDeBuf；目标=Self；阵营=My；触发=BeforeSkill；数值=-1<span class="proof">｜入口：BeforeSkill</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加流血（Bleed）；基础概率 60%；持续 2 回合；一次施加 3 个｜数据：AddStatus；状态 流血 (Bleed)；属性=Attack；概率/倍率=60%；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加流血（Bleed）；基础概率 60%；状态保存值＝施加时施加者的攻击力 × 30%；持续 2 回合；一次施加 3 个｜数据：AddStatus；状态 流血 (Bleed)；概率/倍率=60%；持续回合=2；状态保存值换算={&quot;Rate&quot;:0.3,&quot;Property&quot;:&quot;Attack&quot;}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">行动值变化</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F02</span><span class="node-name">AddTime</span></span></div>
-      <p class="effect-copy">自身行动值提升 50%｜数据：AddTime；目标=Self；阵营=My；数值=0.5<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">自身行动值提升 50%｜数据：AddTime；目标=Self；阵营=My；数值=0.5<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">行动值变化</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F02</span><span class="node-name">AddTime</span></span></div>
-      <p class="effect-copy">自身行动值提升 50%｜数据：AddTime；目标=Self；阵营=My；属性=NowHP；数值=0.5<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">自身行动值提升 50%｜数据：AddTime；目标=Self；阵营=My；数值=0.5；条件详情={&quot;Who&quot;:&quot;SelectTarget&quot;,&quot;Property&quot;:&quot;NowHP&quot;,&quot;Comparer&quot;:&quot;Lt&quot;,&quot;Value&quot;:0}<span class="proof">｜入口：觉醒技能函数；需核查执行宿主</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">行动值变化</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F02</span><span class="node-name">AddTime</span></span></div>
-      <p class="effect-copy">自身行动值提升 50%；条件：目标具有 Bleed｜数据：AddTime；目标=Self；阵营=My；属性=NowHP；数值=0.5；条件=HaveBuff<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">自身行动值提升 50%｜数据：AddTime；目标=Self；阵营=My；数值=0.5；条件=HaveBuff；全部条件=[{&quot;Who&quot;:&quot;SelectTarget&quot;,&quot;CheckFun&quot;:&quot;HaveBuff&quot;,&quot;CheckID&quot;:&quot;Bleed&quot;},{&quot;Who&quot;:&quot;SelectTarget&quot;,&quot;Property&quot;:&quot;NowHP&quot;,&quot;Comparer&quot;:&quot;Gtn&quot;,&quot;Value&quot;:0}]<span class="proof">｜入口：觉醒技能函数；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　效果发生率提升 5%</li><li><b>Lv.4</b>　伤害量提升 10%</li><li><b>Lv.5</b>　效果发生率提升 10%</li><li><b>Lv.6</b>　伤害量提升 15%</li></ul></details>
         </section><section class="section" id="H129S3">
           <div class="section-title"><h2>H129S3　要好好疼爱我喔～</h2><span class="meta">伤害技能｜目标 数据库未标注｜CD 5｜AttRate 2｜Pow 0.95｜魂燃 10</span></div>
           <p class="description">基础命中率提升 50%&lt;br&gt;迸发能量攻击敌人，消灭敌人时造成[灭绝:SetDieOut:StatusFun]并使自身技能冷却时间减少 1 回合。攻击结束后使自身附加[技能伤害无效:SkillNullifier:StatusFun] 1 次</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">消灭判定</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F17</span><span class="node-name">SetDieOut</span></span></div>
-      <p class="effect-copy">目标生命降至 0 时，提交消灭判定｜数据：SetDieOut；属性=NowHP；数值=0<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">目标生命降至 0 时，提交消灭判定｜数据：SetDieOut；条件详情={&quot;Who&quot;:&quot;SelectTarget&quot;,&quot;Property&quot;:&quot;NowHP&quot;,&quot;Comparer&quot;:&quot;Lt&quot;,&quot;Value&quot;:0}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">AddAllSkillCoolDown</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F21</span><span class="node-name">AddAllSkillCoolDown</span></span></div>
-      <p class="effect-copy">AddAllSkillCoolDown；目标=Self；阵营=My；属性=NowHP；数值=-1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">AddAllSkillCoolDown；目标=Self；阵营=My；数值=-1；条件详情={&quot;Who&quot;:&quot;SelectTarget&quot;,&quot;Property&quot;:&quot;NowHP&quot;,&quot;Comparer&quot;:&quot;Lt&quot;,&quot;Value&quot;:0}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加技能伤害无效（SkillNullifier）｜数据：AddStatus；状态 技能伤害无效 (SkillNullifier)；目标=Self；阵营=My<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加技能伤害无效（SkillNullifier）｜数据：AddStatus；状态 技能伤害无效 (SkillNullifier)；目标=Self；阵营=My<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">I06</span><span class="node-name">收集角色、神器与状态函数</span></span></div>
-      <p class="effect-copy">属性/条件函数；触发=Property；属性=HitRate；数值=0.5<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数；触发=Property；属性=HitRate；数值=0.5<span class="proof">｜入口：Property</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：A02替换魂燃函数后，于A07执行；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　冷却时间减少 1 回合</li><li><b>Lv.5</b>　伤害量提升 10%</li><li><b>Lv.6</b>　伤害量提升 15%</li></ul></details>
         </section><section class="section" id="damage-chain">
           <div class="section-title"><h2>直接目标的完整伤害链</h2><span class="meta">H129S1、H129S2、H129S3 使用</span></div>
@@ -68,33 +68,33 @@
           <p class="description">无法获得任何正向状态</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">SealBuff</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">SealBuff = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">SealBuff = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>Bleed　流血</h3><span class="meta">基础回合 2｜最大层数 0｜常驻 0</span></div>
           <p class="description">回合开始时，依据施展者的攻击力受到等比伤害</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">状态伤害结算</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F14</span><span class="node-name">BuffAttack</span></span></div>
-      <p class="effect-copy">回合开始时，按施加者攻击力结算本状态伤害｜数据：BuffAttack；触发=BuffRound<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">回合开始时，按施加者攻击力结算本状态伤害｜数据：BuffAttack；触发=BuffRound<span class="proof">｜入口：BuffRound</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">流血结算标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">启用流血结算规则：回合开始时按施加者攻击力造成伤害｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">启用流血结算规则：回合开始时按施加者攻击力造成伤害｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>SkillNullifier　技能伤害无效</h3><span class="meta">基础回合 -1｜最大层数 0｜常驻 0</span></div>
           <p class="description">使技能造成的伤害无效</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">NoDamage</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">NoDamage = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">NoDamage = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article></div></section>
 </main></body></html>

@@ -6,7 +6,7 @@
     "subtitle": "火属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h001-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h001-readable-node-sheet.html"
   },
   {
     "id": "H002",
@@ -15,7 +15,7 @@
     "subtitle": "火属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h002-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h002-readable-node-sheet.html"
   },
   {
     "id": "H003",
@@ -24,7 +24,7 @@
     "subtitle": "火属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h003-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h003-readable-node-sheet.html"
   },
   {
     "id": "H004",
@@ -33,7 +33,7 @@
     "subtitle": "火属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h004-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h004-readable-node-sheet.html"
   },
   {
     "id": "H005",
@@ -42,7 +42,7 @@
     "subtitle": "火属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h005-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h005-readable-node-sheet.html"
   },
   {
     "id": "H006",
@@ -51,16 +51,16 @@
     "subtitle": "火属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h006-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h006-readable-node-sheet.html"
   },
   {
     "id": "H007",
     "name": "艾瑞儿",
-    "title": "艾瑞儿 H007 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h007-readable-node-sheet.html"
+    "title": "艾瑞儿 H007 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 坦克｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h007-build-damage-node-sheet.html"
   },
   {
     "id": "H008",
@@ -69,16 +69,16 @@
     "subtitle": "Ice属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h008-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h008-readable-node-sheet.html"
   },
   {
     "id": "H009",
     "name": "菈法瑞",
-    "title": "菈法瑞 H009 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h009-readable-node-sheet.html"
+    "title": "菈法瑞 H009 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 医疗｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h009-build-damage-node-sheet.html"
   },
   {
     "id": "H010",
@@ -87,16 +87,16 @@
     "subtitle": "Ice属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h010-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h010-readable-node-sheet.html"
   },
   {
     "id": "H011",
     "name": "爱莉卡",
-    "title": "爱莉卡 H011 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h011-readable-node-sheet.html"
+    "title": "爱莉卡 H011 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 射手｜2 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "2 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h011-build-damage-node-sheet.html"
   },
   {
     "id": "H012",
@@ -105,7 +105,7 @@
     "subtitle": "Ice属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h012-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h012-readable-node-sheet.html"
   },
   {
     "id": "H013",
@@ -114,34 +114,34 @@
     "subtitle": "Earth属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h013-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h013-readable-node-sheet.html"
   },
   {
     "id": "H014",
     "name": "莎莉丝特",
-    "title": "莎莉丝特 H014 · 技能节点阅读版",
-    "subtitle": "Earth属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h014-readable-node-sheet.html"
+    "title": "莎莉丝特 H014 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Earth属性 · 战士｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h014-build-damage-node-sheet.html"
   },
   {
     "id": "H015",
     "name": "多恩",
-    "title": "多恩 H015 · 技能节点阅读版",
-    "subtitle": "Earth属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h015-readable-node-sheet.html"
+    "title": "多恩 H015 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Earth属性 · 医疗｜2 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "2 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h015-build-damage-node-sheet.html"
   },
   {
     "id": "H016",
     "name": "埃帕蒂",
-    "title": "埃帕蒂 H016 · 技能节点阅读版",
-    "subtitle": "Earth属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h016-readable-node-sheet.html"
+    "title": "埃帕蒂 H016 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Earth属性 · 先锋｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h016-build-damage-node-sheet.html"
   },
   {
     "id": "H017",
@@ -150,7 +150,7 @@
     "subtitle": "Earth属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h017-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h017-readable-node-sheet.html"
   },
   {
     "id": "H018",
@@ -159,16 +159,16 @@
     "subtitle": "Earth属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h018-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h018-readable-node-sheet.html"
   },
   {
     "id": "H019",
     "name": "克莱儿",
-    "title": "克莱儿 H019 · 技能节点阅读版",
-    "subtitle": "光属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h019-readable-node-sheet.html"
+    "title": "克莱儿 H019 · 多面板配装、伤害与技能节点表",
+    "subtitle": "光属性 · 战士｜1 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "1 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h019-build-damage-node-sheet.html"
   },
   {
     "id": "H020",
@@ -177,7 +177,7 @@
     "subtitle": "光属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h020-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h020-readable-node-sheet.html"
   },
   {
     "id": "H021",
@@ -186,7 +186,7 @@
     "subtitle": "光属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h021-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h021-readable-node-sheet.html"
   },
   {
     "id": "H022",
@@ -195,16 +195,16 @@
     "subtitle": "光属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h022-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h022-readable-node-sheet.html"
   },
   {
     "id": "H023",
     "name": "异变的奥普怀妮",
-    "title": "异变的奥普怀妮 H023 · 技能节点阅读版",
-    "subtitle": "暗属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h023-readable-node-sheet.html"
+    "title": "异变的奥普怀妮 H023 · 多面板配装、伤害与技能节点表",
+    "subtitle": "暗属性 · 战士｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h023-build-damage-node-sheet.html"
   },
   {
     "id": "H024",
@@ -213,7 +213,7 @@
     "subtitle": "暗属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h024-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h024-readable-node-sheet.html"
   },
   {
     "id": "H025",
@@ -222,7 +222,7 @@
     "subtitle": "暗属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h025-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h025-readable-node-sheet.html"
   },
   {
     "id": "H026",
@@ -231,7 +231,7 @@
     "subtitle": "火属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h026-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h026-readable-node-sheet.html"
   },
   {
     "id": "H027",
@@ -240,7 +240,7 @@
     "subtitle": "火属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h027-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h027-readable-node-sheet.html"
   },
   {
     "id": "H028",
@@ -249,7 +249,7 @@
     "subtitle": "火属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h028-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h028-readable-node-sheet.html"
   },
   {
     "id": "H029",
@@ -258,7 +258,7 @@
     "subtitle": "火属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h029-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h029-readable-node-sheet.html"
   },
   {
     "id": "H030",
@@ -267,7 +267,7 @@
     "subtitle": "火属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h030-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h030-readable-node-sheet.html"
   },
   {
     "id": "H031",
@@ -276,7 +276,7 @@
     "subtitle": "火属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h031-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h031-readable-node-sheet.html"
   },
   {
     "id": "H032",
@@ -285,7 +285,7 @@
     "subtitle": "火属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h032-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h032-readable-node-sheet.html"
   },
   {
     "id": "H033",
@@ -294,7 +294,7 @@
     "subtitle": "火属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h033-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h033-readable-node-sheet.html"
   },
   {
     "id": "H034",
@@ -303,7 +303,7 @@
     "subtitle": "Ice属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h034-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h034-readable-node-sheet.html"
   },
   {
     "id": "H035",
@@ -312,7 +312,7 @@
     "subtitle": "Ice属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h035-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h035-readable-node-sheet.html"
   },
   {
     "id": "H036",
@@ -321,7 +321,7 @@
     "subtitle": "Ice属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h036-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h036-readable-node-sheet.html"
   },
   {
     "id": "H037",
@@ -330,7 +330,7 @@
     "subtitle": "Ice属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h037-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h037-readable-node-sheet.html"
   },
   {
     "id": "H038",
@@ -339,7 +339,7 @@
     "subtitle": "Ice属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h038-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h038-readable-node-sheet.html"
   },
   {
     "id": "H039",
@@ -348,7 +348,7 @@
     "subtitle": "Ice属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h039-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h039-readable-node-sheet.html"
   },
   {
     "id": "H040",
@@ -357,7 +357,7 @@
     "subtitle": "Ice属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h040-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h040-readable-node-sheet.html"
   },
   {
     "id": "H041",
@@ -366,7 +366,7 @@
     "subtitle": "Earth属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h041-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h041-readable-node-sheet.html"
   },
   {
     "id": "H042",
@@ -375,7 +375,7 @@
     "subtitle": "Earth属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h042-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h042-readable-node-sheet.html"
   },
   {
     "id": "H043",
@@ -384,16 +384,16 @@
     "subtitle": "Earth属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h043-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h043-readable-node-sheet.html"
   },
   {
     "id": "H044",
     "name": "莉娜",
-    "title": "莉娜 H044 · 技能节点阅读版",
-    "subtitle": "Earth属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h044-readable-node-sheet.html"
+    "title": "莉娜 H044 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Earth属性 · 医疗｜3 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "3 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h044-build-damage-node-sheet.html"
   },
   {
     "id": "H045",
@@ -402,7 +402,7 @@
     "subtitle": "Earth属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h045-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h045-readable-node-sheet.html"
   },
   {
     "id": "H046",
@@ -411,7 +411,7 @@
     "subtitle": "Earth属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h046-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h046-readable-node-sheet.html"
   },
   {
     "id": "H047",
@@ -420,7 +420,7 @@
     "subtitle": "Earth属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h047-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h047-readable-node-sheet.html"
   },
   {
     "id": "H048",
@@ -429,7 +429,7 @@
     "subtitle": "Earth属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h048-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h048-readable-node-sheet.html"
   },
   {
     "id": "H049",
@@ -438,25 +438,25 @@
     "subtitle": "光属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h049-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h049-readable-node-sheet.html"
   },
   {
     "id": "H050",
     "name": "复制体卡洛琳",
-    "title": "复制体卡洛琳 H050 · 技能节点阅读版",
-    "subtitle": "光属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h050-readable-node-sheet.html"
+    "title": "复制体卡洛琳 H050 · 多面板配装、伤害与技能节点表",
+    "subtitle": "光属性 · 坦克｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h050-build-damage-node-sheet.html"
   },
   {
     "id": "H051",
     "name": "复制体芭索萝",
-    "title": "复制体芭索萝 H051 · 技能节点阅读版",
-    "subtitle": "光属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h051-readable-node-sheet.html"
+    "title": "复制体芭索萝 H051 · 多面板配装、伤害与技能节点表",
+    "subtitle": "光属性 · 战士｜3 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "3 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h051-build-damage-node-sheet.html"
   },
   {
     "id": "H052",
@@ -465,16 +465,16 @@
     "subtitle": "光属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h052-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h052-readable-node-sheet.html"
   },
   {
     "id": "H053",
     "name": "复制体玛蒂尔达",
-    "title": "复制体玛蒂尔达 H053 · 技能节点阅读版",
-    "subtitle": "光属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h053-readable-node-sheet.html"
+    "title": "复制体玛蒂尔达 H053 · 多面板配装、伤害与技能节点表",
+    "subtitle": "光属性 · 射手｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h053-build-damage-node-sheet.html"
   },
   {
     "id": "H054",
@@ -483,25 +483,25 @@
     "subtitle": "光属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h054-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h054-readable-node-sheet.html"
   },
   {
     "id": "H055",
     "name": "异变的使徒",
-    "title": "异变的使徒 H055 · 技能节点阅读版",
-    "subtitle": "暗属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h055-readable-node-sheet.html"
+    "title": "异变的使徒 H055 · 多面板配装、伤害与技能节点表",
+    "subtitle": "暗属性 · 法师｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h055-build-damage-node-sheet.html"
   },
   {
     "id": "H056",
     "name": "复制体卡丽希",
-    "title": "复制体卡丽希 H056 · 技能节点阅读版",
-    "subtitle": "暗属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h056-readable-node-sheet.html"
+    "title": "复制体卡丽希 H056 · 多面板配装、伤害与技能节点表",
+    "subtitle": "暗属性 · 战士｜1 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "1 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h056-build-damage-node-sheet.html"
   },
   {
     "id": "H057",
@@ -510,7 +510,7 @@
     "subtitle": "暗属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h057-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h057-readable-node-sheet.html"
   },
   {
     "id": "H058",
@@ -519,25 +519,25 @@
     "subtitle": "暗属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h058-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h058-readable-node-sheet.html"
   },
   {
     "id": "H059",
     "name": "复制体迪尔德丽",
-    "title": "复制体迪尔德丽 H059 · 技能节点阅读版",
-    "subtitle": "暗属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h059-readable-node-sheet.html"
+    "title": "复制体迪尔德丽 H059 · 多面板配装、伤害与技能节点表",
+    "subtitle": "暗属性 · 先锋｜1 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "1 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h059-build-damage-node-sheet.html"
   },
   {
     "id": "H060",
     "name": "使徒",
-    "title": "使徒 H060 · 技能节点阅读版",
-    "subtitle": "暗属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h060-readable-node-sheet.html"
+    "title": "使徒 H060 · 多面板配装、伤害与技能节点表",
+    "subtitle": "暗属性 · 法师｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h060-build-damage-node-sheet.html"
   },
   {
     "id": "H061",
@@ -546,16 +546,16 @@
     "subtitle": "暗属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h061-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h061-readable-node-sheet.html"
   },
   {
     "id": "H062",
     "name": "复制体乔依丝",
-    "title": "复制体乔依丝 H062 · 技能节点阅读版",
-    "subtitle": "暗属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h062-readable-node-sheet.html"
+    "title": "复制体乔依丝 H062 · 多面板配装、伤害与技能节点表",
+    "subtitle": "暗属性 · 医疗｜2 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "2 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h062-build-damage-node-sheet.html"
   },
   {
     "id": "H063",
@@ -564,7 +564,7 @@
     "subtitle": "Ice属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h063-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h063-readable-node-sheet.html"
   },
   {
     "id": "H064",
@@ -573,7 +573,7 @@
     "subtitle": "Ice属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h064-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h064-readable-node-sheet.html"
   },
   {
     "id": "H065",
@@ -582,7 +582,7 @@
     "subtitle": "Ice属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h065-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h065-readable-node-sheet.html"
   },
   {
     "id": "H066",
@@ -591,7 +591,7 @@
     "subtitle": "Ice属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h066-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h066-readable-node-sheet.html"
   },
   {
     "id": "H067",
@@ -600,7 +600,7 @@
     "subtitle": "Ice属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h067-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h067-readable-node-sheet.html"
   },
   {
     "id": "H068",
@@ -609,7 +609,7 @@
     "subtitle": "Ice属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h068-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h068-readable-node-sheet.html"
   },
   {
     "id": "H069",
@@ -618,7 +618,7 @@
     "subtitle": "Ice属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h069-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h069-readable-node-sheet.html"
   },
   {
     "id": "H070",
@@ -627,7 +627,7 @@
     "subtitle": "Ice属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h070-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h070-readable-node-sheet.html"
   },
   {
     "id": "H071",
@@ -636,7 +636,7 @@
     "subtitle": "Ice属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h071-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h071-readable-node-sheet.html"
   },
   {
     "id": "H072",
@@ -645,7 +645,7 @@
     "subtitle": "Ice属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h072-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h072-readable-node-sheet.html"
   },
   {
     "id": "H073",
@@ -654,7 +654,7 @@
     "subtitle": "火属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h073-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h073-readable-node-sheet.html"
   },
   {
     "id": "H074",
@@ -663,16 +663,16 @@
     "subtitle": "火属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h074-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h074-readable-node-sheet.html"
   },
   {
     "id": "H075",
     "name": "拉娜",
-    "title": "拉娜 H075 · 技能节点阅读版",
-    "subtitle": "火属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h075-readable-node-sheet.html"
+    "title": "拉娜 H075 · 多面板配装、伤害与技能节点表",
+    "subtitle": "火属性 · 先锋｜1 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "1 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h075-build-damage-node-sheet.html"
   },
   {
     "id": "H076",
@@ -681,7 +681,7 @@
     "subtitle": "火属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h076-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h076-readable-node-sheet.html"
   },
   {
     "id": "H077",
@@ -690,7 +690,7 @@
     "subtitle": "火属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h077-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h077-readable-node-sheet.html"
   },
   {
     "id": "H078",
@@ -699,7 +699,7 @@
     "subtitle": "火属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h078-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h078-readable-node-sheet.html"
   },
   {
     "id": "H079",
@@ -708,7 +708,7 @@
     "subtitle": "火属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h079-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h079-readable-node-sheet.html"
   },
   {
     "id": "H080",
@@ -717,7 +717,7 @@
     "subtitle": "火属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h080-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h080-readable-node-sheet.html"
   },
   {
     "id": "H081",
@@ -726,7 +726,7 @@
     "subtitle": "火属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h081-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h081-readable-node-sheet.html"
   },
   {
     "id": "H082",
@@ -735,7 +735,7 @@
     "subtitle": "Earth属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h082-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h082-readable-node-sheet.html"
   },
   {
     "id": "H083",
@@ -744,7 +744,7 @@
     "subtitle": "Earth属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h083-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h083-readable-node-sheet.html"
   },
   {
     "id": "H084",
@@ -753,7 +753,7 @@
     "subtitle": "Earth属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h084-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h084-readable-node-sheet.html"
   },
   {
     "id": "H085",
@@ -762,7 +762,7 @@
     "subtitle": "Earth属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h085-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h085-readable-node-sheet.html"
   },
   {
     "id": "H086",
@@ -771,7 +771,7 @@
     "subtitle": "Earth属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h086-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h086-readable-node-sheet.html"
   },
   {
     "id": "H087",
@@ -780,7 +780,7 @@
     "subtitle": "Earth属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h087-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h087-readable-node-sheet.html"
   },
   {
     "id": "H088",
@@ -789,7 +789,7 @@
     "subtitle": "Earth属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h088-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h088-readable-node-sheet.html"
   },
   {
     "id": "H089",
@@ -798,16 +798,16 @@
     "subtitle": "Earth属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h089-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h089-readable-node-sheet.html"
   },
   {
     "id": "H090",
     "name": "玛夏",
-    "title": "玛夏 H090 · 技能节点阅读版",
-    "subtitle": "光属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h090-readable-node-sheet.html"
+    "title": "玛夏 H090 · 多面板配装、伤害与技能节点表",
+    "subtitle": "光属性 · 战士｜1 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "1 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h090-build-damage-node-sheet.html"
   },
   {
     "id": "H091",
@@ -816,7 +816,7 @@
     "subtitle": "光属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h091-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h091-readable-node-sheet.html"
   },
   {
     "id": "H092",
@@ -825,16 +825,16 @@
     "subtitle": "光属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h092-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h092-readable-node-sheet.html"
   },
   {
     "id": "H093",
     "name": "凯蒂达",
-    "title": "凯蒂达 H093 · 技能节点阅读版",
-    "subtitle": "光属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h093-readable-node-sheet.html"
+    "title": "凯蒂达 H093 · 多面板配装、伤害与技能节点表",
+    "subtitle": "光属性 · 坦克｜1 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "1 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h093-build-damage-node-sheet.html"
   },
   {
     "id": "H094",
@@ -843,7 +843,7 @@
     "subtitle": "光属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h094-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h094-readable-node-sheet.html"
   },
   {
     "id": "H095",
@@ -852,7 +852,7 @@
     "subtitle": "光属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h095-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h095-readable-node-sheet.html"
   },
   {
     "id": "H096",
@@ -861,7 +861,7 @@
     "subtitle": "光属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h096-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h096-readable-node-sheet.html"
   },
   {
     "id": "H097",
@@ -870,7 +870,7 @@
     "subtitle": "光属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h097-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h097-readable-node-sheet.html"
   },
   {
     "id": "H098",
@@ -879,7 +879,7 @@
     "subtitle": "暗属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h098-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h098-readable-node-sheet.html"
   },
   {
     "id": "H099",
@@ -888,7 +888,7 @@
     "subtitle": "暗属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h099-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h099-readable-node-sheet.html"
   },
   {
     "id": "H100",
@@ -897,7 +897,7 @@
     "subtitle": "暗属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h100-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h100-readable-node-sheet.html"
   },
   {
     "id": "H101",
@@ -906,7 +906,7 @@
     "subtitle": "暗属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h101-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h101-readable-node-sheet.html"
   },
   {
     "id": "H102",
@@ -915,7 +915,7 @@
     "subtitle": "暗属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h102-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h102-readable-node-sheet.html"
   },
   {
     "id": "H103",
@@ -924,7 +924,7 @@
     "subtitle": "暗属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h103-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h103-readable-node-sheet.html"
   },
   {
     "id": "H104",
@@ -933,7 +933,7 @@
     "subtitle": "暗属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h104-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h104-readable-node-sheet.html"
   },
   {
     "id": "H105",
@@ -942,7 +942,7 @@
     "subtitle": "暗属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h105-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h105-readable-node-sheet.html"
   },
   {
     "id": "H106",
@@ -951,7 +951,7 @@
     "subtitle": "火属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h106-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h106-readable-node-sheet.html"
   },
   {
     "id": "H107",
@@ -960,7 +960,7 @@
     "subtitle": "火属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h107-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h107-readable-node-sheet.html"
   },
   {
     "id": "H108",
@@ -969,7 +969,7 @@
     "subtitle": "光属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h108-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h108-readable-node-sheet.html"
   },
   {
     "id": "H109",
@@ -978,7 +978,7 @@
     "subtitle": "火属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h109-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h109-readable-node-sheet.html"
   },
   {
     "id": "H110",
@@ -987,7 +987,7 @@
     "subtitle": "Ice属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h110-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h110-readable-node-sheet.html"
   },
   {
     "id": "H111",
@@ -996,16 +996,16 @@
     "subtitle": "Earth属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h111-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h111-readable-node-sheet.html"
   },
   {
     "id": "H112",
     "name": "玳莲",
-    "title": "玳莲 H112 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h112-readable-node-sheet.html"
+    "title": "玳莲 H112 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 坦克｜3 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "3 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h112-build-damage-node-sheet.html"
   },
   {
     "id": "H113",
@@ -1014,34 +1014,34 @@
     "subtitle": "暗属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h113-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h113-readable-node-sheet.html"
   },
   {
     "id": "H114",
     "name": "奥丽芙",
-    "title": "奥丽芙 H114 · 技能节点阅读版",
-    "subtitle": "光属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h114-readable-node-sheet.html"
+    "title": "奥丽芙 H114 · 多面板配装、伤害与技能节点表",
+    "subtitle": "光属性 · 医疗｜3 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "3 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h114-build-damage-node-sheet.html"
   },
   {
     "id": "H115",
     "name": "绝望的夏妮",
-    "title": "绝望的夏妮 H115 · 技能节点阅读版",
-    "subtitle": "暗属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h115-readable-node-sheet.html"
+    "title": "绝望的夏妮 H115 · 多面板配装、伤害与技能节点表",
+    "subtitle": "暗属性 · 坦克｜3 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "3 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h115-build-damage-node-sheet.html"
   },
   {
     "id": "H116",
     "name": "守护者艾瑞儿",
-    "title": "守护者艾瑞儿 H116 · 技能节点阅读版",
-    "subtitle": "光属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h116-readable-node-sheet.html"
+    "title": "守护者艾瑞儿 H116 · 多面板配装、伤害与技能节点表",
+    "subtitle": "光属性 · 坦克｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h116-build-damage-node-sheet.html"
   },
   {
     "id": "H117",
@@ -1050,70 +1050,70 @@
     "subtitle": "火属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h117-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h117-readable-node-sheet.html"
   },
   {
     "id": "H118",
     "name": "安泰西亚",
-    "title": "安泰西亚 H118 · 技能节点阅读版",
-    "subtitle": "火属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h118-readable-node-sheet.html"
+    "title": "安泰西亚 H118 · 多面板配装、伤害与技能节点表",
+    "subtitle": "火属性 · 法师｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h118-build-damage-node-sheet.html"
   },
   {
     "id": "H119",
     "name": "Aoi Hinamori",
-    "title": "Aoi Hinamori H119 · 技能节点阅读版",
-    "subtitle": "火属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h119-readable-node-sheet.html"
+    "title": "Aoi Hinamori H119 · 多面板配装、伤害与技能节点表",
+    "subtitle": "火属性 · 战士｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h119-build-damage-node-sheet.html"
   },
   {
     "id": "H120",
     "name": "崔西里亚",
-    "title": "崔西里亚 H120 · 技能节点阅读版",
-    "subtitle": "Earth属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h120-readable-node-sheet.html"
+    "title": "崔西里亚 H120 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Earth属性 · 先锋｜2 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "2 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h120-build-damage-node-sheet.html"
   },
   {
     "id": "H121",
     "name": "赤鬼伯伯",
-    "title": "赤鬼伯伯 H121 · 技能节点阅读版",
-    "subtitle": "火属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h121-readable-node-sheet.html"
+    "title": "赤鬼伯伯 H121 · 多面板配装、伤害与技能节点表",
+    "subtitle": "火属性 · 射手｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h121-build-damage-node-sheet.html"
   },
   {
     "id": "H122",
     "name": "柯丝玛尔",
-    "title": "柯丝玛尔 H122 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h122-readable-node-sheet.html"
+    "title": "柯丝玛尔 H122 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 射手｜1 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "1 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h122-build-damage-node-sheet.html"
   },
   {
     "id": "H123",
     "name": "新春的莎莉丝特",
-    "title": "新春的莎莉丝特 H123 · 技能节点阅读版",
-    "subtitle": "火属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h123-readable-node-sheet.html"
+    "title": "新春的莎莉丝特 H123 · 多面板配装、伤害与技能节点表",
+    "subtitle": "火属性 · 战士｜1 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "1 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h123-build-damage-node-sheet.html"
   },
   {
     "id": "H124",
     "name": "欧贝恩丝",
-    "title": "欧贝恩丝 H124 · 技能节点阅读版",
-    "subtitle": "暗属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h124-readable-node-sheet.html"
+    "title": "欧贝恩丝 H124 · 多面板配装、伤害与技能节点表",
+    "subtitle": "暗属性 · 射手｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h124-build-damage-node-sheet.html"
   },
   {
     "id": "H125",
@@ -1122,16 +1122,16 @@
     "subtitle": "光属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h125-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h125-readable-node-sheet.html"
   },
   {
     "id": "H126",
     "name": "盖儿",
-    "title": "盖儿 H126 · 技能节点阅读版",
-    "subtitle": "暗属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h126-readable-node-sheet.html"
+    "title": "盖儿 H126 · 多面板配装、伤害与技能节点表",
+    "subtitle": "暗属性 · 先锋｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h126-build-damage-node-sheet.html"
   },
   {
     "id": "H127",
@@ -1140,16 +1140,16 @@
     "subtitle": "光属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h127-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h127-readable-node-sheet.html"
   },
   {
     "id": "H128",
     "name": "伊娃",
-    "title": "伊娃 H128 · 技能节点阅读版",
-    "subtitle": "暗属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h128-readable-node-sheet.html"
+    "title": "伊娃 H128 · 多面板配装、伤害与技能节点表",
+    "subtitle": "暗属性 · 战士｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h128-build-damage-node-sheet.html"
   },
   {
     "id": "H129",
@@ -1158,34 +1158,34 @@
     "subtitle": "Earth属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h129-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h129-readable-node-sheet.html"
   },
   {
     "id": "H130",
     "name": "碧海的诺可琳",
-    "title": "碧海的诺可琳 H130 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h130-readable-node-sheet.html"
+    "title": "碧海的诺可琳 H130 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 射手｜3 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "3 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h130-build-damage-node-sheet.html"
   },
   {
     "id": "H131",
     "name": "蓓蕾卡",
-    "title": "蓓蕾卡 H131 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h131-readable-node-sheet.html"
+    "title": "蓓蕾卡 H131 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 法师｜2 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "2 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h131-build-damage-node-sheet.html"
   },
   {
     "id": "H132",
     "name": "妮诺凯西",
-    "title": "妮诺凯西 H132 · 技能节点阅读版",
-    "subtitle": "Earth属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h132-readable-node-sheet.html"
+    "title": "妮诺凯西 H132 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Earth属性 · 先锋｜3 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "3 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h132-build-damage-node-sheet.html"
   },
   {
     "id": "H133",
@@ -1194,16 +1194,16 @@
     "subtitle": "光属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h133-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h133-readable-node-sheet.html"
   },
   {
     "id": "H134",
     "name": "奥柏丝蒂恩",
-    "title": "奥柏丝蒂恩 H134 · 技能节点阅读版",
-    "subtitle": "暗属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h134-readable-node-sheet.html"
+    "title": "奥柏丝蒂恩 H134 · 多面板配装、伤害与技能节点表",
+    "subtitle": "暗属性 · 战士｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h134-build-damage-node-sheet.html"
   },
   {
     "id": "H135",
@@ -1212,7 +1212,7 @@
     "subtitle": "Earth属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h135-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h135-readable-node-sheet.html"
   },
   {
     "id": "H136",
@@ -1221,25 +1221,25 @@
     "subtitle": "火属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h136-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h136-readable-node-sheet.html"
   },
   {
     "id": "H137",
     "name": "天宫咲夜",
-    "title": "天宫咲夜 H137 · 技能节点阅读版",
-    "subtitle": "光属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h137-readable-node-sheet.html"
+    "title": "天宫咲夜 H137 · 多面板配装、伤害与技能节点表",
+    "subtitle": "光属性 · 战士｜3 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "3 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h137-build-damage-node-sheet.html"
   },
   {
     "id": "H138",
     "name": "贝儿",
-    "title": "贝儿 H138 · 技能节点阅读版",
-    "subtitle": "光属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h138-readable-node-sheet.html"
+    "title": "贝儿 H138 · 多面板配装、伤害与技能节点表",
+    "subtitle": "光属性 · 先锋｜2 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "2 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h138-build-damage-node-sheet.html"
   },
   {
     "id": "H139",
@@ -1248,7 +1248,7 @@
     "subtitle": "火属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h139-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h139-readable-node-sheet.html"
   },
   {
     "id": "H140",
@@ -1257,34 +1257,34 @@
     "subtitle": "暗属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h140-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h140-readable-node-sheet.html"
   },
   {
     "id": "H141",
     "name": "Projekt Melody",
-    "title": "Projekt Melody H141 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h141-readable-node-sheet.html"
+    "title": "Projekt Melody H141 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 法师｜1 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "1 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h141-build-damage-node-sheet.html"
   },
   {
     "id": "H142",
     "name": "HongKongDoll",
-    "title": "HongKongDoll H142 · 技能节点阅读版",
-    "subtitle": "Earth属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h142-readable-node-sheet.html"
+    "title": "HongKongDoll H142 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Earth属性 · 战士｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h142-build-damage-node-sheet.html"
   },
   {
     "id": "H143",
     "name": "彩伽",
-    "title": "彩伽 H143 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h143-readable-node-sheet.html"
+    "title": "彩伽 H143 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 医疗｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h143-build-damage-node-sheet.html"
   },
   {
     "id": "H144",
@@ -1293,7 +1293,7 @@
     "subtitle": "Earth属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h144-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h144-readable-node-sheet.html"
   },
   {
     "id": "H145",
@@ -1302,16 +1302,16 @@
     "subtitle": "火属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h145-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h145-readable-node-sheet.html"
   },
   {
     "id": "H146",
     "name": "圣诞的蜜拉贝儿",
-    "title": "圣诞的蜜拉贝儿 H146 · 技能节点阅读版",
-    "subtitle": "火属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h146-readable-node-sheet.html"
+    "title": "圣诞的蜜拉贝儿 H146 · 多面板配装、伤害与技能节点表",
+    "subtitle": "火属性 · 战士｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h146-build-damage-node-sheet.html"
   },
   {
     "id": "H147",
@@ -1320,34 +1320,34 @@
     "subtitle": "Earth属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h147-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h147-readable-node-sheet.html"
   },
   {
     "id": "H148",
     "name": "新春的蜜娜",
-    "title": "新春的蜜娜 H148 · 技能节点阅读版",
-    "subtitle": "火属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h148-readable-node-sheet.html"
+    "title": "新春的蜜娜 H148 · 多面板配装、伤害与技能节点表",
+    "subtitle": "火属性 · 射手｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h148-build-damage-node-sheet.html"
   },
   {
     "id": "H149",
     "name": "璀璨誓约的露比",
-    "title": "璀璨誓约的露比 H149 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h149-readable-node-sheet.html"
+    "title": "璀璨誓约的露比 H149 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 坦克｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h149-build-damage-node-sheet.html"
   },
   {
     "id": "H150",
     "name": "璀璨誓约的伊娥丝",
-    "title": "璀璨誓约的伊娥丝 H150 · 技能节点阅读版",
-    "subtitle": "光属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h150-readable-node-sheet.html"
+    "title": "璀璨誓约的伊娥丝 H150 · 多面板配装、伤害与技能节点表",
+    "subtitle": "光属性 · 战士｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h150-build-damage-node-sheet.html"
   },
   {
     "id": "H151",
@@ -1356,25 +1356,25 @@
     "subtitle": "火属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h151-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h151-readable-node-sheet.html"
   },
   {
     "id": "H152",
     "name": "夏日的珮忒菈",
-    "title": "夏日的珮忒菈 H152 · 技能节点阅读版",
-    "subtitle": "Earth属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h152-readable-node-sheet.html"
+    "title": "夏日的珮忒菈 H152 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Earth属性 · 医疗｜1 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "1 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h152-build-damage-node-sheet.html"
   },
   {
     "id": "H153",
     "name": "兔女郎爱莉卡",
-    "title": "兔女郎爱莉卡 H153 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h153-readable-node-sheet.html"
+    "title": "兔女郎爱莉卡 H153 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 先锋｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h153-build-damage-node-sheet.html"
   },
   {
     "id": "H154",
@@ -1383,7 +1383,7 @@
     "subtitle": "光属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h154-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h154-readable-node-sheet.html"
   },
   {
     "id": "H155",
@@ -1392,16 +1392,16 @@
     "subtitle": "暗属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h155-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h155-readable-node-sheet.html"
   },
   {
     "id": "H156",
     "name": "乌尔德",
-    "title": "乌尔德 H156 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h156-readable-node-sheet.html"
+    "title": "乌尔德 H156 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 医疗｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h156-build-damage-node-sheet.html"
   },
   {
     "id": "H157",
@@ -1410,7 +1410,7 @@
     "subtitle": "Earth属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h157-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h157-readable-node-sheet.html"
   },
   {
     "id": "H158",
@@ -1419,7 +1419,7 @@
     "subtitle": "Earth属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h158-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h158-readable-node-sheet.html"
   },
   {
     "id": "H159",
@@ -1428,16 +1428,16 @@
     "subtitle": "火属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h159-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h159-readable-node-sheet.html"
   },
   {
     "id": "H160",
     "name": "可伊",
-    "title": "可伊 H160 · 技能节点阅读版",
-    "subtitle": "光属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h160-readable-node-sheet.html"
+    "title": "可伊 H160 · 多面板配装、伤害与技能节点表",
+    "subtitle": "光属性 · 法师｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h160-build-damage-node-sheet.html"
   },
   {
     "id": "H161",
@@ -1446,25 +1446,25 @@
     "subtitle": "光属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h161-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h161-readable-node-sheet.html"
   },
   {
     "id": "H162",
     "name": "泳池魅影吉妮兹",
-    "title": "泳池魅影吉妮兹 H162 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h162-readable-node-sheet.html"
+    "title": "泳池魅影吉妮兹 H162 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 战士｜2 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "2 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h162-build-damage-node-sheet.html"
   },
   {
     "id": "H163",
     "name": "归还者璐茜娅",
-    "title": "归还者璐茜娅 H163 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h163-readable-node-sheet.html"
+    "title": "归还者璐茜娅 H163 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 射手｜3 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "3 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h163-build-damage-node-sheet.html"
   },
   {
     "id": "H164",
@@ -1473,16 +1473,16 @@
     "subtitle": "Earth属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h164-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h164-readable-node-sheet.html"
   },
   {
     "id": "H165",
     "name": "彼岸花茱莉亚",
-    "title": "彼岸花茱莉亚 H165 · 技能节点阅读版",
-    "subtitle": "暗属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h165-readable-node-sheet.html"
+    "title": "彼岸花茱莉亚 H165 · 多面板配装、伤害与技能节点表",
+    "subtitle": "暗属性 · 先锋｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h165-build-damage-node-sheet.html"
   },
   {
     "id": "H166",
@@ -1491,25 +1491,25 @@
     "subtitle": "暗属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h166-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h166-readable-node-sheet.html"
   },
   {
     "id": "H167",
     "name": "猫祭",
-    "title": "猫祭 H167 · 技能节点阅读版",
-    "subtitle": "火属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h167-readable-node-sheet.html"
+    "title": "猫祭 H167 · 多面板配装、伤害与技能节点表",
+    "subtitle": "火属性 · 战士｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h167-build-damage-node-sheet.html"
   },
   {
     "id": "H168",
     "name": "继任者弥卡伊勒",
-    "title": "继任者弥卡伊勒 H168 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h168-readable-node-sheet.html"
+    "title": "继任者弥卡伊勒 H168 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 战士｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h168-build-damage-node-sheet.html"
   },
   {
     "id": "H169",
@@ -1518,16 +1518,16 @@
     "subtitle": "火属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h169-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h169-readable-node-sheet.html"
   },
   {
     "id": "H170",
     "name": "甜蜜美梦安熙恩",
-    "title": "甜蜜美梦安熙恩 H170 · 技能节点阅读版",
-    "subtitle": "光属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h170-readable-node-sheet.html"
+    "title": "甜蜜美梦安熙恩 H170 · 多面板配装、伤害与技能节点表",
+    "subtitle": "光属性 · 射手｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h170-build-damage-node-sheet.html"
   },
   {
     "id": "H171",
@@ -1536,52 +1536,52 @@
     "subtitle": "暗属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h171-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h171-readable-node-sheet.html"
   },
   {
     "id": "H172",
     "name": "南瓜鬼怪莱拉",
-    "title": "南瓜鬼怪莱拉 H172 · 技能节点阅读版",
-    "subtitle": "火属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h172-readable-node-sheet.html"
+    "title": "南瓜鬼怪莱拉 H172 · 多面板配装、伤害与技能节点表",
+    "subtitle": "火属性 · 战士｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h172-build-damage-node-sheet.html"
   },
   {
     "id": "H173",
     "name": "时界巡者Aoi",
-    "title": "时界巡者Aoi H173 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h173-readable-node-sheet.html"
+    "title": "时界巡者Aoi H173 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 战士｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h173-build-damage-node-sheet.html"
   },
   {
     "id": "H174",
     "name": "啦啦队蓓蕾卡",
-    "title": "啦啦队蓓蕾卡 H174 · 技能节点阅读版",
-    "subtitle": "Earth属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h174-readable-node-sheet.html"
+    "title": "啦啦队蓓蕾卡 H174 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Earth属性 · 战士｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h174-build-damage-node-sheet.html"
   },
   {
     "id": "H175",
     "name": "小女将希蓓尔",
-    "title": "小女将希蓓尔 H175 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h175-readable-node-sheet.html"
+    "title": "小女将希蓓尔 H175 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 坦克｜1 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "1 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h175-build-damage-node-sheet.html"
   },
   {
     "id": "H176",
     "name": "蜜茶多恩",
-    "title": "蜜茶多恩 H176 · 技能节点阅读版",
-    "subtitle": "Earth属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h176-readable-node-sheet.html"
+    "title": "蜜茶多恩 H176 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Earth属性 · 先锋｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h176-build-damage-node-sheet.html"
   },
   {
     "id": "H177",
@@ -1590,16 +1590,16 @@
     "subtitle": "火属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h177-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h177-readable-node-sheet.html"
   },
   {
     "id": "H178",
     "name": "喧闹之星哈蒂",
-    "title": "喧闹之星哈蒂 H178 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h178-readable-node-sheet.html"
+    "title": "喧闹之星哈蒂 H178 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 先锋｜3 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "3 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h178-build-damage-node-sheet.html"
   },
   {
     "id": "H179",
@@ -1608,16 +1608,16 @@
     "subtitle": "Earth属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h179-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h179-readable-node-sheet.html"
   },
   {
     "id": "H180",
     "name": "烈酒赤兔芭索萝",
-    "title": "烈酒赤兔芭索萝 H180 · 技能节点阅读版",
-    "subtitle": "火属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h180-readable-node-sheet.html"
+    "title": "烈酒赤兔芭索萝 H180 · 多面板配装、伤害与技能节点表",
+    "subtitle": "火属性 · 战士｜1 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "1 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h180-build-damage-node-sheet.html"
   },
   {
     "id": "H181",
@@ -1626,16 +1626,16 @@
     "subtitle": "光属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h181-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h181-readable-node-sheet.html"
   },
   {
     "id": "H182",
     "name": "望月",
-    "title": "望月 H182 · 技能节点阅读版",
-    "subtitle": "暗属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h182-readable-node-sheet.html"
+    "title": "望月 H182 · 多面板配装、伤害与技能节点表",
+    "subtitle": "暗属性 · 法师｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h182-build-damage-node-sheet.html"
   },
   {
     "id": "H183",
@@ -1644,7 +1644,7 @@
     "subtitle": "光属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h183-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h183-readable-node-sheet.html"
   },
   {
     "id": "H184",
@@ -1653,7 +1653,7 @@
     "subtitle": "暗属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h184-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h184-readable-node-sheet.html"
   },
   {
     "id": "H185",
@@ -1662,7 +1662,7 @@
     "subtitle": "暗属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h185-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h185-readable-node-sheet.html"
   },
   {
     "id": "H186",
@@ -1671,25 +1671,25 @@
     "subtitle": "暗属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h186-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h186-readable-node-sheet.html"
   },
   {
     "id": "H187",
     "name": "绚烂夏花卡洛琳",
-    "title": "绚烂夏花卡洛琳 H187 · 技能节点阅读版",
-    "subtitle": "Earth属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h187-readable-node-sheet.html"
+    "title": "绚烂夏花卡洛琳 H187 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Earth属性 · 先锋｜2 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "2 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h187-build-damage-node-sheet.html"
   },
   {
     "id": "H188",
     "name": "雪江",
-    "title": "雪江 H188 · 技能节点阅读版",
-    "subtitle": "火属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h188-readable-node-sheet.html"
+    "title": "雪江 H188 · 多面板配装、伤害与技能节点表",
+    "subtitle": "火属性 · 射手｜2 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "2 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h188-build-damage-node-sheet.html"
   },
   {
     "id": "H189",
@@ -1698,7 +1698,7 @@
     "subtitle": "Ice属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h189-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h189-readable-node-sheet.html"
   },
   {
     "id": "H190",
@@ -1707,7 +1707,7 @@
     "subtitle": "光属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h190-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h190-readable-node-sheet.html"
   },
   {
     "id": "H191",
@@ -1716,25 +1716,25 @@
     "subtitle": "暗属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h191-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h191-readable-node-sheet.html"
   },
   {
     "id": "H192",
     "name": "爱恋泡影的玳莲",
-    "title": "爱恋泡影的玳莲 H192 · 技能节点阅读版",
-    "subtitle": "Ice属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h192-readable-node-sheet.html"
+    "title": "爱恋泡影的玳莲 H192 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Ice属性 · 法师｜1 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "1 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h192-build-damage-node-sheet.html"
   },
   {
     "id": "H193",
     "name": "沐夏吉赛尔",
-    "title": "沐夏吉赛尔 H193 · 技能节点阅读版",
-    "subtitle": "Earth属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h193-readable-node-sheet.html"
+    "title": "沐夏吉赛尔 H193 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Earth属性 · 坦克｜2 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "2 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h193-build-damage-node-sheet.html"
   },
   {
     "id": "H194",
@@ -1743,7 +1743,7 @@
     "subtitle": "火属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h194-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h194-readable-node-sheet.html"
   },
   {
     "id": "H195",
@@ -1752,7 +1752,7 @@
     "subtitle": "Earth属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h195-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h195-readable-node-sheet.html"
   },
   {
     "id": "H196",
@@ -1761,7 +1761,7 @@
     "subtitle": "光属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h196-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h196-readable-node-sheet.html"
   },
   {
     "id": "H197",
@@ -1770,7 +1770,7 @@
     "subtitle": "暗属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h197-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h197-readable-node-sheet.html"
   },
   {
     "id": "H198",
@@ -1779,7 +1779,7 @@
     "subtitle": "Earth属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h198-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h198-readable-node-sheet.html"
   },
   {
     "id": "H199",
@@ -1788,7 +1788,7 @@
     "subtitle": "火属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h199-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h199-readable-node-sheet.html"
   },
   {
     "id": "H200",
@@ -1797,7 +1797,7 @@
     "subtitle": "Ice属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h200-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h200-readable-node-sheet.html"
   },
   {
     "id": "H201",
@@ -1806,7 +1806,7 @@
     "subtitle": "光属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h201-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h201-readable-node-sheet.html"
   },
   {
     "id": "H202",
@@ -1815,7 +1815,7 @@
     "subtitle": "暗属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h202-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h202-readable-node-sheet.html"
   },
   {
     "id": "H203",
@@ -1824,7 +1824,7 @@
     "subtitle": "火属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h203-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h203-readable-node-sheet.html"
   },
   {
     "id": "H204",
@@ -1833,7 +1833,7 @@
     "subtitle": "Ice属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h204-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h204-readable-node-sheet.html"
   },
   {
     "id": "H205",
@@ -1842,7 +1842,7 @@
     "subtitle": "Earth属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h205-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h205-readable-node-sheet.html"
   },
   {
     "id": "H206",
@@ -1851,7 +1851,7 @@
     "subtitle": "火属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h206-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h206-readable-node-sheet.html"
   },
   {
     "id": "H207",
@@ -1860,7 +1860,7 @@
     "subtitle": "Ice属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h207-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h207-readable-node-sheet.html"
   },
   {
     "id": "H208",
@@ -1869,7 +1869,7 @@
     "subtitle": "暗属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h208-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h208-readable-node-sheet.html"
   },
   {
     "id": "H601",
@@ -1878,16 +1878,16 @@
     "subtitle": "Ice属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h601-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h601-readable-node-sheet.html"
   },
   {
     "id": "H602",
     "name": "芽路",
-    "title": "芽路 H602 · 技能节点阅读版",
-    "subtitle": "火属性 · 先锋｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h602-readable-node-sheet.html"
+    "title": "芽路 H602 · 多面板配装、伤害与技能节点表",
+    "subtitle": "火属性 · 先锋｜1 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "1 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h602-build-damage-node-sheet.html"
   },
   {
     "id": "H603",
@@ -1896,7 +1896,7 @@
     "subtitle": "Earth属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h603-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h603-readable-node-sheet.html"
   },
   {
     "id": "H604",
@@ -1905,7 +1905,7 @@
     "subtitle": "Ice属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h604-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h604-readable-node-sheet.html"
   },
   {
     "id": "H605",
@@ -1914,16 +1914,16 @@
     "subtitle": "Earth属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h605-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h605-readable-node-sheet.html"
   },
   {
     "id": "H606",
     "name": "露娜",
-    "title": "露娜 H606 · 技能节点阅读版",
-    "subtitle": "火属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h606-readable-node-sheet.html"
+    "title": "露娜 H606 · 多面板配装、伤害与技能节点表",
+    "subtitle": "火属性 · 法师｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h606-build-damage-node-sheet.html"
   },
   {
     "id": "H607",
@@ -1932,7 +1932,7 @@
     "subtitle": "Earth属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h607-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h607-readable-node-sheet.html"
   },
   {
     "id": "H608",
@@ -1941,7 +1941,7 @@
     "subtitle": "火属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h608-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h608-readable-node-sheet.html"
   },
   {
     "id": "H609",
@@ -1950,7 +1950,7 @@
     "subtitle": "Ice属性 · 坦克｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h609-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h609-readable-node-sheet.html"
   },
   {
     "id": "H610",
@@ -1959,7 +1959,7 @@
     "subtitle": "Earth属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h610-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h610-readable-node-sheet.html"
   },
   {
     "id": "H611",
@@ -1968,25 +1968,25 @@
     "subtitle": "火属性 · 射手｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h611-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h611-readable-node-sheet.html"
   },
   {
     "id": "H612",
     "name": "空",
-    "title": "空 H612 · 技能节点阅读版",
-    "subtitle": "Earth属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h612-readable-node-sheet.html"
+    "title": "空 H612 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Earth属性 · 法师｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h612-build-damage-node-sheet.html"
   },
   {
     "id": "H613",
     "name": "咲",
-    "title": "咲 H613 · 技能节点阅读版",
-    "subtitle": "Earth属性 · 医疗｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
-    "panels": "0 套面板",
-    "kind": "node-only",
-    "source": "generated_node_sheets/h613-readable-node-sheet.html"
+    "title": "咲 H613 · 多面板配装、伤害与技能节点表",
+    "subtitle": "Earth属性 · 医疗｜4 套面板｜配装、理论伤害与完整技能节点表",
+    "panels": "4 套面板",
+    "kind": "combined",
+    "source": "website_staging_20261102/combined/h613-build-damage-node-sheet.html"
   },
   {
     "id": "H614",
@@ -1995,16 +1995,16 @@
     "subtitle": "Ice属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h614-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h614-readable-node-sheet.html"
   },
   {
     "id": "H804",
     "name": "蜜娜",
-    "title": "蜜娜 H804 · 多面板配装、伤害与技能节点表",
-    "subtitle": "火属性 · 战士｜2 套面板｜配装、理论伤害与完整技能节点表",
-    "panels": "2 套面板",
-    "kind": "combined",
-    "source": "combined_node_sheets/h804-build-damage-node-sheet.html"
+    "title": "蜜娜 H804 · 技能节点阅读版",
+    "subtitle": "火属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
+    "panels": "0 套面板",
+    "kind": "node-only",
+    "source": "website_staging_20261102/generated/h804-readable-node-sheet.html"
   },
   {
     "id": "H809",
@@ -2013,7 +2013,7 @@
     "subtitle": "火属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h809-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h809-readable-node-sheet.html"
   },
   {
     "id": "H810",
@@ -2022,7 +2022,7 @@
     "subtitle": "光属性 · 战士｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h810-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h810-readable-node-sheet.html"
   },
   {
     "id": "H811",
@@ -2031,6 +2031,6 @@
     "subtitle": "火属性 · 法师｜按人工技能页结构整理｜白底单页｜当前仅收录技能节点表",
     "panels": "0 套面板",
     "kind": "node-only",
-    "source": "generated_node_sheets/h811-readable-node-sheet.html"
+    "source": "website_staging_20261102/generated/h811-readable-node-sheet.html"
   }
 ]

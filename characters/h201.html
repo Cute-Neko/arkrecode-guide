@@ -18,55 +18,55 @@
           <p class="description">重力加压攻击敌人。若目标拥有负向状态时，伤害量提升</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">条件伤害倍率</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">满足条件时，条件攻击倍率为 0.2｜数据：属性/条件函数；属性=ValueOne；概率/倍率=20%；数值=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数；条件详情={&quot;Who&quot;:&quot;SelectTarget&quot;,&quot;Property&quot;:&quot;DebuffCount&quot;,&quot;Comparer&quot;:&quot;Gt&quot;,&quot;Value&quot;:1}<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　伤害量提升 5%</li><li><b>Lv.5</b>　伤害量提升 5%</li><li><b>Lv.6</b>　伤害量提升 5%</li><li><b>Lv.7</b>　伤害量提升 5%</li><li><b>Lv.8</b>　伤害量提升 10%</li></ul></details>
         </section><section class="section" id="H201S2">
           <div class="section-title"><h2>H201S2　循此苦旅</h2><span class="meta">被动技能｜目标 数据库未标注｜CD 4</span></div>
           <p class="description">战斗开始时，自身附加[领航者:H201S2:StatusFun]( 1 回合)。若自身处于[领航者:H201S2:StatusFun]状态，敌人无法反击。自身除外的我方成员施展全体攻击后，施展「以抵群星」，「以抵群星」效果 [4:2_1:UIValue] 回合只会发生 1 次&lt;br&gt;以抵群星(获得 10 点星源)：自身行动值提升 40%</p>
           <div class="note">该技能没有玩家主动施放入口；效果从下方标出的 Trigger 宿主阶段进入。</div><div class="effects"><div class="effect">
-      <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加领航者（H201S2）；持续 1 回合｜数据：AddStatus；状态 领航者 (H201S2)；目标=Self；阵营=My；触发=StartBattle；持续回合=1<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">施加状态</span><span class="node trigger"><span class="node-id">S03</span><span class="node-name">StartBattle</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
+      <p class="effect-copy">施加领航者（H201S2）；持续 1 回合｜数据：AddStatus；状态 领航者 (H201S2)；目标=Self；阵营=My；触发=StartBattle；持续回合=1<span class="proof">｜入口：StartBattle</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">I06</span><span class="node-name">收集角色、神器与状态函数</span></span></div>
-      <p class="effect-copy">属性/条件函数；触发=Property；属性=RoleNoCount；数值=1；条件=HaveBuff<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数；触发=Property；属性=RoleNoCount；数值=1；条件=HaveBuff；条件详情={&quot;Who&quot;:&quot;AuraSource&quot;,&quot;CheckFun&quot;:&quot;HaveBuff&quot;,&quot;CheckID&quot;:&quot;H201S2&quot;}<span class="proof">｜入口：Property</span></p>
     </div><div class="effect">
-      <div class="lane"><span class="lane-label">追加技能</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F07</span><span class="node-name">AdditionSkill</span></span><span class="arrow">→</span><span class="node queue"><span class="node-id">Q01</span><span class="node-name">反击、夹击与追加技能队列</span></span><span class="arrow">→</span><span class="node queue"><span class="node-id">Q04</span><span class="node-name">优先追加技能（Continue）→夹击→反击→死亡→普通追加技能（Addition）</span></span><span class="arrow">→</span><span class="node action"><span class="node-id">A04</span><span class="node-name">StartNewSkillEvent</span></span></div>
-      <p class="effect-copy">满足条件时，追加施展 H201S4｜数据：AdditionSkill；状态 H201S4 (H201S4)；目标=Self；阵营=My；触发=AnyAllyAfterSkill；条件=CheckSkillCooldown/IsDamageSkill/IsNoSelf/TargetIsAll；标志=IgnoreImmune/IgnoreDodge<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">追加技能</span><span class="node action"><span class="node-id">UNRESOLVED</span><span class="node-name">未登记节点</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F07</span><span class="node-name">AdditionSkill</span></span><span class="arrow">→</span><span class="node queue"><span class="node-id">Q01</span><span class="node-name">反击、夹击与追加技能队列</span></span><span class="arrow">→</span><span class="node queue"><span class="node-id">Q04</span><span class="node-name">优先追加技能（Continue）→夹击→反击→死亡→普通追加技能（Addition）</span></span><span class="arrow">→</span><span class="node action"><span class="node-id">A04</span><span class="node-name">StartNewSkillEvent</span></span></div>
+      <p class="effect-copy">满足条件时，追加施展 H201S4｜数据：AdditionSkill；状态 H201S4 (H201S4)；触发=AnyAllyAfterSkill；条件=CheckSkillCooldown/IsDamageSkill/IsNoSelf/TargetIsAll；全部条件=[{&quot;CheckFun&quot;:&quot;CheckSkillCooldown&quot;,&quot;CheckID&quot;:&quot;H201S2&quot;},{&quot;Who&quot;:&quot;TriggerSource&quot;,&quot;CheckFun&quot;:&quot;TargetIsAll&quot;},{&quot;Who&quot;:&quot;TriggerSource&quot;,&quot;CheckFun&quot;:&quot;IsDamageSkill&quot;},{&quot;Who&quot;:&quot;TriggerSource&quot;,&quot;CheckFun&quot;:&quot;IsNoSelf&quot;}]<span class="proof">｜入口：AnyAllyAfterSkill（宿主待核查）；需核查执行宿主</span></p>
     </div><div class="effect">
-      <div class="lane"><span class="lane-label">ReSetSkillCoolDown</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F11</span><span class="node-name">ReSetSkillCoolDown</span></span></div>
-      <p class="effect-copy">ReSetSkillCoolDown；状态 H201S4 (H201S4)；目标=Self；阵营=My；触发=AnyAllyAfterSkill；条件=CheckSkillCooldown/IsDamageSkill/IsNoSelf/TargetIsAll；标志=IgnoreImmune/IgnoreDodge<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">ReSetSkillCoolDown</span><span class="node action"><span class="node-id">UNRESOLVED</span><span class="node-name">未登记节点</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F11</span><span class="node-name">ReSetSkillCoolDown</span></span></div>
+      <p class="effect-copy">子效果：在父效果的执行条件下运行；ReSetSkillCoolDown；状态 领航者 (H201S2)；目标=Self；阵营=My；触发=AnyAllyAfterSkill；标志=IgnoreImmune/IgnoreDodge<span class="proof">｜入口：AnyAllyAfterSkill（宿主待核查）；需核查执行宿主</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">条件伤害倍率</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">满足条件时，条件攻击倍率为 0｜数据：属性/条件函数；属性=ValueOne；概率/倍率=0%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　冷却时间减少 1 回合</li></ul></details>
         </section><section class="section" id="H201S3">
           <div class="section-title"><h2>H201S3　一起去吧…</h2><span class="meta">伤害技能｜目标 All｜CD 6｜AttRate 1.1｜Pow 0.9｜魂燃 20</span></div>
           <p class="description">火箭升空攻击全体敌人使正向状态减少 1 回合后，造成[:AWAKEN][拘禁:Restrict:StatusFun]( 2 回合)，自身附加[领航者:H201S2:StatusFun]( 2 回合)</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">AddAllBuffRound</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F15</span><span class="node-name">AddAllBuffRound</span></span></div>
-      <p class="effect-copy">AddAllBuffRound；目标=All；数值=-1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">AddAllBuffRound；目标=All；数值=-1<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">条件伤害倍率</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">满足条件时，条件攻击倍率为 0｜数据：属性/条件函数；属性=ValueOne；概率/倍率=0%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加拘禁（Restrict）；持续 2 回合｜数据：AddStatus；状态 拘禁 (Restrict)；目标=All；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加拘禁（Restrict）；持续 2 回合｜数据：AddStatus；状态 拘禁 (Restrict)；目标=All；持续回合=2<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加领航者（H201S2）；持续 2 回合｜数据：AddStatus；状态 领航者 (H201S2)；目标=Self；阵营=My；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加领航者（H201S2）；持续 2 回合｜数据：AddStatus；状态 领航者 (H201S2)；目标=Self；阵营=My；持续回合=2<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">数值强化</span><span class="node operator"><span class="node-id">F06</span><span class="node-name">AddValue</span></span></div>
-      <p class="effect-copy">AddValue；概率/倍率=0%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">AddValue；概率/倍率=0%<span class="proof">｜入口：A02替换魂燃函数后，于A07执行；需核查执行宿主</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加无法恢复（Unhealable）；持续 2 回合｜数据：AddStatus；状态 无法恢复 (Unhealable)；目标=All；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加无法恢复（Unhealable）；持续 2 回合｜数据：AddStatus；状态 无法恢复 (Unhealable)；目标=All；持续回合=2<span class="proof">｜入口：觉醒技能函数；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　冷却时间减少 1 回合</li><li><b>Lv.5</b>　伤害量提升 5%</li><li><b>Lv.6</b>　伤害量提升 5%</li><li><b>Lv.7</b>　伤害量提升 10%</li><li><b>Lv.8</b>　伤害量提升 10%</li></ul></details>
         </section><section class="section" id="H201S4">
           <div class="section-title"><h2>H201S4　以抵群星</h2><span class="meta">非伤害技能｜目标 My / Self｜CD 1</span></div>
           <p class="description">数据库无技能说明</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">行动值变化</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F02</span><span class="node-name">AddTime</span></span></div>
-      <p class="effect-copy">自身行动值提升 40%｜数据：AddTime；目标=Self；阵营=My；数值=0.4<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">自身行动值提升 40%｜数据：AddTime；目标=Self；阵营=My；数值=0.4<span class="proof">｜入口：技能静态函数</span></p>
     </div></div>
         </section><section class="section" id="damage-chain">
           <div class="section-title"><h2>直接目标的完整伤害链</h2><span class="meta">H201S1、H201S3 使用</span></div>
@@ -78,33 +78,33 @@
           <p class="description">攻击力、暴击伤害提升 30%。此状态不会被解除</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">攻击力提升</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">攻击力提高 30%（最终攻击倍率）｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">攻击力提高 30%（最终攻击倍率）｜数据：属性/条件函数<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">CriticalDamageRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">CriticalDamageRate = 0.3｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">CriticalDamageRate = 0.3｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>Restrict　拘禁</h3><span class="meta">基础回合 1｜最大层数 0｜常驻 0</span></div>
           <p class="description">除了根据速度而变化的行动值之外，无法再获得行动值提升效果</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">AntiAddTime</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">AntiAddTime = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">AntiAddTime = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">Restrict</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">Restrict = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">Restrict = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>Unhealable　无法恢复</h3><span class="meta">基础回合 1｜最大层数 0｜常驻 0</span></div>
           <p class="description">无法恢复生命力</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">SealHeal</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">SealHeal = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">SealHeal = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article></div></section>
 </main></body></html>

@@ -18,36 +18,36 @@
           <p class="description">操作能量冲击目标并以 [35%:1_1:Rate] 机率造成[速度下降:ReduceSpeed:StatusFun]( 2 回合)。回合结束时，使目标身上的[灼烧:Burn:StatusFun][激发:Torrent:StatusFun]</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加速度下降（ReduceSpeed）；基础概率 35%；持续 2 回合｜数据：AddStatus；状态 速度下降 (ReduceSpeed)；概率/倍率=35%；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加速度下降（ReduceSpeed）；基础概率 35%；持续 2 回合｜数据：AddStatus；状态 速度下降 (ReduceSpeed)；概率/倍率=35%；持续回合=2<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加Blast_Burn（Blast_Burn）｜数据：AddStatus；状态 Blast_Burn (Blast_Burn)；标志=IgnoreImmune/IgnoreDodge<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加Blast_Burn（Blast_Burn）｜数据：AddStatus；状态 Blast_Burn (Blast_Burn)；标志=IgnoreImmune/IgnoreDodge<span class="proof">｜入口：技能静态函数</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　速度下降效果效果发生率提升 5%</li><li><b>Lv.5</b>　伤害量提升 10%</li><li><b>Lv.6</b>　速度下降效果效果发生率提升 5%</li><li><b>Lv.7</b>　伤害量提升 15%</li></ul></details>
         </section><section class="section" id="H079S2">
           <div class="section-title"><h2>H079S2　疑神疑鬼</h2><span class="meta">被动技能｜目标 数据库未标注｜CD 0</span></div>
           <p class="description">受到攻击时，自身附加[护盾:Shield:StatusFun]( 1 回合)，并对攻击者造成[灼烧:Burn:StatusFun]( 1 回合)。护盾效果 1 回合只会发生 1 次。护盾效果根据自身攻击力等比提升</p>
           <div class="note">该技能没有玩家主动施放入口；效果从下方标出的 Trigger 宿主阶段进入。</div><div class="effects"><div class="effect">
-      <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加护盾（Shield）；基础概率 60%；持续 1 回合｜数据：AddStatus；状态 护盾 (Shield)；目标=Self；阵营=My；触发=TargetAfterSkill；属性=Attack；概率/倍率=60%；持续回合=1；条件=IsDamageSkill<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">施加状态</span><span class="node queue"><span class="node-id">Q02</span><span class="node-name">目标及全场 AfterSkill</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
+      <p class="effect-copy">施加护盾（Shield）；持续 1 回合｜数据：AddStatus；状态 护盾 (Shield)；目标=Self；阵营=My；触发=TargetAfterSkill；持续回合=1；条件=IsDamageSkill；条件详情={&quot;CheckFun&quot;:&quot;IsDamageSkill&quot;}；数值换算={&quot;Rate&quot;:0.6,&quot;Property&quot;:&quot;Attack&quot;}<span class="proof">｜入口：TargetAfterSkill</span></p>
     </div><div class="effect">
-      <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加灼烧（Burn）；基础概率 60%；持续 1 回合｜数据：AddStatus；状态 灼烧 (Burn)；目标=SkillSource；触发=TargetAfterSkill；属性=Attack；概率/倍率=60%；持续回合=1；条件=IsDamageSkill<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">施加状态</span><span class="node queue"><span class="node-id">Q02</span><span class="node-name">目标及全场 AfterSkill</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
+      <p class="effect-copy">施加灼烧（Burn）；状态保存值＝施加时施加者的攻击力 × 60%；持续 1 回合｜数据：AddStatus；状态 灼烧 (Burn)；目标=SkillSource；触发=TargetAfterSkill；持续回合=1；条件=IsDamageSkill；条件详情={&quot;CheckFun&quot;:&quot;IsDamageSkill&quot;}；状态保存值换算={&quot;Rate&quot;:0.6,&quot;Property&quot;:&quot;Attack&quot;}<span class="proof">｜入口：TargetAfterSkill</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　护盾提升15%</li><li><b>Lv.3</b>　护盾提升15%</li></ul></details>
         </section><section class="section" id="H079S3">
           <div class="section-title"><h2>H079S3　呜哇啊啊～！</h2><span class="meta">伤害技能｜目标 All｜CD 4｜AttRate 1｜Pow 1｜魂燃 20</span></div>
           <p class="description">慌张地攻击全体敌人，解除 1 个正向状态后，以 [60%:3_1:Rate] 机率造成[灼烧:Burn:StatusFun]( [1:AWAKEN] 回合)</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">RemoveBuf</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F05</span><span class="node-name">RemoveBuf</span></span></div>
-      <p class="effect-copy">RemoveBuf；目标=All；数值=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">RemoveBuf；目标=All；数值=1<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加灼烧（Burn）；基础概率 60%；持续 1 回合｜数据：AddStatus；状态 灼烧 (Burn)；目标=All；属性=Attack；概率/倍率=60%；持续回合=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加灼烧（Burn）；基础概率 60%；状态保存值＝施加时施加者的攻击力 × 60%；持续 1 回合｜数据：AddStatus；状态 灼烧 (Burn)；目标=All；概率/倍率=60%；持续回合=1；状态保存值换算={&quot;Rate&quot;:0.6,&quot;Property&quot;:&quot;Attack&quot;}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">AddRound</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F41</span><span class="node-name">AddRound</span></span></div>
-      <p class="effect-copy">AddRound；目标=Self；阵营=My<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">AddRound；目标=Self；阵营=My<span class="proof">｜入口：A02替换魂燃函数后，于A07执行；需核查执行宿主</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加灼烧（Burn）；基础概率 60%；持续 2 回合｜数据：AddStatus；状态 灼烧 (Burn)；目标=All；属性=Attack；概率/倍率=60%；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加灼烧（Burn）；基础概率 60%；状态保存值＝施加时施加者的攻击力 × 60%；持续 2 回合｜数据：AddStatus；状态 灼烧 (Burn)；目标=All；概率/倍率=60%；持续回合=2；状态保存值换算={&quot;Rate&quot;:0.6,&quot;Property&quot;:&quot;Attack&quot;}<span class="proof">｜入口：觉醒技能函数；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　效果发生率提升 5%</li><li><b>Lv.4</b>　效果发生率提升 5%</li><li><b>Lv.5</b>　冷却时间减少 1 回合</li><li><b>Lv.6</b>　伤害量提升 10%</li><li><b>Lv.7</b>　效果发生率提升 5%</li><li><b>Lv.8</b>　伤害量提升 15%</li></ul></details>
         </section><section class="section" id="damage-chain">
           <div class="section-title"><h2>直接目标的完整伤害链</h2><span class="meta">H079S1、H079S3 使用</span></div>
@@ -59,49 +59,46 @@
           <p class="description">速度下降 30%</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">SpeedFinalRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">SpeedFinalRate = -0.3｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">SpeedFinalRate = -0.3｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">ReduceSpeed</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">ReduceSpeed = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">ReduceSpeed = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>Blast_Burn　Blast_Burn</h3><span class="meta">基础回合 1｜最大层数 1｜常驻 TRUE</span></div>
           <p class="description">数据库无状态说明</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">BlastBuff</span><span class="node queue"><span class="node-id">E01</span><span class="node-name">全场回合后监听</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F30</span><span class="node-name">BlastBuff</span></span></div>
-      <p class="effect-copy">BlastBuff；状态 灼烧 (Burn)；目标=Self；阵营=My；触发=AnyOneAfterRound；属性=BlastBuffRoundValue；概率/倍率=1.1；数值=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">BlastBuff；状态 灼烧 (Burn)；目标=Self；阵营=My；触发=AnyOneAfterRound；数值换算={&quot;Who&quot;:&quot;Target&quot;,&quot;Rate&quot;:1.1,&quot;Property&quot;:&quot;BlastBuffRoundValue&quot;,&quot;PropertyID&quot;:&quot;Burn&quot;}<span class="proof">｜入口：AnyOneAfterRound</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">RemoveBufsByID</span><span class="node queue"><span class="node-id">E01</span><span class="node-name">全场回合后监听</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F29</span><span class="node-name">RemoveBufsByID</span></span></div>
-      <p class="effect-copy">RemoveBufsByID；状态 灼烧 (Burn)；目标=Self；阵营=My；触发=AnyOneAfterRound；属性=BlastBuffRoundValue；概率/倍率=1.1；数值=1<span class="proof">｜已验证连续边</span></p>
-    </div><div class="effect">
-      <div class="lane"><span class="lane-label">RemoveBufsByID</span><span class="node queue"><span class="node-id">E01</span><span class="node-name">全场回合后监听</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F29</span><span class="node-name">RemoveBufsByID</span></span></div>
-      <p class="effect-copy">RemoveBufsByID；状态 Blast_Burn (Blast_Burn)；目标=Self；阵营=My；触发=AnyOneAfterRound；数值=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">RemoveBufsByID；状态 Blast_Burn (Blast_Burn)；目标=Self；阵营=My；触发=AnyOneAfterRound；数值=1<span class="proof">｜入口：AnyOneAfterRound</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>Shield　护盾</h3><span class="meta">基础回合 2｜最大层数 0｜常驻 0</span></div>
           <p class="description">受到伤害时，会代替生命力吸收部分的伤害</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">Shield</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">Shield = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">Shield = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>Burn　灼烧</h3><span class="meta">基础回合 2｜最大层数 0｜常驻 0</span></div>
           <p class="description">回合开始时，依据施展者的攻击力受到等比的巨大伤害</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">状态伤害结算</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F14</span><span class="node-name">BuffAttack</span></span></div>
-      <p class="effect-copy">回合开始时，按施加者攻击力结算本状态伤害｜数据：BuffAttack；触发=BuffRound<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">回合开始时，按施加者攻击力结算本状态伤害｜数据：BuffAttack；触发=BuffRound<span class="proof">｜入口：BuffRound</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">Burn</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">Burn = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">Burn = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article></div></section>
 </main></body></html>

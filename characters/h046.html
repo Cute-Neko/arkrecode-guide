@@ -18,49 +18,49 @@
           <p class="description">攻击敌人。伤害量根据自身速度等比提升&lt;br&gt;若自身处于[速度提升:IncreaseSpeed:StatusFun]状态时，则改为施展「旋刃穿刺」&lt;br&gt;旋刃穿刺：连续攻击敌人造成[防御力下降:ReduceDef:StatusFun]( 1 回合)。伤害量根据自身速度等比提升</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">条件伤害倍率</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">满足条件时，条件攻击倍率为 0.00081｜数据：属性/条件函数；属性=Speed；概率/倍率=0.081%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">ReplaceSkill</span><span class="node operator"><span class="node-id">F10</span><span class="node-name">ReplaceSkill</span></span></div>
-      <p class="effect-copy">ReplaceSkill；状态 H046S4 (H046S4)；条件=HaveBuff/SkillID<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">ReplaceSkill；状态 H046S4 (H046S4)；条件=HaveBuff/SkillID；条件详情={&quot;CheckFun&quot;:&quot;SkillID&quot;,&quot;CheckID&quot;:&quot;H046S1&quot;,&quot;Conditions&quot;:[{&quot;CheckFun&quot;:&quot;HaveBuff&quot;,&quot;CheckID&quot;:&quot;IncreaseSpeed&quot;}]}<span class="proof">｜入口：技能静态函数</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　伤害量提升 5%</li><li><b>Lv.5</b>　伤害量提升 10%</li><li><b>Lv.6</b>　伤害量提升 10%</li></ul></details>
         </section><section class="section" id="H046S2">
           <div class="section-title"><h2>H046S2　自豪的速度</h2><span class="meta">被动技能｜目标 数据库未标注｜CD 0</span></div>
           <p class="description">发生暴击时，使自身附加[速度提升:IncreaseSpeed:StatusFun]( 1 回合)，并以 [70%:2_1:Rate] 机率附加[随机正向状态:RandomAddStatus:StatusFun]( 1 回合)。随机正向状态 1 回合只会发生 1 次</p>
           <div class="note">该技能没有玩家主动施放入口；效果从下方标出的 Trigger 宿主阶段进入。</div><div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加速度提升（IncreaseSpeed）；持续 1 回合｜数据：AddStatus；状态 速度提升 (IncreaseSpeed)；目标=Self；阵营=My；持续回合=1；条件=IsCriticalHit<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加速度提升（IncreaseSpeed）；持续 1 回合｜数据：AddStatus；状态 速度提升 (IncreaseSpeed)；目标=Self；阵营=My；持续回合=1；条件=IsCriticalHit；条件详情={&quot;Who&quot;:&quot;Source&quot;,&quot;CheckFun&quot;:&quot;IsCriticalHit&quot;}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">随机施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F22</span><span class="node-name">RandomAddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加（None）；基础概率 70%；持续 1 回合｜数据：RandomAddStatus；目标=Self；阵营=My；概率/倍率=70%；持续回合=1；条件=IsCriticalHit<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加（None）；基础概率 70%；持续 1 回合｜数据：RandomAddStatus；目标=Self；阵营=My；概率/倍率=70%；持续回合=1；条件=IsCriticalHit；条件详情={&quot;CheckFun&quot;:&quot;IsCriticalHit&quot;}<span class="proof">｜入口：技能静态函数</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　效果发生率提升 5%</li><li><b>Lv.3</b>　效果发生率提升 5%</li><li><b>Lv.4</b>　效果发生率提升 5%</li><li><b>Lv.5</b>　效果发生率提升 5%</li><li><b>Lv.6</b>　效果发生率提升 10%</li></ul></details>
         </section><section class="section" id="H046S3">
           <div class="section-title"><h2>H046S3　享乐主义</h2><span class="meta">伤害技能｜目标 数据库未标注｜CD 4｜AttRate 1.6｜Pow 1｜魂燃 10</span></div>
           <p class="description">乱砍敌人，消灭目标时产生[追加回合:SetTime:StatusFun][:AWAKEN]。伤害量根据自身速度等比提升</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">AddRound</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F41</span><span class="node-name">AddRound</span></span></div>
-      <p class="effect-copy">AddRound；目标=Self；阵营=My；属性=NowHP；数值=0<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">AddRound；目标=Self；阵营=My；条件详情={&quot;Who&quot;:&quot;SelectTarget&quot;,&quot;Property&quot;:&quot;NowHP&quot;,&quot;Value&quot;:0,&quot;Comparer&quot;:&quot;Lt&quot;}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">条件伤害倍率</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">满足条件时，条件攻击倍率为 0.0021｜数据：属性/条件函数；属性=Speed；概率/倍率=0.21%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：A02替换魂燃函数后，于A07执行；需核查执行宿主</span></p>
     </div><div class="effect">
-      <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；触发=ForceConquer；条件=HaveBuff<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">UNRESOLVED</span><span class="node-name">未登记节点</span></span></div>
+      <p class="effect-copy">属性/条件函数；触发=ForceConquer；条件=HaveBuff；条件详情={&quot;CheckFun&quot;:&quot;HaveBuff&quot;,&quot;CheckID&quot;:&quot;IncreaseSpeed&quot;}<span class="proof">｜入口：ForceConquer（宿主待核查）；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　冷却时间减少 1 回合</li><li><b>Lv.5</b>　伤害量提升 10%</li><li><b>Lv.6</b>　伤害量提升 10%</li></ul></details>
         </section><section class="section" id="H046S4">
           <div class="section-title"><h2>H046S4　旋刃穿刺</h2><span class="meta">伤害技能｜目标 数据库未标注｜CD 1｜AttRate 1.5｜Pow 0.9</span></div>
           <p class="description">数据库无技能说明</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加防御力下降（ReduceDef）；持续 1 回合｜数据：AddStatus；状态 防御力下降 (ReduceDef)；持续回合=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加防御力下降（ReduceDef）；持续 1 回合｜数据：AddStatus；状态 防御力下降 (ReduceDef)；持续回合=1<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">条件伤害倍率</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">满足条件时，条件攻击倍率为 0.00075｜数据：属性/条件函数；属性=Speed；概率/倍率=0.075%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">IsNormalSkill</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">IsNormalSkill = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">IsNormalSkill = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div></div>
         </section><section class="section" id="damage-chain">
           <div class="section-title"><h2>直接目标的完整伤害链</h2><span class="meta">H046S1、H046S3、H046S4 使用</span></div>
@@ -72,20 +72,20 @@
           <p class="description">速度提升 30%</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">SpeedFinalRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">SpeedFinalRate = 0.3｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">SpeedFinalRate = 0.3｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>ReduceDef　防御力下降</h3><span class="meta">基础回合 2｜最大层数 0｜常驻 0</span></div>
           <p class="description">防御力下降 70%</p>
           <div class="effect">
-      <div class="lane"><span class="lane-label">DefenceFinalRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">DefenceFinalRate = -0.7｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">防御力提升</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
+      <p class="effect-copy">防御力提高 -70%（最终防御倍率）｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article></div></section>
 </main></body></html>

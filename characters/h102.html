@@ -18,30 +18,30 @@
           <p class="description">咏唱漆黑魔法，以 [35%:1_1:Rate] 机率造成[无法恢复:Unhealable:StatusFun]( 2 回合)</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加无法恢复（Unhealable）；基础概率 35%；持续 2 回合｜数据：AddStatus；状态 无法恢复 (Unhealable)；概率/倍率=35%；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加无法恢复（Unhealable）；基础概率 35%；持续 2 回合｜数据：AddStatus；状态 无法恢复 (Unhealable)；概率/倍率=35%；持续回合=2<span class="proof">｜入口：技能静态函数</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　效果发生率提升 5%</li><li><b>Lv.4</b>　伤害量提升 10%</li><li><b>Lv.5</b>　效果发生率提升 10%</li><li><b>Lv.6</b>　伤害量提升 15%</li></ul></details>
         </section><section class="section" id="H102S2">
           <div class="section-title"><h2>H102S2　咒术屏障</h2><span class="meta">被动技能｜目标 数据库未标注｜CD 0</span></div>
           <p class="description">架起魔法屏障，使我方全体受到的全体攻击伤害下降 [25%:H102S2:UIRate]。伤害下降效果重复时，只会套用最高效果</p>
           <div class="note">该技能没有玩家主动施放入口；效果从下方标出的 Trigger 宿主阶段进入。</div><div class="effects"><div class="effect">
-      <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；目标=Self；阵营=My；触发=BeforeEvent；属性=ValueOne；概率/倍率=25%；条件=TargetIsAll<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">属性与条件</span><span class="node damage"><span class="node-id">D08</span><span class="node-name">事件提交前函数</span></span></div>
+      <p class="effect-copy">属性/条件函数；目标=Self；阵营=My；触发=BeforeEvent；条件=TargetIsAll；条件详情={&quot;CheckFun&quot;:&quot;TargetIsAll&quot;}<span class="proof">｜入口：BeforeEvent</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　受到的伤害量下降 0.5%</li><li><b>Lv.3</b>　受到的伤害量下降 0.5%</li><li><b>Lv.4</b>　受到的伤害量下降 1%</li><li><b>Lv.5</b>　受到的伤害量下降 1%</li><li><b>Lv.6</b>　受到的伤害量下降 2%</li></ul></details>
         </section><section class="section" id="H102S3">
           <div class="section-title"><h2>H102S3　禁忌邪术</h2><span class="meta">伤害技能｜目标 数据库未标注｜CD 4｜AttRate 1.8｜Pow 1｜魂燃 10</span></div>
           <p class="description">使用邪术攻击敌人，造成行动值下降 [25%:3_1:Value]、[:AWAKEN][沉默:Silence:StatusFun]( 2 回合)</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">行动值变化</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F02</span><span class="node-name">AddTime</span></span></div>
-      <p class="effect-copy">目标行动值降低 25%｜数据：AddTime；数值=-0.25<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">目标行动值降低 25%｜数据：AddTime；数值=-0.25<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加沉默（Silence）；持续 2 回合｜数据：AddStatus；状态 沉默 (Silence)；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加沉默（Silence）；持续 2 回合｜数据：AddStatus；状态 沉默 (Silence)；持续回合=2<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">技能冷却变化</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F18</span><span class="node-name">AddSkillCoolDown</span></span></div>
-      <p class="effect-copy">自身 H102S3 冷却时间减少 2 回合｜数据：AddSkillCoolDown；状态 H102S3 (H102S3)；目标=Self；阵营=My；数值=-2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">自身 H102S3 冷却时间减少 2 回合｜数据：AddSkillCoolDown；状态 H102S3 (H102S3)；目标=Self；阵营=My；数值=-2<span class="proof">｜入口：A02替换魂燃函数后，于A07执行；需核查执行宿主</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加无法强化（CannotBuff）；持续 2 回合｜数据：AddStatus；状态 无法强化 (CannotBuff)；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加无法强化（CannotBuff）；持续 2 回合｜数据：AddStatus；状态 无法强化 (CannotBuff)；持续回合=2<span class="proof">｜入口：觉醒技能函数；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 10%</li><li><b>Lv.3</b>　行动值提升 5%</li><li><b>Lv.4</b>　冷却时间减少 1 回合</li><li><b>Lv.5</b>　行动值提升 10%</li><li><b>Lv.6</b>　伤害量提升 15%</li></ul></details>
         </section><section class="section" id="damage-chain">
           <div class="section-title"><h2>直接目标的完整伤害链</h2><span class="meta">H102S1、H102S3 使用</span></div>
@@ -53,30 +53,30 @@
           <p class="description">无法恢复生命力</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">SealHeal</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">SealHeal = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">SealHeal = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>Silence　沉默</h3><span class="meta">基础回合 1｜最大层数 0｜常驻 0</span></div>
           <p class="description">在自身的回合选择技能时，无法选择基本技能除外的其他技能</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">Silence</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">Silence = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">Silence = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>CannotBuff　无法强化</h3><span class="meta">基础回合 1｜最大层数 0｜常驻 0</span></div>
           <p class="description">无法获得任何正向状态</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">SealBuff</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">SealBuff = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">SealBuff = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article></div></section>
 </main></body></html>

@@ -18,64 +18,67 @@
           <p class="description">射出爱心攻击敌人解除 1 个正向状态[:AWAKEN]。成功解除目标正向状态时，追加施展「特别服务♥」&lt;br&gt;特别服务♥：攻击敌人并恢復我方全体成员生命力。伤害量及恢復量根据自身最大生命力等比提升</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">RemoveBuf</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F05</span><span class="node-name">RemoveBuf</span></span></div>
-      <p class="effect-copy">RemoveBuf；状态 H186S4 (H186S4)；数值=1<span class="proof">｜已验证连续边</span></p>
-    </div><div class="effect">
-      <div class="lane"><span class="lane-label">追加技能</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F07</span><span class="node-name">AdditionSkill</span></span><span class="arrow">→</span><span class="node queue"><span class="node-id">Q01</span><span class="node-name">反击、夹击与追加技能队列</span></span><span class="arrow">→</span><span class="node queue"><span class="node-id">Q04</span><span class="node-name">优先追加技能（Continue）→夹击→反击→死亡→普通追加技能（Addition）</span></span><span class="arrow">→</span><span class="node action"><span class="node-id">A04</span><span class="node-name">StartNewSkillEvent</span></span></div>
-      <p class="effect-copy">满足条件时，追加施展 H186S4｜数据：AdditionSkill；状态 H186S4 (H186S4)；数值=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">RemoveBuf；数值=1<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">数值强化</span><span class="node operator"><span class="node-id">F06</span><span class="node-name">AddValue</span></span></div>
-      <p class="effect-copy">AddValue；概率/倍率=0%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">AddValue；概率/倍率=0%<span class="proof">｜入口：A02替换魂燃函数后，于A07执行；需核查执行宿主</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；属性=MaxHP；概率/倍率=3%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：觉醒技能函数；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 10%</li><li><b>Lv.4</b>　伤害量提升 15%</li></ul></details>
         </section><section class="section" id="H186S2">
           <div class="section-title"><h2>H186S2　感谢超级留言！</h2><span class="meta">被动技能｜目标 数据库未标注｜CD 4</span></div>
           <p class="description">攻击时[贯穿:Penetrate:StatusFun]目标防禦力，不会发生暴击&lt;br&gt;我方成员死亡时，使全体我方成员附加[护盾:Shield:StatusFun]( 2 回合)、[免疫:Immune:StatusFun]( 2 回合)，自身附加[情绪高昂起来！:H186S2:StatusFun]( 2 回合)。成员死亡效果 4 回合只会发生 1 次。护盾效果根据自身最大生命力等比提升</p>
           <div class="note">该技能没有玩家主动施放入口；效果从下方标出的 Trigger 宿主阶段进入。</div><div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">防御贯穿</span><span class="node damage"><span class="node-id">D04</span><span class="node-name">防御与三层贯穿</span></span></div>
-      <p class="effect-copy">本次攻击贯穿目标 100% 防御力｜数据：属性/条件函数；属性=ValueOne；概率/倍率=100%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：防御贯穿公式阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">禁止强击</span><span class="node damage"><span class="node-id">D02</span><span class="node-name">命中/闪避/暴击</span></span></div>
-      <p class="effect-copy">攻击不会触发强击｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">攻击不会触发强击｜数据：属性/条件函数<span class="proof">｜入口：命中类型判定阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">禁止暴击</span><span class="node damage"><span class="node-id">D02</span><span class="node-name">命中/闪避/暴击</span></span></div>
-      <p class="effect-copy">攻击不会发生暴击｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">攻击不会发生暴击｜数据：属性/条件函数<span class="proof">｜入口：命中类型判定阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node trigger"><span class="node-id">L01</span><span class="node-name">SelfDead / OtherDead</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加护盾（Shield）；基础概率 30%；持续 2 回合｜数据：AddStatus；状态 护盾 (Shield)；目标=All；阵营=My；触发=OtherDead；属性=MaxHP；概率/倍率=30%；持续回合=2；条件=CheckSkillCooldown/IsSameCamp；标志=IgnoreImmune/IgnoreDodge<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加护盾（Shield）；持续 2 回合｜数据：AddStatus；状态 护盾 (Shield)；目标=All；阵营=My；触发=OtherDead；持续回合=2；条件=CheckSkillCooldown/IsSameCamp；全部条件=[{&quot;Who&quot;:&quot;TriggerSource&quot;,&quot;CheckFun&quot;:&quot;IsSameCamp&quot;},{&quot;CheckFun&quot;:&quot;CheckSkillCooldown&quot;,&quot;CheckID&quot;:&quot;H186S2&quot;}]；数值换算={&quot;Rate&quot;:0.3,&quot;Property&quot;:&quot;MaxHP&quot;}<span class="proof">｜入口：OtherDead</span></p>
+    </div><div class="effect">
+      <div class="lane"><span class="lane-label">施加状态</span><span class="node trigger"><span class="node-id">L01</span><span class="node-name">SelfDead / OtherDead</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
+      <p class="effect-copy">子效果：在父效果的执行条件下运行；施加免疫（Immune）；持续 2 回合｜数据：AddStatus；状态 免疫 (Immune)；目标=All；阵营=My；触发=OtherDead；持续回合=2<span class="proof">｜入口：OtherDead</span></p>
+    </div><div class="effect">
+      <div class="lane"><span class="lane-label">施加状态</span><span class="node trigger"><span class="node-id">L01</span><span class="node-name">SelfDead / OtherDead</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
+      <p class="effect-copy">子效果：在父效果的执行条件下运行；施加情绪高昂起来！（H186S2）；持续 2 回合｜数据：AddStatus；状态 情绪高昂起来！ (H186S2)；目标=Self；阵营=My；触发=OtherDead；持续回合=2<span class="proof">｜入口：OtherDead</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">ReSetSkillCoolDown</span><span class="node trigger"><span class="node-id">L01</span><span class="node-name">SelfDead / OtherDead</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F11</span><span class="node-name">ReSetSkillCoolDown</span></span></div>
-      <p class="effect-copy">ReSetSkillCoolDown；状态 护盾 (Shield)；目标=All；阵营=My；触发=OtherDead；属性=MaxHP；概率/倍率=30%；持续回合=2；条件=CheckSkillCooldown/IsSameCamp；标志=IgnoreImmune/IgnoreDodge<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">子效果：在父效果的执行条件下运行；ReSetSkillCoolDown；状态 情绪高昂起来！ (H186S2)；目标=Self；阵营=My；触发=OtherDead；标志=IgnoreImmune/IgnoreDodge<span class="proof">｜入口：OtherDead</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　护盾提升 5%</li><li><b>Lv.3</b>　护盾提升 5%</li><li><b>Lv.4</b>　护盾提升 5%</li><li><b>Lv.5</b>　护盾提升 5%</li><li><b>Lv.6</b>　护盾提升 5%</li><li><b>Lv.7</b>　护盾提升 10%</li></ul></details>
         </section><section class="section" id="H186S3">
           <div class="section-title"><h2>H186S3　多看我一眼嘛♥</h2><span class="meta">伤害技能｜目标 数据库未标注｜CD 5｜AttRate 0.3｜Pow 1</span></div>
           <p class="description">解除敌人所有正向状态后，播放影像进行攻击。消灭敌人时，使死亡的全体我方成员復活，并附加[不屈:Immortal:StatusFun]( 1 回合)。若自身处于[情绪高昂起来！:H186S2:StatusFun]状态时，伤害量提升 100%。伤害量根据自身最大生命力等比提升</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">RemoveBuf</span><span class="node action"><span class="node-id">A06</span><span class="node-name">魂力→自身BeforeSkill→全体AnyOneBeforeSkill→夹击</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F05</span><span class="node-name">RemoveBuf</span></span></div>
-      <p class="effect-copy">RemoveBuf；触发=BeforeSkill；数值=-1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">RemoveBuf；触发=BeforeSkill；数值=-1<span class="proof">｜入口：BeforeSkill</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">直接复活</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F44</span><span class="node-name">DirectRevive</span></span></div>
-      <p class="effect-copy">DirectRevive；状态 H186S3 (H186S3)；目标=AllWithDead；阵营=My；属性=MaxHP；概率/倍率=1%；数值=0<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">DirectRevive；状态 H186S3 (H186S3)；目标=AllWithDead；阵营=My；条件详情={&quot;Who&quot;:&quot;Target&quot;,&quot;Property&quot;:&quot;NowHP&quot;,&quot;Comparer&quot;:&quot;Lt&quot;,&quot;Value&quot;:0}；数值换算={&quot;Who&quot;:&quot;Target&quot;,&quot;Rate&quot;:0.01,&quot;Property&quot;:&quot;MaxHP&quot;}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">条件伤害倍率</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">目标具有 H186S2 时，条件攻击倍率为 1｜数据：属性/条件函数；属性=ValueOne；概率/倍率=100%；条件=HaveBuff<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数；条件=HaveBuff<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；属性=MaxHP；概率/倍率=14%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node trigger"><span class="node-id">L05</span><span class="node-name">复活事件与 AfterRevive</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加不屈（Immortal）；持续 1 回合｜数据：AddStatus；状态 不屈 (Immortal)；目标=ParamTarget；触发=AfterRevive；持续回合=1；条件=FunID<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加不屈（Immortal）；持续 1 回合｜数据：AddStatus；状态 不屈 (Immortal)；目标=ParamTarget；触发=AfterRevive；持续回合=1；条件=FunID；条件详情={&quot;CheckFun&quot;:&quot;FunID&quot;,&quot;CheckID&quot;:&quot;H186S3&quot;}<span class="proof">｜入口：AfterRevive</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　冷却时间减少 1 回合</li><li><b>Lv.5</b>　伤害量提升 5%</li><li><b>Lv.6</b>　伤害量提升 5%</li><li><b>Lv.7</b>　伤害量提升 10%</li></ul></details>
         </section><section class="section" id="H186S4">
           <div class="section-title"><h2>H186S4　特别服务♥</h2><span class="meta">伤害技能｜目标 数据库未标注｜CD 1｜AttRate 0.3｜Pow 1</span></div>
           <p class="description">数据库无技能说明</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">生命恢复</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F03</span><span class="node-name">AddHP</span></span></div>
-      <p class="effect-copy">恢复生命；恢复量为MaxHP的 10%｜数据：AddHP；目标=All；阵营=My；属性=MaxHP；概率/倍率=10%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">恢复生命；恢复量为MaxHP的 10%｜数据：AddHP；目标=All；阵营=My；数值换算={&quot;Rate&quot;:0.1,&quot;Property&quot;:&quot;MaxHP&quot;}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；属性=MaxHP；概率/倍率=10%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div></div>
         </section><section class="section" id="damage-chain">
           <div class="section-title"><h2>直接目标的完整伤害链</h2><span class="meta">H186S1、H186S3、H186S4 使用</span></div>
@@ -87,40 +90,40 @@
           <p class="description">受到伤害时，会代替生命力吸收部分的伤害</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">Shield</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">Shield = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">Shield = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>Immune　免疫</h3><span class="meta">基础回合 2｜最大层数 0｜常驻 0</span></div>
           <p class="description">目标不会受到任何负向状态及部分有害效果的影响</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">Immune</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">Immune = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">Immune = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>H186S2　情绪高昂起来！</h3><span class="meta">基础回合 1｜最大层数 0｜常驻 TRUE</span></div>
           <p class="description">状态命中、速度提升 30%。此状态不会被解除</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">EffectHitRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">EffectHitRate = 0.3｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">EffectHitRate = 0.3｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">SpeedFinalRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">SpeedFinalRate = 0.3｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">SpeedFinalRate = 0.3｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>Immortal　不屈</h3><span class="meta">基础回合 1｜最大层数 0｜常驻 0</span></div>
           <p class="description">目标在效果持续回合期间不会死亡</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">Immortal</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">Immortal = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">Immortal = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article></div></section>
 </main></body></html>

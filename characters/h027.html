@@ -18,51 +18,51 @@
           <p class="description">运用装载圣典的箱子攻击敌人，以 [50%:1_1:Rate] 机率[转移:TransferDeBuff:StatusFun] 1 个负向状态。若自身处于[激愤:Enrage:StatusFun]状态时伤害量提升，并使敌人[晕眩:Stun:StatusFun]( 1 回合)。伤害量根据自身防御力等比提升</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">TransferDeBuff</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F33</span><span class="node-name">TransferDeBuff</span></span></div>
-      <p class="effect-copy">TransferDeBuff；概率/倍率=50%；数值=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">TransferDeBuff；概率/倍率=50%；数值=1<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；条件=HaveBuff<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数；条件=HaveBuff；条件详情={&quot;CheckFun&quot;:&quot;HaveBuff&quot;,&quot;CheckID&quot;:&quot;Enrage&quot;}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加晕眩（Stun）｜数据：AddStatus；状态 晕眩 (Stun)；条件=HaveBuff<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加晕眩（Stun）｜数据：AddStatus；状态 晕眩 (Stun)；条件=HaveBuff；条件详情={&quot;CheckFun&quot;:&quot;HaveBuff&quot;,&quot;CheckID&quot;:&quot;Enrage&quot;}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；属性=Defence；概率/倍率=90%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；属性=Defence；概率/倍率=30%；条件=HaveBuff<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数；条件=HaveBuff；条件详情={&quot;CheckFun&quot;:&quot;HaveBuff&quot;,&quot;CheckID&quot;:&quot;Enrage&quot;}<span class="proof">｜入口：技能静态函数</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　效果发生率提升 10%</li><li><b>Lv.5</b>　效果发生率提升 15%</li><li><b>Lv.6</b>　伤害量提升 10%</li><li><b>Lv.7</b>　伤害量提升 10%</li></ul></details>
         </section><section class="section" id="H027S2">
           <div class="section-title"><h2>H027S2　制裁</h2><span class="meta">伤害技能｜目标 All｜CD 4｜AttRate 0.3｜Pow 0.9</span></div>
           <p class="description">高速旋转装载圣典的箱子攻击全体敌人，造成行动值下降 [20%:2_1:UIRate]。若敌人行动值归 0，则追加造成[晕眩:Stun:StatusFun]( 1 回合)。若自身处于[激愤:Enrage:StatusFun]状态时，行动值下降效果提升为 2 倍。伤害量根据自身防御力等比提升</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">行动值变化</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F02</span><span class="node-name">AddTime</span></span></div>
-      <p class="effect-copy">目标行动值提升 0%；条件：目标具有 Enrage｜数据：AddTime；状态 晕眩 (Stun)；目标=All；属性=ValueOne；概率/倍率=-20%；数值=0；持续回合=1；条件=HaveBuff<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">AddTime；目标=All；条件=HaveBuff；数值换算={&quot;Base&quot;:-0.2,&quot;Rate&quot;:-0.2,&quot;Property&quot;:&quot;ValueOne&quot;,&quot;Condition&quot;:{&quot;CheckFun&quot;:&quot;HaveBuff&quot;,&quot;CheckID&quot;:&quot;Enrage&quot;}}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加晕眩（Stun）；基础概率 -20%；持续 1 回合｜数据：AddStatus；状态 晕眩 (Stun)；目标=All；属性=ValueOne；概率/倍率=-20%；数值=0；持续回合=1；条件=HaveBuff<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">子效果：在父效果的执行条件下运行；施加晕眩（Stun）；持续 1 回合｜数据：AddStatus；状态 晕眩 (Stun)；目标=SkillSetting；持续回合=1；条件详情={&quot;Who&quot;:&quot;Target&quot;,&quot;Property&quot;:&quot;NowTime&quot;,&quot;Comparer&quot;:&quot;Lt&quot;,&quot;Value&quot;:0}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；属性=Defence；概率/倍率=70%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　行动值提升 2%</li><li><b>Lv.4</b>　行动值提升 3%</li><li><b>Lv.5</b>　冷却时间减少 1 回合</li><li><b>Lv.6</b>　行动值提升 5%</li><li><b>Lv.7</b>　伤害量提升 10%</li><li><b>Lv.8</b>　伤害量提升 15%</li></ul></details>
         </section><section class="section" id="H027S3">
           <div class="section-title"><h2>H027S3　真理信仰</h2><span class="meta">非伤害技能｜目标 My / Self｜CD 1｜魂燃 20</span></div>
           <p class="description">以圣典为媒介祈求奇迹降临。对自身附加[激愤:Enrage:StatusFun]( 3 回合)[并:AWAKEN]获得[追加回合:SetTime:StatusFun]&lt;br&gt;首次开始战斗时获得 50 战意&lt;br&gt;被攻击时获得 10 战意</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加激愤（Enrage）；持续 3 回合｜数据：AddStatus；状态 激愤 (Enrage)；目标=Self；阵营=My；持续回合=3<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加激愤（Enrage）；持续 3 回合｜数据：AddStatus；状态 激愤 (Enrage)；目标=Self；阵营=My；持续回合=3<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">AddRound</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F41</span><span class="node-name">AddRound</span></span></div>
-      <p class="effect-copy">AddRound；目标=Self；阵营=My<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">AddRound；目标=Self；阵营=My<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">条件伤害倍率</span><span class="node damage"><span class="node-id">D03A</span><span class="node-name">常量攻击与条件攻击</span></span></div>
-      <p class="effect-copy">满足条件时，条件攻击倍率为 0｜数据：属性/条件函数；属性=ValueOne；概率/倍率=0%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：攻击与条件伤害公式阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">生命恢复</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F03</span><span class="node-name">AddHP</span></span></div>
-      <p class="effect-copy">恢复生命；恢复量为MaxHP的 50%｜数据：AddHP；目标=Self；阵营=My；属性=MaxHP；概率/倍率=50%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">恢复生命；恢复量为MaxHP的 50%｜数据：AddHP；目标=Self；阵营=My；数值换算={&quot;Rate&quot;:0.5,&quot;Property&quot;:&quot;MaxHP&quot;}<span class="proof">｜入口：A02替换魂燃函数后，于A07执行；需核查执行宿主</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">生命恢复</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F03</span><span class="node-name">AddHP</span></span></div>
-      <p class="effect-copy">恢复生命；恢复量为MaxHP的 50%｜数据：AddHP；目标=Self；阵营=My；属性=MaxHP；概率/倍率=50%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">恢复生命；恢复量为MaxHP的 50%｜数据：AddHP；目标=Self；阵营=My；数值换算={&quot;Rate&quot;:0.5,&quot;Property&quot;:&quot;MaxHP&quot;}<span class="proof">｜入口：觉醒技能函数；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　增加 2 点星源</li><li><b>Lv.3</b>　恢复量提升 20%</li></ul></details>
         </section><section class="section" id="damage-chain">
           <div class="section-title"><h2>直接目标的完整伤害链</h2><span class="meta">H027S1、H027S2 使用</span></div>
@@ -74,20 +74,20 @@
           <p class="description">在持续回合内无法行动</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">Dizzy</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">Dizzy = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">Dizzy = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>Enrage　激愤</h3><span class="meta">基础回合 1｜最大层数 0｜常驻 TRUE</span></div>
           <p class="description">防禦力及状态抗性提升 30%。此状态不会被解除</p>
           <div class="effect">
-      <div class="lane"><span class="lane-label">DefenceFinalRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">DefenceFinalRate = 0.3｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">防御力提升</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
+      <p class="effect-copy">防御力提高 30%（最终防御倍率）｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">ResistanceRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">ResistanceRate = 0.3｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">ResistanceRate = 0.3｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div>
         </article></div></section>
 </main></body></html>

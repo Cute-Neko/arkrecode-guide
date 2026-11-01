@@ -18,54 +18,54 @@
           <p class="description">噼砍敌人。伤害量根据自身最大生命力等比提升。追击以外的情况施展时，以 50% 机率改为施展「追忆残响」，若自身拥有正向状态，则机率提升为 100%。改为施展「追忆残响」时，不会发动追击</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；属性=MaxHP；概率/倍率=10%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">ReplaceSkill</span><span class="node operator"><span class="node-id">F10</span><span class="node-name">ReplaceSkill</span></span></div>
-      <p class="effect-copy">ReplaceSkill；状态 H177S2 (H177S2)；属性=ValueOne；概率/倍率=50%；数值=1；条件=IsPinch/SkillID；标志=Invert<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">ReplaceSkill；状态 H177S2 (H177S2)；条件=IsPinch/SkillID；全部条件=[{&quot;CheckFun&quot;:&quot;SkillID&quot;,&quot;CheckID&quot;:&quot;H177S1&quot;},{&quot;CheckFun&quot;:&quot;IsPinch&quot;,&quot;Invert&quot;:true}]<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">ReplaceSkill</span><span class="node operator"><span class="node-id">F10</span><span class="node-name">ReplaceSkill</span></span></div>
-      <p class="effect-copy">ReplaceSkill；状态 H177S2 (H177S2)；属性=ValueOne；概率/倍率=50%；数值=1；条件=IsPinch/SkillID；标志=Invert<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">ReplaceSkill；状态 H177S2 (H177S2)；条件=IsPinch/SkillID；全部条件=[{&quot;CheckFun&quot;:&quot;SkillID&quot;,&quot;CheckID&quot;:&quot;H177S1&quot;},{&quot;CheckFun&quot;:&quot;IsPinch&quot;,&quot;Invert&quot;:true}]<span class="proof">｜入口：技能静态函数</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　伤害量提升 5%</li><li><b>Lv.5</b>　伤害量提升 5%</li><li><b>Lv.6</b>　伤害量提升 10%</li></ul></details>
         </section><section class="section" id="H177S2">
           <div class="section-title"><h2>H177S2　追忆残响</h2><span class="meta">伤害技能｜目标 数据库未标注｜CD 4｜AttRate 1｜Pow 1｜魂燃 10</span></div>
           <p class="description">投掷手斧攻击敌人造成[创伤:Injury:StatusFun]，命中时造成相当于目标创伤效果 50% 的追加伤害。伤害量根据自身最大生命力等比提升。创伤效果根据伤害量等比提升，每施展 1 次技能，最多可降低目标最大生命力的 20%&lt;br&gt;基础暴击率提升 15%</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">创伤值变化</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F32</span><span class="node-name">AddInjuryRate</span></span></div>
-      <p class="effect-copy">按换算字段增加创伤值｜数据：AddInjuryRate；目标=SkillDirectTargets；属性=SkillDamageHPRate；概率/倍率=100%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">按换算字段增加创伤值｜数据：AddInjuryRate；目标=SkillDirectTargets；数值换算={&quot;Who&quot;:&quot;Target&quot;,&quot;Rate&quot;:1,&quot;Property&quot;:&quot;SkillDamageHPRate&quot;,&quot;MaxValue&quot;:0.2}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">生命值直伤</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F40</span><span class="node-name">DirectHPValueHit</span></span><span class="arrow">→</span><span class="node queue"><span class="node-id">Q03</span><span class="node-name">ProcessAdditionDamage / ProcessDirectHit</span></span><span class="arrow">→</span><span class="node damage"><span class="node-id">D00</span><span class="node-name">建立命中事件与前快照</span></span></div>
-      <p class="effect-copy">按生命或状态值换算产生直接伤害｜数据：DirectHPValueHit；目标=SkillDirectTargets；属性=InjuryValue；概率/倍率=50%；条件=IsHitMiss；标志=Invert<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">按生命或状态值换算产生直接伤害｜数据：DirectHPValueHit；目标=SkillDirectTargets；条件=IsHitMiss；条件详情={&quot;Who&quot;:&quot;Target&quot;,&quot;CheckFun&quot;:&quot;IsHitMiss&quot;,&quot;Invert&quot;:true}；数值换算={&quot;Who&quot;:&quot;Target&quot;,&quot;Rate&quot;:0.5,&quot;Property&quot;:&quot;InjuryValue&quot;}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；属性=MaxHP；概率/倍率=18%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">NoPinch</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">NoPinch = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">NoPinch = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">CriticalRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">CriticalRate = 0.15｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">CriticalRate = 0.15｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">数值强化</span><span class="node operator"><span class="node-id">F06</span><span class="node-name">AddValue</span></span></div>
-      <p class="effect-copy">AddValue；概率/倍率=10%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">AddValue；概率/倍率=10%<span class="proof">｜入口：A02替换魂燃函数后，于A07执行；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　冷却时间减少 1 回合</li><li><b>Lv.5</b>　伤害量提升 10%</li><li><b>Lv.6</b>　伤害量提升 10%</li></ul></details>
         </section><section class="section" id="H177S3">
           <div class="section-title"><h2>H177S3　与闺蜜的约定</h2><span class="meta">伤害技能｜目标 All｜CD 5｜AttRate 0.7｜Pow 1</span></div>
           <p class="description">攻击全体敌人造成[创伤:Injury:StatusFun]。使全体我方成员附加[暴击伤害提升:IncreaseCriticalHitDamage:StatusFun]( 2 回合)[:AWAKEN]、自身行动值提升 50%。伤害量根据自身最大生命力等比提升。创伤效果根据伤害量等比提升，每施展 1 次技能，最多可降低目标最大生命力的 20%</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">创伤值变化</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F32</span><span class="node-name">AddInjuryRate</span></span></div>
-      <p class="effect-copy">按换算字段增加创伤值｜数据：AddInjuryRate；目标=SkillDirectTargets；属性=SkillDamageHPRate；概率/倍率=100%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">按换算字段增加创伤值｜数据：AddInjuryRate；目标=SkillDirectTargets；数值换算={&quot;Who&quot;:&quot;Target&quot;,&quot;Rate&quot;:1,&quot;Property&quot;:&quot;SkillDamageHPRate&quot;,&quot;MaxValue&quot;:0.2}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加暴击伤害提升（IncreaseCriticalHitDamage）；持续 2 回合｜数据：AddStatus；状态 暴击伤害提升 (IncreaseCriticalHitDamage)；目标=All；阵营=My；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加暴击伤害提升（IncreaseCriticalHitDamage）；持续 2 回合｜数据：AddStatus；状态 暴击伤害提升 (IncreaseCriticalHitDamage)；目标=All；阵营=My；持续回合=2<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">行动值变化</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F02</span><span class="node-name">AddTime</span></span></div>
-      <p class="effect-copy">自身行动值提升 50%｜数据：AddTime；目标=Self；阵营=My；数值=0.5<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">自身行动值提升 50%｜数据：AddTime；目标=Self；阵营=My；数值=0.5<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">属性与条件</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">属性/条件函数；属性=MaxHP；概率/倍率=15%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加免疫（Immune）；持续 2 回合｜数据：AddStatus；状态 免疫 (Immune)；目标=Self；阵营=My；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加免疫（Immune）；持续 2 回合｜数据：AddStatus；状态 免疫 (Immune)；目标=Self；阵营=My；持续回合=2<span class="proof">｜入口：觉醒技能函数；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　冷却时间减少 1 回合</li><li><b>Lv.5</b>　伤害量提升 10%</li><li><b>Lv.6</b>　伤害量提升 10%</li></ul></details>
         </section><section class="section" id="damage-chain">
           <div class="section-title"><h2>直接目标的完整伤害链</h2><span class="meta">H177S1、H177S2、H177S3 使用</span></div>
@@ -77,20 +77,20 @@
           <p class="description">暴击伤害提升 50%</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">CriticalDamageRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">CriticalDamageRate = 0.5｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">CriticalDamageRate = 0.5｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article><article class="status-card">
           <div class="section-title"><h3>Immune　免疫</h3><span class="meta">基础回合 2｜最大层数 0｜常驻 0</span></div>
           <p class="description">目标不会受到任何负向状态及部分有害效果的影响</p>
           <div class="effect">
       <div class="lane"><span class="lane-label">Immune</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">Immune = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">Immune = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article></div></section>
 </main></body></html>

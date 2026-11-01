@@ -18,57 +18,57 @@
           <p class="description">指挥浮游砲攻击敌人，并以 [65%:1_1:Rate] 机率造成[防禦力下降:ReduceDef:StatusFun]( 1 回合)。命中时造成自身攻击力等比的追加伤害。此攻击不会发生暴击</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加防御力下降（ReduceDef）；基础概率 65%；持续 1 回合｜数据：AddStatus；状态 防御力下降 (ReduceDef)；概率/倍率=65%；持续回合=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加防御力下降（ReduceDef）；基础概率 65%；持续 1 回合｜数据：AddStatus；状态 防御力下降 (ReduceDef)；概率/倍率=65%；持续回合=1<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">禁止暴击</span><span class="node damage"><span class="node-id">D02</span><span class="node-name">命中/闪避/暴击</span></span></div>
-      <p class="effect-copy">攻击不会发生暴击｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">攻击不会发生暴击｜数据：属性/条件函数<span class="proof">｜入口：命中类型判定阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">禁止强击</span><span class="node damage"><span class="node-id">D02</span><span class="node-name">命中/闪避/暴击</span></span></div>
-      <p class="effect-copy">攻击不会触发强击｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">攻击不会触发强击｜数据：属性/条件函数<span class="proof">｜入口：命中类型判定阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">DirectHit</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F37</span><span class="node-name">DirectHit</span></span><span class="arrow">→</span><span class="node queue"><span class="node-id">Q03</span><span class="node-name">ProcessAdditionDamage / ProcessDirectHit</span></span><span class="arrow">→</span><span class="node damage"><span class="node-id">D00</span><span class="node-name">建立命中事件与前快照</span></span></div>
-      <p class="effect-copy">DirectHit；目标=SkillDirectTargets；属性=Attack；概率/倍率=50%；条件=IsHitMiss；标志=Invert<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">DirectHit；目标=SkillDirectTargets；条件=IsHitMiss；条件详情={&quot;Who&quot;:&quot;Target&quot;,&quot;CheckFun&quot;:&quot;IsHitMiss&quot;,&quot;Invert&quot;:true}；数值换算={&quot;Rate&quot;:0.5,&quot;Property&quot;:&quot;Attack&quot;}<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">施加状态</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F01</span><span class="node-name">AddStatus</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B00</span><span class="node-name">抵抗、能力免疫、容器准入</span></span><span class="arrow">→</span><span class="node status"><span class="node-id">B01</span><span class="node-name">创建并提交状态事件</span></span></div>
-      <p class="effect-copy">施加防御力下降（ReduceDef）；基础概率 100%；持续 2 回合｜数据：AddStatus；状态 防御力下降 (ReduceDef)；概率/倍率=100%；持续回合=2<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">施加防御力下降（ReduceDef）；基础概率 100%；持续 2 回合｜数据：AddStatus；状态 防御力下降 (ReduceDef)；概率/倍率=100%；持续回合=2<span class="proof">｜入口：A02替换魂燃函数后，于A07执行；需核查执行宿主</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　效果发生率提升 10%</li><li><b>Lv.5</b>　伤害量提升 10%</li><li><b>Lv.6</b>　伤害量提升 10%</li></ul></details>
         </section><section class="section" id="H202S2">
           <div class="section-title"><h2>H202S2　躁动的狂热</h2><span class="meta">被动技能｜目标 数据库未标注｜CD 0</span></div>
           <p class="description">随速度提升的行动值效果减少 50%。自身除外的 1 号位我方成员回合开始时，自身行动值提升 [70%:2_1:Value]</p>
           <div class="note">该技能没有玩家主动施放入口；效果从下方标出的 Trigger 宿主阶段进入。</div><div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">SpeedFinalRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">SpeedFinalRate = -0.5｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">SpeedFinalRate = -0.5｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">行动值变化</span><span class="node trigger"><span class="node-id">T04</span><span class="node-name">全体角色 AnyOneBeforeRound（含行动者）</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F02</span><span class="node-name">AddTime</span></span></div>
-      <p class="effect-copy">自身行动值提升 70%｜数据：AddTime；目标=Self；阵营=My；触发=AnyOneBeforeRound；数值=0.7；条件=IsNoSelf/IsSameCamp/Position<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">自身行动值提升 70%｜数据：AddTime；目标=Self；阵营=My；触发=AnyOneBeforeRound；数值=0.7；条件=IsNoSelf/IsSameCamp/Position；全部条件=[{&quot;Who&quot;:&quot;TriggerSource&quot;,&quot;CheckFun&quot;:&quot;IsSameCamp&quot;},{&quot;Who&quot;:&quot;TriggerSource&quot;,&quot;CheckFun&quot;:&quot;IsNoSelf&quot;},{&quot;Who&quot;:&quot;TriggerSource&quot;,&quot;CheckFun&quot;:&quot;Position&quot;,&quot;CheckID&quot;:&quot;0&quot;}]<span class="proof">｜入口：AnyOneBeforeRound</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　行动值提升 5%</li><li><b>Lv.3</b>　行动值提升 5%</li><li><b>Lv.4</b>　行动值提升 5%</li><li><b>Lv.5</b>　行动值提升 5%</li><li><b>Lv.6</b>　行动值提升 10%</li></ul></details>
         </section><section class="section" id="H202S3">
           <div class="section-title"><h2>H202S3　是你的味道…</h2><span class="meta">伤害技能｜目标 All｜CD 5｜AttRate 0.35｜Pow 1</span></div>
           <p class="description">操控浮游砲轰炸全体敌人解除 1 个正向状态后，使技能冷却时间增加 1 回合、行动值下降 30%。此攻击不会被反击。此攻击不会发生暴击。[[贯穿:Penetrate:StatusFun]目标 50% 防禦力:AWAKEN]</p>
           <div class="effects"><div class="effect">
       <div class="lane"><span class="lane-label">RemoveBuf</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F05</span><span class="node-name">RemoveBuf</span></span></div>
-      <p class="effect-copy">RemoveBuf；目标=All；数值=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">RemoveBuf；目标=All；数值=1<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">AddAllSkillCoolDown</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F21</span><span class="node-name">AddAllSkillCoolDown</span></span></div>
-      <p class="effect-copy">AddAllSkillCoolDown；目标=All；数值=1<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">子效果：在父效果的执行条件下运行；AddAllSkillCoolDown；目标=All；数值=1<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">行动值变化</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span><span class="arrow">→</span><span class="node dispatch"><span class="node-id">X00→X04</span><span class="node-name">读取函数并分派到EFunction</span></span><span class="arrow">→</span><span class="node operator"><span class="node-id">F02</span><span class="node-name">AddTime</span></span></div>
-      <p class="effect-copy">目标行动值降低 30%｜数据：AddTime；目标=All；数值=-0.3<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">目标行动值降低 30%｜数据：AddTime；目标=All；数值=-0.3<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">NoCounter</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">NoCounter = 1｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">NoCounter = 1｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">禁止暴击</span><span class="node damage"><span class="node-id">D02</span><span class="node-name">命中/闪避/暴击</span></span></div>
-      <p class="effect-copy">攻击不会发生暴击｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">攻击不会发生暴击｜数据：属性/条件函数<span class="proof">｜入口：命中类型判定阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">禁止强击</span><span class="node damage"><span class="node-id">D02</span><span class="node-name">命中/闪避/暴击</span></span></div>
-      <p class="effect-copy">攻击不会触发强击｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">攻击不会触发强击｜数据：属性/条件函数<span class="proof">｜入口：命中类型判定阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">防御贯穿</span><span class="node damage"><span class="node-id">D04</span><span class="node-name">防御与三层贯穿</span></span></div>
-      <p class="effect-copy">本次攻击贯穿目标 50% 防御力｜数据：属性/条件函数；属性=ValueOne；概率/倍率=50%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：防御贯穿公式阶段</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">防御贯穿</span><span class="node damage"><span class="node-id">D04</span><span class="node-name">防御与三层贯穿</span></span></div>
-      <p class="effect-copy">本次攻击贯穿目标 100% 防御力｜数据：属性/条件函数；属性=ValueOne；概率/倍率=100%<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">属性/条件函数<span class="proof">｜入口：防御贯穿公式阶段</span></p>
     </div></div><details class="enhance"><summary>技能强化摘要</summary><ul><li><b>Lv.2</b>　伤害量提升 5%</li><li><b>Lv.3</b>　伤害量提升 5%</li><li><b>Lv.4</b>　冷却时间减少 1 回合</li><li><b>Lv.5</b>　伤害量提升 10%</li><li><b>Lv.6</b>　伤害量提升 10%</li></ul></details>
         </section><section class="section" id="damage-chain">
           <div class="section-title"><h2>直接目标的完整伤害链</h2><span class="meta">H202S1、H202S3 使用</span></div>
@@ -79,11 +79,11 @@
           <div class="section-title"><h3>ReduceDef　防御力下降</h3><span class="meta">基础回合 2｜最大层数 0｜常驻 0</span></div>
           <p class="description">防御力下降 70%</p>
           <div class="effect">
-      <div class="lane"><span class="lane-label">DefenceFinalRate</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
-      <p class="effect-copy">DefenceFinalRate = -0.7｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <div class="lane"><span class="lane-label">防御力提升</span><span class="node action"><span class="node-id">A07</span><span class="node-name">逐直接目标处理</span></span></div>
+      <p class="effect-copy">防御力提高 -70%（最终防御倍率）｜数据：属性/条件函数<span class="proof">｜入口：技能静态函数</span></p>
     </div><div class="effect">
       <div class="lane"><span class="lane-label">状态筛选标记</span><span class="node trigger"><span class="node-id">T06</span><span class="node-name">持续状态跳动</span></span></div>
-      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜已验证连续边</span></p>
+      <p class="effect-copy">该状态带有筛选标记，可被流血计数、引爆与状态筛选逻辑识别｜数据：属性/条件函数<span class="proof">｜入口：持续状态跳动与筛选阶段</span></p>
     </div>
         </article></div></section>
 </main></body></html>
