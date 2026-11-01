@@ -88,6 +88,7 @@ input:focus{{border-color:var(--blue);box-shadow:0 0 0 3px #bfdbfe}}.count{{whit
 .resources{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:26px}}.resource{{display:block;padding:18px 20px;border:1px solid #bfdbfe;border-radius:14px;background:#f8fbff;color:inherit;text-decoration:none}}.resource:hover{{border-color:#60a5fa;background:#eff6ff}}.resource b{{display:block;margin-bottom:5px;color:#1d4ed8;font-size:18px}}.resource span{{color:var(--muted);font-size:13px;line-height:1.6}}
 .grid{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
 .card{{display:block;min-height:205px;padding:22px;border:1px solid var(--line);border-radius:16px;background:#fff;color:inherit;text-decoration:none;box-shadow:0 8px 28px rgba(15,23,42,.05);transition:.16s ease}}
+.card[hidden]{{display:none}}
 .card:hover{{transform:translateY(-2px);border-color:#93c5fd;box-shadow:0 14px 34px rgba(37,99,235,.12)}}.card:focus-visible{{outline:3px solid #93c5fd;outline-offset:3px}}
 .card-top{{display:flex;justify-content:space-between;align-items:center}}.role-id{{color:var(--blue);font:700 14px Consolas,monospace}}.panel-count{{padding:5px 9px;border-radius:999px;background:#eff6ff;color:#1d4ed8;font-size:12px;font-weight:700}}
 .card h2{{margin:22px 0 7px;font-size:25px}}.card p{{margin:0;color:var(--muted);font-size:14px;line-height:1.65}}.open{{display:block;margin-top:22px;color:#334155;font-size:14px;font-weight:700}}.open b{{color:var(--blue);font-size:18px}}
